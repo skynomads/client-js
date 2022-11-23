@@ -1,7 +1,7 @@
-import { Configuration } from '../configuration.js';
-import { V1alpha1Export } from '../models/V1alpha1Export.js';
-import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget.js';
-import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi.js";
+import { Configuration } from '../configuration';
+import { V1alpha1Export } from '../models/V1alpha1Export';
+import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
+import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi";
 export interface ExportApiV1ExportGetRequest {
 }
 export interface ExportApiV1ExportNameGetRequest {

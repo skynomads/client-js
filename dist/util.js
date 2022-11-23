@@ -1,4 +1,7 @@
-export function isCodeInRange(codeRange, code) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.canConsumeForm = exports.isCodeInRange = void 0;
+function isCodeInRange(codeRange, code) {
     if (codeRange === "0") {
         return true;
     }
@@ -6,11 +9,11 @@ export function isCodeInRange(codeRange, code) {
         return true;
     }
     else {
-        const codeString = code.toString();
+        var codeString = code.toString();
         if (codeString.length != codeRange.length) {
             return false;
         }
-        for (let i = 0; i < codeString.length; i++) {
+        for (var i = 0; i < codeString.length; i++) {
             if (codeRange.charAt(i) != "X" && codeRange.charAt(i) != codeString.charAt(i)) {
                 return false;
             }
@@ -18,7 +21,9 @@ export function isCodeInRange(codeRange, code) {
         return true;
     }
 }
-export function canConsumeForm(contentTypes) {
+exports.isCodeInRange = isCodeInRange;
+function canConsumeForm(contentTypes) {
     return contentTypes.indexOf('multipart/form-data') !== -1;
 }
+exports.canConsumeForm = canConsumeForm;
 //# sourceMappingURL=util.js.map

@@ -10,11 +10,11 @@
  * Do not edit the class manually.
  */
 
-import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry.js';
-import { V1OwnerReference } from '../models/V1OwnerReference.js';
-import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec.js';
-import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus.js';
-import { HttpFile } from '../http/http.js';
+import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry';
+import { V1OwnerReference } from '../models/V1OwnerReference';
+import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
+import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { HttpFile } from '../http/http';
 
 export class V1alpha1ExportTarget {
     /**

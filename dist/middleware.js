@@ -1,13 +1,18 @@
-import { from } from './rxjsStub.js';
-export class PromiseMiddlewareWrapper {
-    constructor(middleware) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromiseMiddlewareWrapper = void 0;
+var rxjsStub_1 = require("./rxjsStub");
+var PromiseMiddlewareWrapper = (function () {
+    function PromiseMiddlewareWrapper(middleware) {
         this.middleware = middleware;
     }
-    pre(context) {
-        return from(this.middleware.pre(context));
-    }
-    post(context) {
-        return from(this.middleware.post(context));
-    }
-}
+    PromiseMiddlewareWrapper.prototype.pre = function (context) {
+        return (0, rxjsStub_1.from)(this.middleware.pre(context));
+    };
+    PromiseMiddlewareWrapper.prototype.post = function (context) {
+        return (0, rxjsStub_1.from)(this.middleware.post(context));
+    };
+    return PromiseMiddlewareWrapper;
+}());
+exports.PromiseMiddlewareWrapper = PromiseMiddlewareWrapper;
 //# sourceMappingURL=middleware.js.map

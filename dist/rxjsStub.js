@@ -1,24 +1,33 @@
-export class Observable {
-    constructor(promise) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.map = exports.mergeMap = exports.of = exports.from = exports.Observable = void 0;
+var Observable = (function () {
+    function Observable(promise) {
         this.promise = promise;
     }
-    toPromise() {
+    Observable.prototype.toPromise = function () {
         return this.promise;
-    }
-    pipe(callback) {
+    };
+    Observable.prototype.pipe = function (callback) {
         return new Observable(this.promise.then(callback));
-    }
-}
-export function from(promise) {
+    };
+    return Observable;
+}());
+exports.Observable = Observable;
+function from(promise) {
     return new Observable(promise);
 }
-export function of(value) {
+exports.from = from;
+function of(value) {
     return new Observable(Promise.resolve(value));
 }
-export function mergeMap(callback) {
-    return (value) => callback(value).toPromise();
+exports.of = of;
+function mergeMap(callback) {
+    return function (value) { return callback(value).toPromise(); };
 }
-export function map(callback) {
+exports.mergeMap = mergeMap;
+function map(callback) {
     return callback;
 }
+exports.map = map;
 //# sourceMappingURL=rxjsStub.js.map

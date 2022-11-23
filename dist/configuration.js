@@ -1,17 +1,22 @@
-import { PromiseMiddlewareWrapper } from "./middleware.js";
-import { IsomorphicFetchHttpLibrary as DefaultHttpLibrary } from "./http/isomorphic-fetch.js";
-import { server1 } from "./servers.js";
-import { configureAuthMethods } from "./auth/auth.js";
-export function createConfiguration(conf = {}) {
-    const configuration = {
-        baseServer: conf.baseServer !== undefined ? conf.baseServer : server1,
-        httpApi: conf.httpApi || new DefaultHttpLibrary(),
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createConfiguration = void 0;
+var middleware_1 = require("./middleware");
+var isomorphic_fetch_1 = require("./http/isomorphic-fetch");
+var servers_1 = require("./servers");
+var auth_1 = require("./auth/auth");
+function createConfiguration(conf) {
+    if (conf === void 0) { conf = {}; }
+    var configuration = {
+        baseServer: conf.baseServer !== undefined ? conf.baseServer : servers_1.server1,
+        httpApi: conf.httpApi || new isomorphic_fetch_1.IsomorphicFetchHttpLibrary(),
         middleware: conf.middleware || [],
-        authMethods: configureAuthMethods(conf.authMethods)
+        authMethods: (0, auth_1.configureAuthMethods)(conf.authMethods)
     };
     if (conf.promiseMiddleware) {
-        conf.promiseMiddleware.forEach(m => configuration.middleware.push(new PromiseMiddlewareWrapper(m)));
+        conf.promiseMiddleware.forEach(function (m) { return configuration.middleware.push(new middleware_1.PromiseMiddlewareWrapper(m)); });
     }
     return configuration;
 }
+exports.createConfiguration = createConfiguration;
 //# sourceMappingURL=configuration.js.map

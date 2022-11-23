@@ -1,27 +1,32 @@
-import { RequestContext } from "./http/http.js";
-export class ServerConfiguration {
-    constructor(url, variableConfiguration) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.servers = exports.server1 = exports.ServerConfiguration = void 0;
+var http_1 = require("./http/http");
+var ServerConfiguration = (function () {
+    function ServerConfiguration(url, variableConfiguration) {
         this.url = url;
         this.variableConfiguration = variableConfiguration;
     }
-    setVariables(variableConfiguration) {
+    ServerConfiguration.prototype.setVariables = function (variableConfiguration) {
         Object.assign(this.variableConfiguration, variableConfiguration);
-    }
-    getConfiguration() {
+    };
+    ServerConfiguration.prototype.getConfiguration = function () {
         return this.variableConfiguration;
-    }
-    getUrl() {
-        let replacedUrl = this.url;
-        for (const key in this.variableConfiguration) {
+    };
+    ServerConfiguration.prototype.getUrl = function () {
+        var replacedUrl = this.url;
+        for (var key in this.variableConfiguration) {
             var re = new RegExp("{" + key + "}", "g");
             replacedUrl = replacedUrl.replace(re, this.variableConfiguration[key]);
         }
         return replacedUrl;
-    }
-    makeRequestContext(endpoint, httpMethod) {
-        return new RequestContext(this.getUrl() + endpoint, httpMethod);
-    }
-}
-export const server1 = new ServerConfiguration("//cloudplane.org/v1", {});
-export const servers = [server1];
+    };
+    ServerConfiguration.prototype.makeRequestContext = function (endpoint, httpMethod) {
+        return new http_1.RequestContext(this.getUrl() + endpoint, httpMethod);
+    };
+    return ServerConfiguration;
+}());
+exports.ServerConfiguration = ServerConfiguration;
+exports.server1 = new ServerConfiguration("//cloudplane.org/v1", {});
+exports.servers = [exports.server1];
 //# sourceMappingURL=servers.js.map

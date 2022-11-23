@@ -1,4 +1,4 @@
-import { Configuration } from '../configuration.js';
+import { Configuration } from '../configuration';
 export declare const COLLECTION_FORMATS: {
     csv: string;
     ssv: string;

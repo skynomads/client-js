@@ -1,17 +1,22 @@
-export class V1alpha1ExportStatus {
-    static getAttributeTypeMap() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.V1alpha1ExportStatus = void 0;
+var V1alpha1ExportStatus = (function () {
+    function V1alpha1ExportStatus() {
+    }
+    V1alpha1ExportStatus.getAttributeTypeMap = function () {
         return V1alpha1ExportStatus.attributeTypeMap;
-    }
-    constructor() {
-    }
-}
-V1alpha1ExportStatus.discriminator = undefined;
-V1alpha1ExportStatus.attributeTypeMap = [
-    {
-        "name": "conditions",
-        "baseName": "conditions",
-        "type": "Array<V1Condition>",
-        "format": ""
-    }
-];
+    };
+    V1alpha1ExportStatus.discriminator = undefined;
+    V1alpha1ExportStatus.attributeTypeMap = [
+        {
+            "name": "conditions",
+            "baseName": "conditions",
+            "type": "Array<V1Condition>",
+            "format": ""
+        }
+    ];
+    return V1alpha1ExportStatus;
+}());
+exports.V1alpha1ExportStatus = V1alpha1ExportStatus;
 //# sourceMappingURL=V1alpha1ExportStatus.js.map

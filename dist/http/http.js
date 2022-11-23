@@ -1,3 +1,33 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,10 +37,39 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import URLParse from "url-parse";
-import { from } from '../rxjsStub.js';
-export * from './isomorphic-fetch';
-export var HttpMethod;
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.wrapHttpLibrary = exports.ResponseContext = exports.SelfDecodingBody = exports.RequestContext = exports.HttpException = exports.HttpMethod = void 0;
+var URLParse = require("url-parse");
+var rxjsStub_1 = require("../rxjsStub");
+__exportStar(require("./isomorphic-fetch"), exports);
+var HttpMethod;
 (function (HttpMethod) {
     HttpMethod["GET"] = "GET";
     HttpMethod["HEAD"] = "HEAD";
@@ -21,88 +80,103 @@ export var HttpMethod;
     HttpMethod["OPTIONS"] = "OPTIONS";
     HttpMethod["TRACE"] = "TRACE";
     HttpMethod["PATCH"] = "PATCH";
-})(HttpMethod || (HttpMethod = {}));
-export class HttpException extends Error {
-    constructor(msg) {
-        super(msg);
+})(HttpMethod = exports.HttpMethod || (exports.HttpMethod = {}));
+var HttpException = (function (_super) {
+    __extends(HttpException, _super);
+    function HttpException(msg) {
+        return _super.call(this, msg) || this;
     }
-}
-export class RequestContext {
-    constructor(url, httpMethod) {
+    return HttpException;
+}(Error));
+exports.HttpException = HttpException;
+var RequestContext = (function () {
+    function RequestContext(url, httpMethod) {
         this.httpMethod = httpMethod;
         this.headers = {};
         this.body = undefined;
         this.url = new URLParse(url, true);
     }
-    getUrl() {
+    RequestContext.prototype.getUrl = function () {
         return this.url.toString();
-    }
-    setUrl(url) {
+    };
+    RequestContext.prototype.setUrl = function (url) {
         this.url = new URLParse(url, true);
-    }
-    setBody(body) {
+    };
+    RequestContext.prototype.setBody = function (body) {
         this.body = body;
-    }
-    getHttpMethod() {
+    };
+    RequestContext.prototype.getHttpMethod = function () {
         return this.httpMethod;
-    }
-    getHeaders() {
+    };
+    RequestContext.prototype.getHeaders = function () {
         return this.headers;
-    }
-    getBody() {
+    };
+    RequestContext.prototype.getBody = function () {
         return this.body;
-    }
-    setQueryParam(name, value) {
-        let queryObj = this.url.query;
+    };
+    RequestContext.prototype.setQueryParam = function (name, value) {
+        var queryObj = this.url.query;
         queryObj[name] = value;
         this.url.set("query", queryObj);
-    }
-    addCookie(name, value) {
+    };
+    RequestContext.prototype.addCookie = function (name, value) {
         if (!this.headers["Cookie"]) {
             this.headers["Cookie"] = "";
         }
         this.headers["Cookie"] += name + "=" + value + "; ";
-    }
-    setHeaderParam(key, value) {
+    };
+    RequestContext.prototype.setHeaderParam = function (key, value) {
         this.headers[key] = value;
-    }
-}
-export class SelfDecodingBody {
-    constructor(dataSource) {
+    };
+    return RequestContext;
+}());
+exports.RequestContext = RequestContext;
+var SelfDecodingBody = (function () {
+    function SelfDecodingBody(dataSource) {
         this.dataSource = dataSource;
     }
-    binary() {
+    SelfDecodingBody.prototype.binary = function () {
         return this.dataSource;
-    }
-    text() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const data = yield this.dataSource;
-            if (data.text) {
-                return data.text();
-            }
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.addEventListener("load", () => resolve(reader.result));
-                reader.addEventListener("error", () => reject(reader.error));
-                reader.readAsText(data);
+    };
+    SelfDecodingBody.prototype.text = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4, this.dataSource];
+                    case 1:
+                        data = _a.sent();
+                        if (data.text) {
+                            return [2, data.text()];
+                        }
+                        return [2, new Promise(function (resolve, reject) {
+                                var reader = new FileReader();
+                                reader.addEventListener("load", function () { return resolve(reader.result); });
+                                reader.addEventListener("error", function () { return reject(reader.error); });
+                                reader.readAsText(data);
+                            })];
+                }
             });
         });
-    }
-}
-export class ResponseContext {
-    constructor(httpStatusCode, headers, body) {
+    };
+    return SelfDecodingBody;
+}());
+exports.SelfDecodingBody = SelfDecodingBody;
+var ResponseContext = (function () {
+    function ResponseContext(httpStatusCode, headers, body) {
         this.httpStatusCode = httpStatusCode;
         this.headers = headers;
         this.body = body;
     }
-    getParsedHeader(headerName) {
-        const result = {};
+    ResponseContext.prototype.getParsedHeader = function (headerName) {
+        var result = {};
         if (!this.headers[headerName]) {
             return result;
         }
-        const parameters = this.headers[headerName].split(";");
-        for (const parameter of parameters) {
-            let [key, value] = parameter.split("=", 2);
+        var parameters = this.headers[headerName].split(";");
+        for (var _i = 0, parameters_1 = parameters; _i < parameters_1.length; _i++) {
+            var parameter = parameters_1[_i];
+            var _a = parameter.split("=", 2), key = _a[0], value = _a[1];
             key = key.toLowerCase().trim();
             if (value === undefined) {
                 result[""] = key;
@@ -116,24 +190,32 @@ export class ResponseContext {
             }
         }
         return result;
-    }
-    getBodyAsFile() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const data = yield this.body.binary();
-            const fileName = this.getParsedHeader("content-disposition")["filename"] || "";
-            const contentType = this.headers["content-type"] || "";
-            try {
-                return new File([data], fileName, { type: contentType });
-            }
-            catch (error) {
-                return Object.assign(data, {
-                    name: fileName,
-                    type: contentType
-                });
-            }
+    };
+    ResponseContext.prototype.getBodyAsFile = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, fileName, contentType;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4, this.body.binary()];
+                    case 1:
+                        data = _a.sent();
+                        fileName = this.getParsedHeader("content-disposition")["filename"] || "";
+                        contentType = this.headers["content-type"] || "";
+                        try {
+                            return [2, new File([data], fileName, { type: contentType })];
+                        }
+                        catch (error) {
+                            return [2, Object.assign(data, {
+                                    name: fileName,
+                                    type: contentType
+                                })];
+                        }
+                        return [2];
+                }
+            });
         });
-    }
-    getBodyAsAny() {
+    };
+    ResponseContext.prototype.getBodyAsAny = function () {
         try {
             return this.body.text();
         }
@@ -143,13 +225,16 @@ export class ResponseContext {
         }
         catch (_b) { }
         return Promise.resolve(undefined);
-    }
-}
-export function wrapHttpLibrary(promiseHttpLibrary) {
+    };
+    return ResponseContext;
+}());
+exports.ResponseContext = ResponseContext;
+function wrapHttpLibrary(promiseHttpLibrary) {
     return {
-        send(request) {
-            return from(promiseHttpLibrary.send(request));
+        send: function (request) {
+            return (0, rxjsStub_1.from)(promiseHttpLibrary.send(request));
         }
     };
 }
+exports.wrapHttpLibrary = wrapHttpLibrary;
 //# sourceMappingURL=http.js.map

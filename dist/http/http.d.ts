@@ -1,4 +1,4 @@
-import { Observable } from '../rxjsStub.js';
+import { Observable } from '../rxjsStub';
 export * from './isomorphic-fetch';
 export declare enum HttpMethod {
     GET = "GET",

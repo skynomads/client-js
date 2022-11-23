@@ -1,4 +1,4 @@
-import { V1Condition } from '../models/V1Condition.js';
+import { V1Condition } from '../models/V1Condition';
 export declare class V1alpha1ExportStatus {
     'conditions'?: Array<V1Condition>;
     static readonly discriminator: string | undefined;
