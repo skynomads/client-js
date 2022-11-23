@@ -76,10 +76,10 @@ export class ObservableExportApi {
 
     /**
      * Put export
-     * @param request Export
+     * @param _export Export
      */
-    public v1ExportPut(request: V1alpha1Export, _options?: Configuration): Observable<V1alpha1Export> {
-        const requestContextPromise = this.requestFactory.v1ExportPut(request, _options);
+    public v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Observable<V1alpha1Export> {
+        const requestContextPromise = this.requestFactory.v1ExportPut(_export, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -144,10 +144,10 @@ export class ObservableExportApi {
 
     /**
      * Put export target
-     * @param request ExportTarget
+     * @param exportTarget ExportTarget
      */
-    public v1ExportTargetPut(request: V1alpha1ExportTarget, _options?: Configuration): Observable<V1alpha1ExportTarget> {
-        const requestContextPromise = this.requestFactory.v1ExportTargetPut(request, _options);
+    public v1ExportTargetPut(exportTarget: V1alpha1ExportTarget, _options?: Configuration): Observable<V1alpha1ExportTarget> {
+        const requestContextPromise = this.requestFactory.v1ExportTargetPut(exportTarget, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);

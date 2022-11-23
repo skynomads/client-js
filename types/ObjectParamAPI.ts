@@ -33,7 +33,7 @@ export interface ExportApiV1ExportPutRequest {
      * @type V1alpha1Export
      * @memberof ExportApiv1ExportPut
      */
-    request: V1alpha1Export
+    _export: V1alpha1Export
 }
 
 export interface ExportApiV1ExportTargetGetRequest {
@@ -54,7 +54,7 @@ export interface ExportApiV1ExportTargetPutRequest {
      * @type V1alpha1ExportTarget
      * @memberof ExportApiv1ExportTargetPut
      */
-    request: V1alpha1ExportTarget
+    exportTarget: V1alpha1ExportTarget
 }
 
 export class ObjectExportApi {
@@ -85,7 +85,7 @@ export class ObjectExportApi {
      * @param param the request object
      */
     public v1ExportPut(param: ExportApiV1ExportPutRequest, options?: Configuration): Promise<V1alpha1Export> {
-        return this.api.v1ExportPut(param.request,  options).toPromise();
+        return this.api.v1ExportPut(param._export,  options).toPromise();
     }
 
     /**
@@ -109,7 +109,7 @@ export class ObjectExportApi {
      * @param param the request object
      */
     public v1ExportTargetPut(param: ExportApiV1ExportTargetPutRequest, options?: Configuration): Promise<V1alpha1ExportTarget> {
-        return this.api.v1ExportTargetPut(param.request,  options).toPromise();
+        return this.api.v1ExportTargetPut(param.exportTarget,  options).toPromise();
     }
 
 }

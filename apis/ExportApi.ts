@@ -72,14 +72,14 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Put export
-     * @param request Export
+     * @param _export Export
      */
-    public async v1ExportPut(request: V1alpha1Export, _options?: Configuration): Promise<RequestContext> {
+    public async v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'request' is not null or undefined
-        if (request === null || request === undefined) {
-            throw new RequiredError("ExportApi", "v1ExportPut", "request");
+        // verify required parameter '_export' is not null or undefined
+        if (_export === null || _export === undefined) {
+            throw new RequiredError("ExportApi", "v1ExportPut", "_export");
         }
 
 
@@ -97,7 +97,7 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(request, "V1alpha1Export", ""),
+            ObjectSerializer.serialize(_export, "V1alpha1Export", ""),
             contentType
         );
         requestContext.setBody(serializedBody);
@@ -167,14 +167,14 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Put export target
-     * @param request ExportTarget
+     * @param exportTarget ExportTarget
      */
-    public async v1ExportTargetPut(request: V1alpha1ExportTarget, _options?: Configuration): Promise<RequestContext> {
+    public async v1ExportTargetPut(exportTarget: V1alpha1ExportTarget, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
-        // verify required parameter 'request' is not null or undefined
-        if (request === null || request === undefined) {
-            throw new RequiredError("ExportApi", "v1ExportTargetPut", "request");
+        // verify required parameter 'exportTarget' is not null or undefined
+        if (exportTarget === null || exportTarget === undefined) {
+            throw new RequiredError("ExportApi", "v1ExportTargetPut", "exportTarget");
         }
 
 
@@ -192,7 +192,7 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
         ]);
         requestContext.setHeaderParam("Content-Type", contentType);
         const serializedBody = ObjectSerializer.stringify(
-            ObjectSerializer.serialize(request, "V1alpha1ExportTarget", ""),
+            ObjectSerializer.serialize(exportTarget, "V1alpha1ExportTarget", ""),
             contentType
         );
         requestContext.setBody(serializedBody);

@@ -115,7 +115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ExportPut**
-> V1alpha1Export v1ExportPut(request)
+> V1alpha1Export v1ExportPut(_export)
 
 
 ### Example
@@ -130,7 +130,7 @@ const apiInstance = new .ExportApi(configuration);
 
 let body:.ExportApiV1ExportPutRequest = {
   // V1alpha1Export | Export
-  request: {
+  _export: {
     annotations: {
       "key": "key_example",
     },
@@ -202,7 +202,7 @@ apiInstance.v1ExportPut(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | **V1alpha1Export**| Export |
+ **_export** | **V1alpha1Export**| Export |
 
 
 ### Return type
@@ -331,7 +331,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ExportTargetPut**
-> V1alpha1ExportTarget v1ExportTargetPut(request)
+> V1alpha1ExportTarget v1ExportTargetPut(exportTarget)
 
 
 ### Example
@@ -346,7 +346,7 @@ const apiInstance = new .ExportApi(configuration);
 
 let body:.ExportApiV1ExportTargetPutRequest = {
   // V1alpha1ExportTarget | ExportTarget
-  request: {
+  exportTarget: {
     annotations: {
       "key": "key_example",
     },
@@ -422,7 +422,7 @@ apiInstance.v1ExportTargetPut(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | **V1alpha1ExportTarget**| ExportTarget |
+ **exportTarget** | **V1alpha1ExportTarget**| ExportTarget |
 
 
 ### Return type
