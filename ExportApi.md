@@ -115,7 +115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ExportPut**
-> V1alpha1Export v1ExportPut()
+> V1alpha1Export v1ExportPut(request)
 
 
 ### Example
@@ -128,7 +128,69 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .ExportApi(configuration);
 
-let body:any = {};
+let body:.ExportApiV1ExportPutRequest = {
+  // V1alpha1Export | Export
+  request: {
+    annotations: {
+      "key": "key_example",
+    },
+    apiVersion: "apiVersion_example",
+    creationTimestamp: "creationTimestamp_example",
+    deletionGracePeriodSeconds: 1,
+    deletionTimestamp: "deletionTimestamp_example",
+    finalizers: [
+      "finalizers_example",
+    ],
+    generateName: "generateName_example",
+    generation: 1,
+    kind: "kind_example",
+    labels: {
+      "key": "key_example",
+    },
+    managedFields: [
+      {
+        apiVersion: "apiVersion_example",
+        fieldsType: "fieldsType_example",
+        fieldsV1: {},
+        manager: "manager_example",
+        operation: "operation_example",
+        subresource: "subresource_example",
+        time: "time_example",
+      },
+    ],
+    name: "name_example",
+    namespace: "namespace_example",
+    ownerReferences: [
+      {
+        apiVersion: "apiVersion_example",
+        blockOwnerDeletion: true,
+        controller: true,
+        kind: "kind_example",
+        name: "name_example",
+        uid: "uid_example",
+      },
+    ],
+    resourceVersion: "resourceVersion_example",
+    selfLink: "selfLink_example",
+    spec: {
+      application: "application_example",
+      target: "target_example",
+    },
+    status: {
+      conditions: [
+        {
+          lastTransitionTime: "lastTransitionTime_example",
+          message: "message_example",
+          observedGeneration: 1,
+          reason: "reason_example",
+          status: "status_example",
+          type: "type_example",
+        },
+      ],
+    },
+    uid: "uid_example",
+  },
+};
 
 apiInstance.v1ExportPut(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -137,7 +199,10 @@ apiInstance.v1ExportPut(body).then((data:any) => {
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | **V1alpha1Export**| Export |
 
 
 ### Return type
@@ -150,7 +215,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -266,7 +331,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ExportTargetPut**
-> V1alpha1ExportTarget v1ExportTargetPut()
+> V1alpha1ExportTarget v1ExportTargetPut(request)
 
 
 ### Example
@@ -279,7 +344,73 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .ExportApi(configuration);
 
-let body:any = {};
+let body:.ExportApiV1ExportTargetPutRequest = {
+  // V1alpha1ExportTarget | ExportTarget
+  request: {
+    annotations: {
+      "key": "key_example",
+    },
+    apiVersion: "apiVersion_example",
+    creationTimestamp: "creationTimestamp_example",
+    deletionGracePeriodSeconds: 1,
+    deletionTimestamp: "deletionTimestamp_example",
+    finalizers: [
+      "finalizers_example",
+    ],
+    generateName: "generateName_example",
+    generation: 1,
+    kind: "kind_example",
+    labels: {
+      "key": "key_example",
+    },
+    managedFields: [
+      {
+        apiVersion: "apiVersion_example",
+        fieldsType: "fieldsType_example",
+        fieldsV1: {},
+        manager: "manager_example",
+        operation: "operation_example",
+        subresource: "subresource_example",
+        time: "time_example",
+      },
+    ],
+    name: "name_example",
+    namespace: "namespace_example",
+    ownerReferences: [
+      {
+        apiVersion: "apiVersion_example",
+        blockOwnerDeletion: true,
+        controller: true,
+        kind: "kind_example",
+        name: "name_example",
+        uid: "uid_example",
+      },
+    ],
+    resourceVersion: "resourceVersion_example",
+    selfLink: "selfLink_example",
+    spec: {
+      bucket: {
+        accessKey: "accessKey_example",
+        endpoint: "endpoint_example",
+        name: "name_example",
+        secretKey: "secretKey_example",
+      },
+    },
+    status: {
+      conditions: [
+        {
+          lastTransitionTime: "lastTransitionTime_example",
+          message: "message_example",
+          observedGeneration: 1,
+          reason: "reason_example",
+          status: "status_example",
+          type: "type_example",
+        },
+      ],
+    },
+    uid: "uid_example",
+  },
+};
 
 apiInstance.v1ExportTargetPut(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -288,7 +419,10 @@ apiInstance.v1ExportTargetPut(body).then((data:any) => {
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | **V1alpha1ExportTarget**| ExportTarget |
 
 
 ### Return type
@@ -301,7 +435,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

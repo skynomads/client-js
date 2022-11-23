@@ -72,9 +72,16 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Put export
+     * @param request Export
      */
-    public async v1ExportPut(_options?: Configuration): Promise<RequestContext> {
+    public async v1ExportPut(request: V1alpha1Export, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new RequiredError("ExportApi", "v1ExportPut", "request");
+        }
+
 
         // Path Params
         const localVarPath = '/v1/export';
@@ -83,6 +90,17 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(request, "V1alpha1Export", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
@@ -149,9 +167,16 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Put export target
+     * @param request ExportTarget
      */
-    public async v1ExportTargetPut(_options?: Configuration): Promise<RequestContext> {
+    public async v1ExportTargetPut(request: V1alpha1ExportTarget, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new RequiredError("ExportApi", "v1ExportTargetPut", "request");
+        }
+
 
         // Path Params
         const localVarPath = '/v1/export/target';
@@ -160,6 +185,17 @@ export class ExportApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(request, "V1alpha1ExportTarget", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default

@@ -44,9 +44,10 @@ export class PromiseExportApi {
 
     /**
      * Put export
+     * @param request Export
      */
-    public v1ExportPut(_options?: Configuration): Promise<V1alpha1Export> {
-        const result = this.api.v1ExportPut(_options);
+    public v1ExportPut(request: V1alpha1Export, _options?: Configuration): Promise<V1alpha1Export> {
+        const result = this.api.v1ExportPut(request, _options);
         return result.toPromise();
     }
 
@@ -69,9 +70,10 @@ export class PromiseExportApi {
 
     /**
      * Put export target
+     * @param request ExportTarget
      */
-    public v1ExportTargetPut(_options?: Configuration): Promise<V1alpha1ExportTarget> {
-        const result = this.api.v1ExportTargetPut(_options);
+    public v1ExportTargetPut(request: V1alpha1ExportTarget, _options?: Configuration): Promise<V1alpha1ExportTarget> {
+        const result = this.api.v1ExportTargetPut(request, _options);
         return result.toPromise();
     }
 
