@@ -1,6 +1,6 @@
 /**
  * Cloudplane API
- * Description
+ * cloudplane.org API
  *
  * OpenAPI spec version: 0.1
  * Contact: support@cloudplane.org
