@@ -1,0 +1,19 @@
+export * from '../models/V1Condition';
+export * from '../models/V1ManagedFieldsEntry';
+export * from '../models/V1OwnerReference';
+export * from '../models/V1alpha1Export';
+export * from '../models/V1alpha1ExportBucket';
+export * from '../models/V1alpha1ExportSpec';
+export * from '../models/V1alpha1ExportStatus';
+export * from '../models/V1alpha1ExportTarget';
+export * from '../models/V1alpha1ExportTargetSpec';
+export * from '../models/V1alpha1ExportTargetStatus';
+export declare class ObjectSerializer {
+    static findCorrectType(data: any, expectedType: string): any;
+    static serialize(data: any, type: string, format: string): any;
+    static deserialize(data: any, type: string, format: string): any;
+    static normalizeMediaType(mediaType: string | undefined): string | undefined;
+    static getPreferredMediaType(mediaTypes: Array<string>): string;
+    static stringify(data: any, mediaType: string): string;
+    static parse(rawData: string, mediaType: string | undefined): any;
+}
