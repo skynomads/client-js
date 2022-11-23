@@ -270,9 +270,9 @@ var ExportApiResponseProcessor = (function () {
     };
     ExportApiResponseProcessor.prototype.v1ExportNameGet = function (response) {
         return __awaiter(this, void 0, void 0, function () {
-            var contentType, body, _a, _b, _c, _d, body, _e, _f, _g, _h, body, _j, _k, _l, _m, _o, _p;
-            return __generator(this, function (_q) {
-                switch (_q.label) {
+            var contentType, body, _a, _b, _c, _d, body, _e, _f, _g, _h, body, _j, _k, _l, _m, body, _o, _p, _q, _r, _s, _t;
+            return __generator(this, function (_u) {
+                switch (_u.label) {
                     case 0:
                         contentType = ObjectSerializer_1.ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
                         if (!(0, util_1.isCodeInRange)("200", response.httpStatusCode)) return [3, 2];
@@ -280,32 +280,41 @@ var ExportApiResponseProcessor = (function () {
                         _d = (_c = ObjectSerializer_1.ObjectSerializer).parse;
                         return [4, response.body.text()];
                     case 1:
-                        body = _b.apply(_a, [_d.apply(_c, [_q.sent(), contentType]),
+                        body = _b.apply(_a, [_d.apply(_c, [_u.sent(), contentType]),
                             "V1alpha1Export", ""]);
                         return [2, body];
                     case 2:
-                        if (!(0, util_1.isCodeInRange)("500", response.httpStatusCode)) return [3, 4];
+                        if (!(0, util_1.isCodeInRange)("404", response.httpStatusCode)) return [3, 4];
                         _f = (_e = ObjectSerializer_1.ObjectSerializer).deserialize;
                         _h = (_g = ObjectSerializer_1.ObjectSerializer).parse;
                         return [4, response.body.text()];
                     case 3:
-                        body = _f.apply(_e, [_h.apply(_g, [_q.sent(), contentType]),
+                        body = _f.apply(_e, [_h.apply(_g, [_u.sent(), contentType]),
                             "string", ""]);
-                        throw new exception_1.ApiException(response.httpStatusCode, "Internal Server Error", body, response.headers);
+                        throw new exception_1.ApiException(response.httpStatusCode, "Not Found", body, response.headers);
                     case 4:
-                        if (!(response.httpStatusCode >= 200 && response.httpStatusCode <= 299)) return [3, 6];
+                        if (!(0, util_1.isCodeInRange)("500", response.httpStatusCode)) return [3, 6];
                         _k = (_j = ObjectSerializer_1.ObjectSerializer).deserialize;
                         _m = (_l = ObjectSerializer_1.ObjectSerializer).parse;
                         return [4, response.body.text()];
                     case 5:
-                        body = _k.apply(_j, [_m.apply(_l, [_q.sent(), contentType]),
+                        body = _k.apply(_j, [_m.apply(_l, [_u.sent(), contentType]),
+                            "string", ""]);
+                        throw new exception_1.ApiException(response.httpStatusCode, "Internal Server Error", body, response.headers);
+                    case 6:
+                        if (!(response.httpStatusCode >= 200 && response.httpStatusCode <= 299)) return [3, 8];
+                        _p = (_o = ObjectSerializer_1.ObjectSerializer).deserialize;
+                        _r = (_q = ObjectSerializer_1.ObjectSerializer).parse;
+                        return [4, response.body.text()];
+                    case 7:
+                        body = _p.apply(_o, [_r.apply(_q, [_u.sent(), contentType]),
                             "V1alpha1Export", ""]);
                         return [2, body];
-                    case 6:
-                        _o = exception_1.ApiException.bind;
-                        _p = [void 0, response.httpStatusCode, "Unknown API Status Code!"];
+                    case 8:
+                        _s = exception_1.ApiException.bind;
+                        _t = [void 0, response.httpStatusCode, "Unknown API Status Code!"];
                         return [4, response.getBodyAsAny()];
-                    case 7: throw new (_o.apply(exception_1.ApiException, _p.concat([_q.sent(), response.headers])))();
+                    case 9: throw new (_s.apply(exception_1.ApiException, _t.concat([_u.sent(), response.headers])))();
                 }
             });
         });
@@ -405,9 +414,9 @@ var ExportApiResponseProcessor = (function () {
     };
     ExportApiResponseProcessor.prototype.v1ExportTargetNameGet = function (response) {
         return __awaiter(this, void 0, void 0, function () {
-            var contentType, body, _a, _b, _c, _d, body, _e, _f, _g, _h, body, _j, _k, _l, _m, _o, _p;
-            return __generator(this, function (_q) {
-                switch (_q.label) {
+            var contentType, body, _a, _b, _c, _d, body, _e, _f, _g, _h, body, _j, _k, _l, _m, body, _o, _p, _q, _r, _s, _t;
+            return __generator(this, function (_u) {
+                switch (_u.label) {
                     case 0:
                         contentType = ObjectSerializer_1.ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
                         if (!(0, util_1.isCodeInRange)("200", response.httpStatusCode)) return [3, 2];
@@ -415,32 +424,41 @@ var ExportApiResponseProcessor = (function () {
                         _d = (_c = ObjectSerializer_1.ObjectSerializer).parse;
                         return [4, response.body.text()];
                     case 1:
-                        body = _b.apply(_a, [_d.apply(_c, [_q.sent(), contentType]),
+                        body = _b.apply(_a, [_d.apply(_c, [_u.sent(), contentType]),
                             "V1alpha1ExportTarget", ""]);
                         return [2, body];
                     case 2:
-                        if (!(0, util_1.isCodeInRange)("500", response.httpStatusCode)) return [3, 4];
+                        if (!(0, util_1.isCodeInRange)("404", response.httpStatusCode)) return [3, 4];
                         _f = (_e = ObjectSerializer_1.ObjectSerializer).deserialize;
                         _h = (_g = ObjectSerializer_1.ObjectSerializer).parse;
                         return [4, response.body.text()];
                     case 3:
-                        body = _f.apply(_e, [_h.apply(_g, [_q.sent(), contentType]),
+                        body = _f.apply(_e, [_h.apply(_g, [_u.sent(), contentType]),
                             "string", ""]);
-                        throw new exception_1.ApiException(response.httpStatusCode, "Internal Server Error", body, response.headers);
+                        throw new exception_1.ApiException(response.httpStatusCode, "Not Found", body, response.headers);
                     case 4:
-                        if (!(response.httpStatusCode >= 200 && response.httpStatusCode <= 299)) return [3, 6];
+                        if (!(0, util_1.isCodeInRange)("500", response.httpStatusCode)) return [3, 6];
                         _k = (_j = ObjectSerializer_1.ObjectSerializer).deserialize;
                         _m = (_l = ObjectSerializer_1.ObjectSerializer).parse;
                         return [4, response.body.text()];
                     case 5:
-                        body = _k.apply(_j, [_m.apply(_l, [_q.sent(), contentType]),
+                        body = _k.apply(_j, [_m.apply(_l, [_u.sent(), contentType]),
+                            "string", ""]);
+                        throw new exception_1.ApiException(response.httpStatusCode, "Internal Server Error", body, response.headers);
+                    case 6:
+                        if (!(response.httpStatusCode >= 200 && response.httpStatusCode <= 299)) return [3, 8];
+                        _p = (_o = ObjectSerializer_1.ObjectSerializer).deserialize;
+                        _r = (_q = ObjectSerializer_1.ObjectSerializer).parse;
+                        return [4, response.body.text()];
+                    case 7:
+                        body = _p.apply(_o, [_r.apply(_q, [_u.sent(), contentType]),
                             "V1alpha1ExportTarget", ""]);
                         return [2, body];
-                    case 6:
-                        _o = exception_1.ApiException.bind;
-                        _p = [void 0, response.httpStatusCode, "Unknown API Status Code!"];
+                    case 8:
+                        _s = exception_1.ApiException.bind;
+                        _t = [void 0, response.httpStatusCode, "Unknown API Status Code!"];
                         return [4, response.getBodyAsAny()];
-                    case 7: throw new (_o.apply(exception_1.ApiException, _p.concat([_q.sent(), response.headers])))();
+                    case 9: throw new (_s.apply(exception_1.ApiException, _t.concat([_u.sent(), response.headers])))();
                 }
             });
         });
