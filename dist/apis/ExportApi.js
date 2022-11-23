@@ -7,11 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { BaseAPIRequestFactory, RequiredError } from './baseapi';
-import { HttpMethod } from '../http/http';
-import { ObjectSerializer } from '../models/ObjectSerializer';
-import { ApiException } from './exception';
-import { isCodeInRange } from '../util';
+import { BaseAPIRequestFactory, RequiredError } from './baseapi.js';
+import { HttpMethod } from '../http/http.js';
+import { ObjectSerializer } from '../models/ObjectSerializer.js';
+import { ApiException } from './exception.js';
+import { isCodeInRange } from '../util.js';
 export class ExportApiRequestFactory extends BaseAPIRequestFactory {
     v1ExportGet(_options) {
         var _a, _b, _c;

@@ -1,24 +1,24 @@
-export * from '../models/V1Condition';
-export * from '../models/V1ManagedFieldsEntry';
-export * from '../models/V1OwnerReference';
-export * from '../models/V1alpha1Export';
-export * from '../models/V1alpha1ExportBucket';
-export * from '../models/V1alpha1ExportSpec';
-export * from '../models/V1alpha1ExportStatus';
-export * from '../models/V1alpha1ExportTarget';
-export * from '../models/V1alpha1ExportTargetSpec';
-export * from '../models/V1alpha1ExportTargetStatus';
+export * from '../models/V1Condition.js';
+export * from '../models/V1ManagedFieldsEntry.js';
+export * from '../models/V1OwnerReference.js';
+export * from '../models/V1alpha1Export.js';
+export * from '../models/V1alpha1ExportBucket.js';
+export * from '../models/V1alpha1ExportSpec.js';
+export * from '../models/V1alpha1ExportStatus.js';
+export * from '../models/V1alpha1ExportTarget.js';
+export * from '../models/V1alpha1ExportTargetSpec.js';
+export * from '../models/V1alpha1ExportTargetStatus.js';
 
-import { V1Condition } from '../models/V1Condition';
-import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry';
-import { V1OwnerReference } from '../models/V1OwnerReference';
-import { V1alpha1Export } from '../models/V1alpha1Export';
-import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
-import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
-import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
-import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
-import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
-import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { V1Condition } from '../models/V1Condition.js';
+import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry.js';
+import { V1OwnerReference } from '../models/V1OwnerReference.js';
+import { V1alpha1Export } from '../models/V1alpha1Export.js';
+import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket.js';
+import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec.js';
+import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus.js';
+import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget.js';
+import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec.js';
+import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus.js';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [

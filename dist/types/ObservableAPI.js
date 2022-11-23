@@ -1,6 +1,6 @@
-import { of, from } from '../rxjsStub';
-import { mergeMap, map } from '../rxjsStub';
-import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi";
+import { of, from } from '../rxjsStub.js';
+import { mergeMap, map } from '../rxjsStub.js';
+import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi.js";
 export class ObservableExportApi {
     constructor(configuration, requestFactory, responseProcessor) {
         this.configuration = configuration;

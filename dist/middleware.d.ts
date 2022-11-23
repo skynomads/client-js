@@ -1,5 +1,5 @@
-import { RequestContext, ResponseContext } from './http/http';
-import { Observable } from './rxjsStub';
+import { RequestContext, ResponseContext } from './http/http.js';
+import { Observable } from './rxjsStub.js';
 export interface Middleware {
     pre(context: RequestContext): Observable<RequestContext>;
     post(context: ResponseContext): Observable<ResponseContext>;

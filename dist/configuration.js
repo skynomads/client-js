@@ -1,7 +1,7 @@
-import { PromiseMiddlewareWrapper } from "./middleware";
-import { IsomorphicFetchHttpLibrary as DefaultHttpLibrary } from "./http/isomorphic-fetch";
-import { server1 } from "./servers";
-import { configureAuthMethods } from "./auth/auth";
+import { PromiseMiddlewareWrapper } from "./middleware.js";
+import { IsomorphicFetchHttpLibrary as DefaultHttpLibrary } from "./http/isomorphic-fetch.js";
+import { server1 } from "./servers.js";
+import { configureAuthMethods } from "./auth/auth.js";
 export function createConfiguration(conf = {}) {
     const configuration = {
         baseServer: conf.baseServer !== undefined ? conf.baseServer : server1,

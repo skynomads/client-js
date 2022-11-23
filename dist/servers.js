@@ -1,4 +1,4 @@
-import { RequestContext } from "./http/http";
+import { RequestContext } from "./http/http.js";
 export class ServerConfiguration {
     constructor(url, variableConfiguration) {
         this.url = url;

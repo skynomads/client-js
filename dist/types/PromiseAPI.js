@@ -1,4 +1,4 @@
-import { ObservableExportApi } from './ObservableAPI';
+import { ObservableExportApi } from './ObservableAPI.js';
 export class PromiseExportApi {
     constructor(configuration, requestFactory, responseProcessor) {
         this.api = new ObservableExportApi(configuration, requestFactory, responseProcessor);

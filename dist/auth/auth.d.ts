@@ -1,4 +1,4 @@
-import { RequestContext } from "../http/http";
+import { RequestContext } from "../http/http.js";
 export interface SecurityAuthentication {
     getName(): string;
     applySecurityAuthentication(context: RequestContext): void | Promise<void>;

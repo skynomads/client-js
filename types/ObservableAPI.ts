@@ -1,19 +1,19 @@
-import { ResponseContext, RequestContext, HttpFile } from '../http/http';
-import { Configuration} from '../configuration'
-import { Observable, of, from } from '../rxjsStub';
-import {mergeMap, map} from  '../rxjsStub';
-import { V1Condition } from '../models/V1Condition';
-import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry';
-import { V1OwnerReference } from '../models/V1OwnerReference';
-import { V1alpha1Export } from '../models/V1alpha1Export';
-import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
-import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
-import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
-import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
-import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
-import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { ResponseContext, RequestContext, HttpFile } from '../http/http.js';
+import { Configuration} from '../configuration.js'
+import { Observable, of, from } from '../rxjsStub.js';
+import {mergeMap, map} from  '../rxjsStub.js';
+import { V1Condition } from '../models/V1Condition.js';
+import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry.js';
+import { V1OwnerReference } from '../models/V1OwnerReference.js';
+import { V1alpha1Export } from '../models/V1alpha1Export.js';
+import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket.js';
+import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec.js';
+import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus.js';
+import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget.js';
+import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec.js';
+import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus.js';
 
-import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi";
+import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi.js";
 export class ObservableExportApi {
     private requestFactory: ExportApiRequestFactory;
     private responseProcessor: ExportApiResponseProcessor;

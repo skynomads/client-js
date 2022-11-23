@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import URLParse from "url-parse";
-import { from } from '../rxjsStub';
+import { from } from '../rxjsStub.js';
 export * from './isomorphic-fetch';
 export var HttpMethod;
 (function (HttpMethod) {

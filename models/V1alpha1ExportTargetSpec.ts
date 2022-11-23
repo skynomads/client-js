@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
-import { HttpFile } from '../http/http';
+import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket.js';
+import { HttpFile } from '../http/http.js';
 
 export class V1alpha1ExportTargetSpec {
     'bucket'?: V1alpha1ExportBucket;

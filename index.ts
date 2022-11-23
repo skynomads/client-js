@@ -1,12 +1,12 @@
-export * from "./http/http";
-export * from "./auth/auth";
-export * from "./models/all";
-export { createConfiguration } from "./configuration"
-export { Configuration } from "./configuration"
-export * from "./apis/exception";
-export * from "./servers";
-export { RequiredError } from "./apis/baseapi";
+export * from "./http/http.js";
+export * from "./auth/auth.js";
+export * from "./models/all.js";
+export { createConfiguration } from "./configuration.js"
+export { Configuration } from "./configuration.js"
+export * from "./apis/exception.js";
+export * from "./servers.js";
+export { RequiredError } from "./apis/baseapi.js";
 
-export { PromiseMiddleware as Middleware } from './middleware';
-export { PromiseExportApi as ExportApi } from './types/PromiseAPI';
+export { PromiseMiddleware as Middleware } from './middleware.js';
+export { PromiseExportApi as ExportApi } from './types/PromiseAPI.js';
 

@@ -1,8 +1,8 @@
-import { BaseAPIRequestFactory } from './baseapi';
-import { Configuration } from '../configuration';
-import { RequestContext, ResponseContext } from '../http/http';
-import { V1alpha1Export } from '../models/V1alpha1Export';
-import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
+import { BaseAPIRequestFactory } from './baseapi.js';
+import { Configuration } from '../configuration.js';
+import { RequestContext, ResponseContext } from '../http/http.js';
+import { V1alpha1Export } from '../models/V1alpha1Export.js';
+import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget.js';
 export declare class ExportApiRequestFactory extends BaseAPIRequestFactory {
     v1ExportGet(_options?: Configuration): Promise<RequestContext>;
     v1ExportNameGet(name: string, _options?: Configuration): Promise<RequestContext>;

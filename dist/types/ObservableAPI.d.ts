@@ -1,8 +1,8 @@
-import { Configuration } from '../configuration';
-import { Observable } from '../rxjsStub';
-import { V1alpha1Export } from '../models/V1alpha1Export';
-import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
-import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi";
+import { Configuration } from '../configuration.js';
+import { Observable } from '../rxjsStub.js';
+import { V1alpha1Export } from '../models/V1alpha1Export.js';
+import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget.js';
+import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi.js";
 export declare class ObservableExportApi {
     private requestFactory;
     private responseProcessor;

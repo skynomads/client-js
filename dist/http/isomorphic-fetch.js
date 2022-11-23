@@ -1,5 +1,5 @@
-import { ResponseContext } from './http';
-import { from } from '../rxjsStub';
+import { ResponseContext } from './http.js';
+import { from } from '../rxjsStub.js';
 import "whatwg-fetch";
 export class IsomorphicFetchHttpLibrary {
     send(request) {

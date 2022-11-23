@@ -1,4 +1,4 @@
-import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket.js';
 export declare class V1alpha1ExportTargetSpec {
     'bucket'?: V1alpha1ExportBucket;
     static readonly discriminator: string | undefined;

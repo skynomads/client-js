@@ -1,7 +1,7 @@
-import { HttpLibrary } from "./http/http";
-import { Middleware, PromiseMiddleware } from "./middleware";
-import { BaseServerConfiguration } from "./servers";
-import { AuthMethods, AuthMethodsConfiguration } from "./auth/auth";
+import { HttpLibrary } from "./http/http.js";
+import { Middleware, PromiseMiddleware } from "./middleware.js";
+import { BaseServerConfiguration } from "./servers.js";
+import { AuthMethods, AuthMethodsConfiguration } from "./auth/auth.js";
 export interface Configuration {
     readonly baseServer: BaseServerConfiguration;
     readonly httpApi: HttpLibrary;

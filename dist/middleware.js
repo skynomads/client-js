@@ -1,4 +1,4 @@
-import { from } from './rxjsStub';
+import { from } from './rxjsStub.js';
 export class PromiseMiddlewareWrapper {
     constructor(middleware) {
         this.middleware = middleware;

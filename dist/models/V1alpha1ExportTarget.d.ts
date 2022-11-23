@@ -1,7 +1,7 @@
-import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry';
-import { V1OwnerReference } from '../models/V1OwnerReference';
-import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
-import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry.js';
+import { V1OwnerReference } from '../models/V1OwnerReference.js';
+import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec.js';
+import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus.js';
 export declare class V1alpha1ExportTarget {
     'annotations'?: {
         [key: string]: string;

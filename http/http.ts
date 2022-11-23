@@ -1,5 +1,5 @@
 import  URLParse from "url-parse";
-import { Observable, from } from '../rxjsStub';
+import { Observable, from } from '../rxjsStub.js';
 
 export * from './isomorphic-fetch';
 
