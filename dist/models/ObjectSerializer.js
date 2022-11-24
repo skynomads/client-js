@@ -15,8 +15,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ObjectSerializer = void 0;
+__exportStar(require("../models/MainExportTarget"), exports);
 __exportStar(require("../models/V1Condition"), exports);
 __exportStar(require("../models/V1ManagedFieldsEntry"), exports);
+__exportStar(require("../models/V1ObjectMeta"), exports);
 __exportStar(require("../models/V1OwnerReference"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);
@@ -25,8 +27,10 @@ __exportStar(require("../models/V1alpha1ExportStatus"), exports);
 __exportStar(require("../models/V1alpha1ExportTarget"), exports);
 __exportStar(require("../models/V1alpha1ExportTargetSpec"), exports);
 __exportStar(require("../models/V1alpha1ExportTargetStatus"), exports);
+var MainExportTarget_1 = require("../models/MainExportTarget");
 var V1Condition_1 = require("../models/V1Condition");
 var V1ManagedFieldsEntry_1 = require("../models/V1ManagedFieldsEntry");
+var V1ObjectMeta_1 = require("../models/V1ObjectMeta");
 var V1OwnerReference_1 = require("../models/V1OwnerReference");
 var V1alpha1Export_1 = require("../models/V1alpha1Export");
 var V1alpha1ExportBucket_1 = require("../models/V1alpha1ExportBucket");
@@ -52,8 +56,10 @@ var supportedMediaTypes = {
 };
 var enumsMap = new Set([]);
 var typeMap = {
+    "MainExportTarget": MainExportTarget_1.MainExportTarget,
     "V1Condition": V1Condition_1.V1Condition,
     "V1ManagedFieldsEntry": V1ManagedFieldsEntry_1.V1ManagedFieldsEntry,
+    "V1ObjectMeta": V1ObjectMeta_1.V1ObjectMeta,
     "V1OwnerReference": V1OwnerReference_1.V1OwnerReference,
     "V1alpha1Export": V1alpha1Export_1.V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket_1.V1alpha1ExportBucket,

@@ -11,9 +11,11 @@ http/http.ts
 http/isomorphic-fetch.ts
 index.ts
 middleware.ts
+models/MainExportTarget.ts
 models/ObjectSerializer.ts
 models/V1Condition.ts
 models/V1ManagedFieldsEntry.ts
+models/V1ObjectMeta.ts
 models/V1OwnerReference.ts
 models/V1alpha1Export.ts
 models/V1alpha1ExportBucket.ts

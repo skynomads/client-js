@@ -2,8 +2,10 @@ import { ResponseContext, RequestContext, HttpFile } from '../http/http';
 import { Configuration} from '../configuration'
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
+import { MainExportTarget } from '../models/MainExportTarget';
 import { V1Condition } from '../models/V1Condition';
 import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry';
+import { V1ObjectMeta } from '../models/V1ObjectMeta';
 import { V1OwnerReference } from '../models/V1OwnerReference';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
@@ -100,7 +102,7 @@ export class ObservableExportApi {
     /**
      * List export targets
      */
-    public v1ExportTargetGet(_options?: Configuration): Observable<Array<V1alpha1ExportTarget>> {
+    public v1ExportTargetGet(_options?: Configuration): Observable<Array<MainExportTarget>> {
         const requestContextPromise = this.requestFactory.v1ExportTargetGet(_options);
 
         // build promise chain

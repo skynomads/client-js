@@ -1,10 +1,7 @@
-import { V1ObjectMeta } from '../models/V1ObjectMeta';
 import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
 import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
-export declare class V1alpha1ExportTarget {
-    'apiVersion'?: string;
-    'kind'?: string;
-    'metadata'?: V1ObjectMeta;
+export declare class MainExportTarget {
+    'name'?: string;
     'spec'?: V1alpha1ExportTargetSpec;
     'status'?: V1alpha1ExportTargetStatus;
     static readonly discriminator: string | undefined;

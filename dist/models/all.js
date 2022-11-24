@@ -14,8 +14,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("../models/MainExportTarget"), exports);
 __exportStar(require("../models/V1Condition"), exports);
 __exportStar(require("../models/V1ManagedFieldsEntry"), exports);
+__exportStar(require("../models/V1ObjectMeta"), exports);
 __exportStar(require("../models/V1OwnerReference"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);

@@ -1,5 +1,7 @@
+export * from '../models/MainExportTarget';
 export * from '../models/V1Condition';
 export * from '../models/V1ManagedFieldsEntry';
+export * from '../models/V1ObjectMeta';
 export * from '../models/V1OwnerReference';
 export * from '../models/V1alpha1Export';
 export * from '../models/V1alpha1ExportBucket';

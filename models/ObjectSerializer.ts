@@ -1,5 +1,7 @@
+export * from '../models/MainExportTarget';
 export * from '../models/V1Condition';
 export * from '../models/V1ManagedFieldsEntry';
+export * from '../models/V1ObjectMeta';
 export * from '../models/V1OwnerReference';
 export * from '../models/V1alpha1Export';
 export * from '../models/V1alpha1ExportBucket';
@@ -9,8 +11,10 @@ export * from '../models/V1alpha1ExportTarget';
 export * from '../models/V1alpha1ExportTargetSpec';
 export * from '../models/V1alpha1ExportTargetStatus';
 
+import { MainExportTarget } from '../models/MainExportTarget';
 import { V1Condition } from '../models/V1Condition';
 import { V1ManagedFieldsEntry } from '../models/V1ManagedFieldsEntry';
+import { V1ObjectMeta } from '../models/V1ObjectMeta';
 import { V1OwnerReference } from '../models/V1OwnerReference';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
@@ -43,8 +47,10 @@ let enumsMap: Set<string> = new Set<string>([
 ]);
 
 let typeMap: {[index: string]: any} = {
+    "MainExportTarget": MainExportTarget,
     "V1Condition": V1Condition,
     "V1ManagedFieldsEntry": V1ManagedFieldsEntry,
+    "V1ObjectMeta": V1ObjectMeta,
     "V1OwnerReference": V1OwnerReference,
     "V1alpha1Export": V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket,

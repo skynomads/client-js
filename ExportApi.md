@@ -132,47 +132,50 @@ const apiInstance = new .ExportApi(configuration);
 let body:.ExportApiV1ExportPutRequest = {
   // V1alpha1Export | Export
   _export: {
-    annotations: {
-      "key": "key_example",
-    },
     apiVersion: "apiVersion_example",
-    creationTimestamp: "creationTimestamp_example",
-    deletionGracePeriodSeconds: 1,
-    deletionTimestamp: "deletionTimestamp_example",
-    finalizers: [
-      "finalizers_example",
-    ],
-    generateName: "generateName_example",
-    generation: 1,
     kind: "kind_example",
-    labels: {
-      "key": "key_example",
+    metadata: {
+      annotations: {
+        "key": "key_example",
+      },
+      creationTimestamp: "creationTimestamp_example",
+      deletionGracePeriodSeconds: 1,
+      deletionTimestamp: "deletionTimestamp_example",
+      finalizers: [
+        "finalizers_example",
+      ],
+      generateName: "generateName_example",
+      generation: 1,
+      labels: {
+        "key": "key_example",
+      },
+      managedFields: [
+        {
+          apiVersion: "apiVersion_example",
+          fieldsType: "fieldsType_example",
+          fieldsV1: {},
+          manager: "manager_example",
+          operation: "operation_example",
+          subresource: "subresource_example",
+          time: "time_example",
+        },
+      ],
+      name: "name_example",
+      namespace: "namespace_example",
+      ownerReferences: [
+        {
+          apiVersion: "apiVersion_example",
+          blockOwnerDeletion: true,
+          controller: true,
+          kind: "kind_example",
+          name: "name_example",
+          uid: "uid_example",
+        },
+      ],
+      resourceVersion: "resourceVersion_example",
+      selfLink: "selfLink_example",
+      uid: "uid_example",
     },
-    managedFields: [
-      {
-        apiVersion: "apiVersion_example",
-        fieldsType: "fieldsType_example",
-        fieldsV1: {},
-        manager: "manager_example",
-        operation: "operation_example",
-        subresource: "subresource_example",
-        time: "time_example",
-      },
-    ],
-    name: "name_example",
-    namespace: "namespace_example",
-    ownerReferences: [
-      {
-        apiVersion: "apiVersion_example",
-        blockOwnerDeletion: true,
-        controller: true,
-        kind: "kind_example",
-        name: "name_example",
-        uid: "uid_example",
-      },
-    ],
-    resourceVersion: "resourceVersion_example",
-    selfLink: "selfLink_example",
     spec: {
       application: "application_example",
       target: "target_example",
@@ -189,7 +192,6 @@ let body:.ExportApiV1ExportPutRequest = {
         },
       ],
     },
-    uid: "uid_example",
   },
 };
 
@@ -230,7 +232,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ExportTargetGet**
-> Array<V1alpha1ExportTarget> v1ExportTargetGet()
+> Array<MainExportTarget> v1ExportTargetGet()
 
 
 ### Example
@@ -257,7 +259,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Array<V1alpha1ExportTarget>**
+**Array<MainExportTarget>**
 
 ### Authorization
 
@@ -349,47 +351,50 @@ const apiInstance = new .ExportApi(configuration);
 let body:.ExportApiV1ExportTargetPutRequest = {
   // V1alpha1ExportTarget | ExportTarget
   exportTarget: {
-    annotations: {
-      "key": "key_example",
-    },
     apiVersion: "apiVersion_example",
-    creationTimestamp: "creationTimestamp_example",
-    deletionGracePeriodSeconds: 1,
-    deletionTimestamp: "deletionTimestamp_example",
-    finalizers: [
-      "finalizers_example",
-    ],
-    generateName: "generateName_example",
-    generation: 1,
     kind: "kind_example",
-    labels: {
-      "key": "key_example",
+    metadata: {
+      annotations: {
+        "key": "key_example",
+      },
+      creationTimestamp: "creationTimestamp_example",
+      deletionGracePeriodSeconds: 1,
+      deletionTimestamp: "deletionTimestamp_example",
+      finalizers: [
+        "finalizers_example",
+      ],
+      generateName: "generateName_example",
+      generation: 1,
+      labels: {
+        "key": "key_example",
+      },
+      managedFields: [
+        {
+          apiVersion: "apiVersion_example",
+          fieldsType: "fieldsType_example",
+          fieldsV1: {},
+          manager: "manager_example",
+          operation: "operation_example",
+          subresource: "subresource_example",
+          time: "time_example",
+        },
+      ],
+      name: "name_example",
+      namespace: "namespace_example",
+      ownerReferences: [
+        {
+          apiVersion: "apiVersion_example",
+          blockOwnerDeletion: true,
+          controller: true,
+          kind: "kind_example",
+          name: "name_example",
+          uid: "uid_example",
+        },
+      ],
+      resourceVersion: "resourceVersion_example",
+      selfLink: "selfLink_example",
+      uid: "uid_example",
     },
-    managedFields: [
-      {
-        apiVersion: "apiVersion_example",
-        fieldsType: "fieldsType_example",
-        fieldsV1: {},
-        manager: "manager_example",
-        operation: "operation_example",
-        subresource: "subresource_example",
-        time: "time_example",
-      },
-    ],
-    name: "name_example",
-    namespace: "namespace_example",
-    ownerReferences: [
-      {
-        apiVersion: "apiVersion_example",
-        blockOwnerDeletion: true,
-        controller: true,
-        kind: "kind_example",
-        name: "name_example",
-        uid: "uid_example",
-      },
-    ],
-    resourceVersion: "resourceVersion_example",
-    selfLink: "selfLink_example",
     spec: {
       bucket: {
         accessKey: "accessKey_example",
@@ -410,7 +415,6 @@ let body:.ExportApiV1ExportTargetPutRequest = {
         },
       ],
     },
-    uid: "uid_example",
   },
 };
 

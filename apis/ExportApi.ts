@@ -8,6 +8,7 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
+import { MainExportTarget } from '../models/MainExportTarget';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 
@@ -339,13 +340,13 @@ export class ExportApiResponseProcessor {
      * @params response Response returned by the server for a request to v1ExportTargetGet
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1ExportTargetGet(response: ResponseContext): Promise<Array<V1alpha1ExportTarget> > {
+     public async v1ExportTargetGet(response: ResponseContext): Promise<Array<MainExportTarget> > {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<V1alpha1ExportTarget> = ObjectSerializer.deserialize(
+            const body: Array<MainExportTarget> = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<V1alpha1ExportTarget>", ""
-            ) as Array<V1alpha1ExportTarget>;
+                "Array<MainExportTarget>", ""
+            ) as Array<MainExportTarget>;
             return body;
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
@@ -358,10 +359,10 @@ export class ExportApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<V1alpha1ExportTarget> = ObjectSerializer.deserialize(
+            const body: Array<MainExportTarget> = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<V1alpha1ExportTarget>", ""
-            ) as Array<V1alpha1ExportTarget>;
+                "Array<MainExportTarget>", ""
+            ) as Array<MainExportTarget>;
             return body;
         }
 

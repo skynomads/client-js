@@ -1,6 +1,7 @@
 import { BaseAPIRequestFactory } from './baseapi';
 import { Configuration } from '../configuration';
 import { RequestContext, ResponseContext } from '../http/http';
+import { MainExportTarget } from '../models/MainExportTarget';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 export declare class ExportApiRequestFactory extends BaseAPIRequestFactory {
@@ -15,7 +16,7 @@ export declare class ExportApiResponseProcessor {
     v1ExportGet(response: ResponseContext): Promise<Array<V1alpha1Export>>;
     v1ExportNameGet(response: ResponseContext): Promise<V1alpha1Export>;
     v1ExportPut(response: ResponseContext): Promise<V1alpha1Export>;
-    v1ExportTargetGet(response: ResponseContext): Promise<Array<V1alpha1ExportTarget>>;
+    v1ExportTargetGet(response: ResponseContext): Promise<Array<MainExportTarget>>;
     v1ExportTargetNameGet(response: ResponseContext): Promise<V1alpha1ExportTarget>;
     v1ExportTargetPut(response: ResponseContext): Promise<V1alpha1ExportTarget>;
 }
