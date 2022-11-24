@@ -227,6 +227,13 @@ export class ExportApiResponseProcessor {
             ) as Array<V1alpha1Export>;
             return body;
         }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Unauthorized", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -262,6 +269,13 @@ export class ExportApiResponseProcessor {
                 "V1alpha1Export", ""
             ) as V1alpha1Export;
             return body;
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Unauthorized", body, response.headers);
         }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
@@ -313,6 +327,13 @@ export class ExportApiResponseProcessor {
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Bad Request", body, response.headers);
         }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Unauthorized", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -349,6 +370,13 @@ export class ExportApiResponseProcessor {
             ) as Array<MainExportTarget>;
             return body;
         }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Unauthorized", body, response.headers);
+        }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
@@ -384,6 +412,13 @@ export class ExportApiResponseProcessor {
                 "V1alpha1ExportTarget", ""
             ) as V1alpha1ExportTarget;
             return body;
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Unauthorized", body, response.headers);
         }
         if (isCodeInRange("404", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
@@ -434,6 +469,13 @@ export class ExportApiResponseProcessor {
                 "string", ""
             ) as string;
             throw new ApiException<string>(response.httpStatusCode, "Bad Request", body, response.headers);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            const body: string = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "string", ""
+            ) as string;
+            throw new ApiException<string>(response.httpStatusCode, "Unauthorized", body, response.headers);
         }
         if (isCodeInRange("500", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
