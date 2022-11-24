@@ -28,6 +28,12 @@ var V1alpha1ExportBucket = (function () {
             "format": ""
         },
         {
+            "name": "region",
+            "baseName": "region",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "secretKey",
             "baseName": "secretKey",
             "type": "string",

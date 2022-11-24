@@ -13,12 +13,10 @@
 import { HttpFile } from '../http/http';
 
 export class V1alpha1ExportBucket {
-    /**
-    * Region string `json:\"region,omitempty\"`
-    */
     'accessKey'?: string;
     'endpoint'?: string;
     'name'?: string;
+    'region'?: string;
     'secretKey'?: string;
 
     static readonly discriminator: string | undefined = undefined;
@@ -39,6 +37,12 @@ export class V1alpha1ExportBucket {
         {
             "name": "name",
             "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "region",
+            "baseName": "region",
             "type": "string",
             "format": ""
         },
