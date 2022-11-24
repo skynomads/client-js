@@ -405,6 +405,7 @@ let body:.ExportApiV1ExportTargetPutRequest = {
         accessKey: "accessKey_example",
         endpoint: "endpoint_example",
         name: "name_example",
+        region: "region_example",
         secretKey: "secretKey_example",
       },
     },
