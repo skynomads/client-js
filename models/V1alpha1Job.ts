@@ -16,9 +16,9 @@ import { HttpFile } from '../http/http';
 
 export class V1alpha1Job {
     'description'?: string;
+    'name'?: string;
     'parameters'?: V1JSON;
     'template'?: V1Job;
-    'type'?: string;
 
     static readonly discriminator: string | undefined = undefined;
 
@@ -26,6 +26,12 @@ export class V1alpha1Job {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string",
+            "format": ""
+        },
+        {
+            "name": "name",
+            "baseName": "name",
             "type": "string",
             "format": ""
         },
@@ -39,12 +45,6 @@ export class V1alpha1Job {
             "name": "template",
             "baseName": "template",
             "type": "V1Job",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
-            "type": "string",
             "format": ""
         }    ];
 

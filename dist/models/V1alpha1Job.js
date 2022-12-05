@@ -16,6 +16,12 @@ var V1alpha1Job = (function () {
             "format": ""
         },
         {
+            "name": "name",
+            "baseName": "name",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "parameters",
             "baseName": "parameters",
             "type": "V1JSON",
@@ -25,12 +31,6 @@ var V1alpha1Job = (function () {
             "name": "template",
             "baseName": "template",
             "type": "V1Job",
-            "format": ""
-        },
-        {
-            "name": "type",
-            "baseName": "type",
-            "type": "string",
             "format": ""
         }
     ];
