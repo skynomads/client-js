@@ -93,6 +93,7 @@ __exportStar(require("../models/V1HostPathType"), exports);
 __exportStar(require("../models/V1HostPathVolumeSource"), exports);
 __exportStar(require("../models/V1ISCSIVolumeSource"), exports);
 __exportStar(require("../models/V1ISCSIVolumeSourceSecretRef"), exports);
+__exportStar(require("../models/V1JSON"), exports);
 __exportStar(require("../models/V1Job"), exports);
 __exportStar(require("../models/V1JobCondition"), exports);
 __exportStar(require("../models/V1JobConditionType"), exports);
@@ -268,6 +269,13 @@ __exportStar(require("../models/V1alpha1ExportStatus"), exports);
 __exportStar(require("../models/V1alpha1ExportTarget"), exports);
 __exportStar(require("../models/V1alpha1ExportTargetSpec"), exports);
 __exportStar(require("../models/V1alpha1ExportTargetStatus"), exports);
+__exportStar(require("../models/V1alpha1Features"), exports);
+__exportStar(require("../models/V1alpha1Job"), exports);
+__exportStar(require("../models/V1alpha1Note"), exports);
+__exportStar(require("../models/V1alpha1Template"), exports);
+__exportStar(require("../models/V1alpha1TemplateInstance"), exports);
+__exportStar(require("../models/V1alpha1TemplateManifests"), exports);
+__exportStar(require("../models/V1alpha1TemplateStorage"), exports);
 var IntstrIntOrString_1 = require("../models/IntstrIntOrString");
 var MainJobInput_1 = require("../models/MainJobInput");
 var ResourceQuantity_1 = require("../models/ResourceQuantity");
@@ -338,6 +346,7 @@ var V1HostAlias_1 = require("../models/V1HostAlias");
 var V1HostPathVolumeSource_1 = require("../models/V1HostPathVolumeSource");
 var V1ISCSIVolumeSource_1 = require("../models/V1ISCSIVolumeSource");
 var V1ISCSIVolumeSourceSecretRef_1 = require("../models/V1ISCSIVolumeSourceSecretRef");
+var V1JSON_1 = require("../models/V1JSON");
 var V1Job_1 = require("../models/V1Job");
 var V1JobCondition_1 = require("../models/V1JobCondition");
 var V1JobMetadata_1 = require("../models/V1JobMetadata");
@@ -488,6 +497,13 @@ var V1alpha1ExportStatus_1 = require("../models/V1alpha1ExportStatus");
 var V1alpha1ExportTarget_1 = require("../models/V1alpha1ExportTarget");
 var V1alpha1ExportTargetSpec_1 = require("../models/V1alpha1ExportTargetSpec");
 var V1alpha1ExportTargetStatus_1 = require("../models/V1alpha1ExportTargetStatus");
+var V1alpha1Features_1 = require("../models/V1alpha1Features");
+var V1alpha1Job_1 = require("../models/V1alpha1Job");
+var V1alpha1Note_1 = require("../models/V1alpha1Note");
+var V1alpha1Template_1 = require("../models/V1alpha1Template");
+var V1alpha1TemplateInstance_1 = require("../models/V1alpha1TemplateInstance");
+var V1alpha1TemplateManifests_1 = require("../models/V1alpha1TemplateManifests");
+var V1alpha1TemplateStorage_1 = require("../models/V1alpha1TemplateStorage");
 var primitives = [
     "string",
     "boolean",
@@ -609,6 +625,7 @@ var typeMap = {
     "V1HostPathVolumeSource": V1HostPathVolumeSource_1.V1HostPathVolumeSource,
     "V1ISCSIVolumeSource": V1ISCSIVolumeSource_1.V1ISCSIVolumeSource,
     "V1ISCSIVolumeSourceSecretRef": V1ISCSIVolumeSourceSecretRef_1.V1ISCSIVolumeSourceSecretRef,
+    "V1JSON": V1JSON_1.V1JSON,
     "V1Job": V1Job_1.V1Job,
     "V1JobCondition": V1JobCondition_1.V1JobCondition,
     "V1JobMetadata": V1JobMetadata_1.V1JobMetadata,
@@ -759,6 +776,13 @@ var typeMap = {
     "V1alpha1ExportTarget": V1alpha1ExportTarget_1.V1alpha1ExportTarget,
     "V1alpha1ExportTargetSpec": V1alpha1ExportTargetSpec_1.V1alpha1ExportTargetSpec,
     "V1alpha1ExportTargetStatus": V1alpha1ExportTargetStatus_1.V1alpha1ExportTargetStatus,
+    "V1alpha1Features": V1alpha1Features_1.V1alpha1Features,
+    "V1alpha1Job": V1alpha1Job_1.V1alpha1Job,
+    "V1alpha1Note": V1alpha1Note_1.V1alpha1Note,
+    "V1alpha1Template": V1alpha1Template_1.V1alpha1Template,
+    "V1alpha1TemplateInstance": V1alpha1TemplateInstance_1.V1alpha1TemplateInstance,
+    "V1alpha1TemplateManifests": V1alpha1TemplateManifests_1.V1alpha1TemplateManifests,
+    "V1alpha1TemplateStorage": V1alpha1TemplateStorage_1.V1alpha1TemplateStorage,
 };
 var ObjectSerializer = (function () {
     function ObjectSerializer() {

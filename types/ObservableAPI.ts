@@ -80,6 +80,7 @@ import { V1HostPathType } from '../models/V1HostPathType';
 import { V1HostPathVolumeSource } from '../models/V1HostPathVolumeSource';
 import { V1ISCSIVolumeSource } from '../models/V1ISCSIVolumeSource';
 import { V1ISCSIVolumeSourceSecretRef } from '../models/V1ISCSIVolumeSourceSecretRef';
+import { V1JSON } from '../models/V1JSON';
 import { V1Job } from '../models/V1Job';
 import { V1JobCondition } from '../models/V1JobCondition';
 import { V1JobConditionType } from '../models/V1JobConditionType';
@@ -255,6 +256,13 @@ import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
 import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { V1alpha1Features } from '../models/V1alpha1Features';
+import { V1alpha1Job } from '../models/V1alpha1Job';
+import { V1alpha1Note } from '../models/V1alpha1Note';
+import { V1alpha1Template } from '../models/V1alpha1Template';
+import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
+import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
+import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 
 import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi";
 export class ObservableExportApi {
@@ -387,28 +395,27 @@ export class ObservableExportApi {
 
 }
 
-import { JobApiRequestFactory, JobApiResponseProcessor} from "../apis/JobApi";
-export class ObservableJobApi {
-    private requestFactory: JobApiRequestFactory;
-    private responseProcessor: JobApiResponseProcessor;
+import { TemplateApiRequestFactory, TemplateApiResponseProcessor} from "../apis/TemplateApi";
+export class ObservableTemplateApi {
+    private requestFactory: TemplateApiRequestFactory;
+    private responseProcessor: TemplateApiResponseProcessor;
     private configuration: Configuration;
 
     public constructor(
         configuration: Configuration,
-        requestFactory?: JobApiRequestFactory,
-        responseProcessor?: JobApiResponseProcessor
+        requestFactory?: TemplateApiRequestFactory,
+        responseProcessor?: TemplateApiResponseProcessor
     ) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new JobApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new JobApiResponseProcessor();
+        this.requestFactory = requestFactory || new TemplateApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new TemplateApiResponseProcessor();
     }
 
     /**
-     * Put job
-     * @param jobInput JobInput
+     * List templates
      */
-    public v1ExportPut(jobInput: MainJobInput, _options?: Configuration): Observable<V1Job> {
-        const requestContextPromise = this.requestFactory.v1ExportPut(jobInput, _options);
+    public v1ExportPut(_options?: Configuration): Observable<Array<V1alpha1Template>> {
+        const requestContextPromise = this.requestFactory.v1ExportPut(_options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);

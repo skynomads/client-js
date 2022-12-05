@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PromiseJobApi = exports.PromiseExportApi = void 0;
+exports.PromiseTemplateApi = exports.PromiseExportApi = void 0;
 var ObservableAPI_1 = require("./ObservableAPI");
 var PromiseExportApi = (function () {
     function PromiseExportApi(configuration, requestFactory, responseProcessor) {
@@ -30,15 +30,15 @@ var PromiseExportApi = (function () {
 }());
 exports.PromiseExportApi = PromiseExportApi;
 var ObservableAPI_2 = require("./ObservableAPI");
-var PromiseJobApi = (function () {
-    function PromiseJobApi(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableAPI_2.ObservableJobApi(configuration, requestFactory, responseProcessor);
+var PromiseTemplateApi = (function () {
+    function PromiseTemplateApi(configuration, requestFactory, responseProcessor) {
+        this.api = new ObservableAPI_2.ObservableTemplateApi(configuration, requestFactory, responseProcessor);
     }
-    PromiseJobApi.prototype.v1ExportPut = function (jobInput, _options) {
-        var result = this.api.v1ExportPut(jobInput, _options);
+    PromiseTemplateApi.prototype.v1ExportPut = function (_options) {
+        var result = this.api.v1ExportPut(_options);
         return result.toPromise();
     };
-    return PromiseJobApi;
+    return PromiseTemplateApi;
 }());
-exports.PromiseJobApi = PromiseJobApi;
+exports.PromiseTemplateApi = PromiseTemplateApi;
 //# sourceMappingURL=PromiseAPI.js.map

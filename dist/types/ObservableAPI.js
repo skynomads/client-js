@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ObservableJobApi = exports.ObservableExportApi = void 0;
+exports.ObservableTemplateApi = exports.ObservableExportApi = void 0;
 var rxjsStub_1 = require("../rxjsStub");
 var rxjsStub_2 = require("../rxjsStub");
 var ExportApi_1 = require("../apis/ExportApi");
@@ -133,16 +133,16 @@ var ObservableExportApi = (function () {
     return ObservableExportApi;
 }());
 exports.ObservableExportApi = ObservableExportApi;
-var JobApi_1 = require("../apis/JobApi");
-var ObservableJobApi = (function () {
-    function ObservableJobApi(configuration, requestFactory, responseProcessor) {
+var TemplateApi_1 = require("../apis/TemplateApi");
+var ObservableTemplateApi = (function () {
+    function ObservableTemplateApi(configuration, requestFactory, responseProcessor) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new JobApi_1.JobApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new JobApi_1.JobApiResponseProcessor();
+        this.requestFactory = requestFactory || new TemplateApi_1.TemplateApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new TemplateApi_1.TemplateApiResponseProcessor();
     }
-    ObservableJobApi.prototype.v1ExportPut = function (jobInput, _options) {
+    ObservableTemplateApi.prototype.v1ExportPut = function (_options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportPut(jobInput, _options);
+        var requestContextPromise = this.requestFactory.v1ExportPut(_options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_11 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -164,7 +164,7 @@ var ObservableJobApi = (function () {
             return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportPut(rsp); }));
         }));
     };
-    return ObservableJobApi;
+    return ObservableTemplateApi;
 }());
-exports.ObservableJobApi = ObservableJobApi;
+exports.ObservableTemplateApi = ObservableTemplateApi;
 //# sourceMappingURL=ObservableAPI.js.map

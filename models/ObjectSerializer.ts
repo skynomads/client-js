@@ -76,6 +76,7 @@ export * from '../models/V1HostPathType';
 export * from '../models/V1HostPathVolumeSource';
 export * from '../models/V1ISCSIVolumeSource';
 export * from '../models/V1ISCSIVolumeSourceSecretRef';
+export * from '../models/V1JSON';
 export * from '../models/V1Job';
 export * from '../models/V1JobCondition';
 export * from '../models/V1JobConditionType';
@@ -251,6 +252,13 @@ export * from '../models/V1alpha1ExportStatus';
 export * from '../models/V1alpha1ExportTarget';
 export * from '../models/V1alpha1ExportTargetSpec';
 export * from '../models/V1alpha1ExportTargetStatus';
+export * from '../models/V1alpha1Features';
+export * from '../models/V1alpha1Job';
+export * from '../models/V1alpha1Note';
+export * from '../models/V1alpha1Template';
+export * from '../models/V1alpha1TemplateInstance';
+export * from '../models/V1alpha1TemplateManifests';
+export * from '../models/V1alpha1TemplateStorage';
 
 import { IntstrIntOrString } from '../models/IntstrIntOrString';
 import { IntstrType } from '../models/IntstrType';
@@ -330,6 +338,7 @@ import { V1HostPathType } from '../models/V1HostPathType';
 import { V1HostPathVolumeSource } from '../models/V1HostPathVolumeSource';
 import { V1ISCSIVolumeSource } from '../models/V1ISCSIVolumeSource';
 import { V1ISCSIVolumeSourceSecretRef } from '../models/V1ISCSIVolumeSourceSecretRef';
+import { V1JSON } from '../models/V1JSON';
 import { V1Job } from '../models/V1Job';
 import { V1JobCondition } from '../models/V1JobCondition';
 import { V1JobConditionType } from '../models/V1JobConditionType';
@@ -505,6 +514,13 @@ import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
 import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { V1alpha1Features } from '../models/V1alpha1Features';
+import { V1alpha1Job } from '../models/V1alpha1Job';
+import { V1alpha1Note } from '../models/V1alpha1Note';
+import { V1alpha1Template } from '../models/V1alpha1Template';
+import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
+import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
+import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -632,6 +648,7 @@ let typeMap: {[index: string]: any} = {
     "V1HostPathVolumeSource": V1HostPathVolumeSource,
     "V1ISCSIVolumeSource": V1ISCSIVolumeSource,
     "V1ISCSIVolumeSourceSecretRef": V1ISCSIVolumeSourceSecretRef,
+    "V1JSON": V1JSON,
     "V1Job": V1Job,
     "V1JobCondition": V1JobCondition,
     "V1JobMetadata": V1JobMetadata,
@@ -782,6 +799,13 @@ let typeMap: {[index: string]: any} = {
     "V1alpha1ExportTarget": V1alpha1ExportTarget,
     "V1alpha1ExportTargetSpec": V1alpha1ExportTargetSpec,
     "V1alpha1ExportTargetStatus": V1alpha1ExportTargetStatus,
+    "V1alpha1Features": V1alpha1Features,
+    "V1alpha1Job": V1alpha1Job,
+    "V1alpha1Note": V1alpha1Note,
+    "V1alpha1Template": V1alpha1Template,
+    "V1alpha1TemplateInstance": V1alpha1TemplateInstance,
+    "V1alpha1TemplateManifests": V1alpha1TemplateManifests,
+    "V1alpha1TemplateStorage": V1alpha1TemplateStorage,
 }
 
 export class ObjectSerializer {

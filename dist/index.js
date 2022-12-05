@@ -14,7 +14,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JobApi = exports.ExportApi = exports.RequiredError = exports.createConfiguration = void 0;
+exports.TemplateApi = exports.ExportApi = exports.RequiredError = exports.createConfiguration = void 0;
 __exportStar(require("./http/http"), exports);
 __exportStar(require("./auth/auth"), exports);
 __exportStar(require("./models/all"), exports);
@@ -26,5 +26,5 @@ var baseapi_1 = require("./apis/baseapi");
 Object.defineProperty(exports, "RequiredError", { enumerable: true, get: function () { return baseapi_1.RequiredError; } });
 var PromiseAPI_1 = require("./types/PromiseAPI");
 Object.defineProperty(exports, "ExportApi", { enumerable: true, get: function () { return PromiseAPI_1.PromiseExportApi; } });
-Object.defineProperty(exports, "JobApi", { enumerable: true, get: function () { return PromiseAPI_1.PromiseJobApi; } });
+Object.defineProperty(exports, "TemplateApi", { enumerable: true, get: function () { return PromiseAPI_1.PromiseTemplateApi; } });
 //# sourceMappingURL=index.js.map

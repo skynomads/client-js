@@ -79,6 +79,7 @@ import { V1HostPathType } from '../models/V1HostPathType';
 import { V1HostPathVolumeSource } from '../models/V1HostPathVolumeSource';
 import { V1ISCSIVolumeSource } from '../models/V1ISCSIVolumeSource';
 import { V1ISCSIVolumeSourceSecretRef } from '../models/V1ISCSIVolumeSourceSecretRef';
+import { V1JSON } from '../models/V1JSON';
 import { V1Job } from '../models/V1Job';
 import { V1JobCondition } from '../models/V1JobCondition';
 import { V1JobConditionType } from '../models/V1JobConditionType';
@@ -254,6 +255,13 @@ import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 import { V1alpha1ExportTargetSpec } from '../models/V1alpha1ExportTargetSpec';
 import { V1alpha1ExportTargetStatus } from '../models/V1alpha1ExportTargetStatus';
+import { V1alpha1Features } from '../models/V1alpha1Features';
+import { V1alpha1Job } from '../models/V1alpha1Job';
+import { V1alpha1Note } from '../models/V1alpha1Note';
+import { V1alpha1Template } from '../models/V1alpha1Template';
+import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
+import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
+import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 
 import { ObservableExportApi } from "./ObservableAPI";
 import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi";
@@ -340,31 +348,25 @@ export class ObjectExportApi {
 
 }
 
-import { ObservableJobApi } from "./ObservableAPI";
-import { JobApiRequestFactory, JobApiResponseProcessor} from "../apis/JobApi";
+import { ObservableTemplateApi } from "./ObservableAPI";
+import { TemplateApiRequestFactory, TemplateApiResponseProcessor} from "../apis/TemplateApi";
 
-export interface JobApiV1ExportPutRequest {
-    /**
-     * JobInput
-     * @type MainJobInput
-     * @memberof JobApiv1ExportPut
-     */
-    jobInput: MainJobInput
+export interface TemplateApiV1ExportPutRequest {
 }
 
-export class ObjectJobApi {
-    private api: ObservableJobApi
+export class ObjectTemplateApi {
+    private api: ObservableTemplateApi
 
-    public constructor(configuration: Configuration, requestFactory?: JobApiRequestFactory, responseProcessor?: JobApiResponseProcessor) {
-        this.api = new ObservableJobApi(configuration, requestFactory, responseProcessor);
+    public constructor(configuration: Configuration, requestFactory?: TemplateApiRequestFactory, responseProcessor?: TemplateApiResponseProcessor) {
+        this.api = new ObservableTemplateApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
-     * Put job
+     * List templates
      * @param param the request object
      */
-    public v1ExportPut(param: JobApiV1ExportPutRequest, options?: Configuration): Promise<V1Job> {
-        return this.api.v1ExportPut(param.jobInput,  options).toPromise();
+    public v1ExportPut(param: TemplateApiV1ExportPutRequest = {}, options?: Configuration): Promise<Array<V1alpha1Template>> {
+        return this.api.v1ExportPut( options).toPromise();
     }
 
 }

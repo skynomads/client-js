@@ -1,8 +1,7 @@
 import { Configuration } from '../configuration';
-import { MainJobInput } from '../models/MainJobInput';
-import { V1Job } from '../models/V1Job';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
+import { V1alpha1Template } from '../models/V1alpha1Template';
 import { ExportApiRequestFactory, ExportApiResponseProcessor } from "../apis/ExportApi";
 export interface ExportApiV1ExportGetRequest {
 }
@@ -26,12 +25,11 @@ export declare class ObjectExportApi {
     v1ExportTargetNameGet(param: ExportApiV1ExportTargetNameGetRequest, options?: Configuration): Promise<V1alpha1ExportTarget>;
     v1ExportTargetPut(param: ExportApiV1ExportTargetPutRequest, options?: Configuration): Promise<V1alpha1ExportTarget>;
 }
-import { JobApiRequestFactory, JobApiResponseProcessor } from "../apis/JobApi";
-export interface JobApiV1ExportPutRequest {
-    jobInput: MainJobInput;
+import { TemplateApiRequestFactory, TemplateApiResponseProcessor } from "../apis/TemplateApi";
+export interface TemplateApiV1ExportPutRequest {
 }
-export declare class ObjectJobApi {
+export declare class ObjectTemplateApi {
     private api;
-    constructor(configuration: Configuration, requestFactory?: JobApiRequestFactory, responseProcessor?: JobApiResponseProcessor);
-    v1ExportPut(param: JobApiV1ExportPutRequest, options?: Configuration): Promise<V1Job>;
+    constructor(configuration: Configuration, requestFactory?: TemplateApiRequestFactory, responseProcessor?: TemplateApiResponseProcessor);
+    v1ExportPut(param?: TemplateApiV1ExportPutRequest, options?: Configuration): Promise<Array<V1alpha1Template>>;
 }

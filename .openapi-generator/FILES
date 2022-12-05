@@ -1,9 +1,9 @@
 .gitignore
 ExportApi.md
-JobApi.md
 README.md
+TemplateApi.md
 apis/ExportApi.ts
-apis/JobApi.ts
+apis/TemplateApi.ts
 apis/baseapi.ts
 apis/exception.ts
 auth/auth.ts
@@ -92,6 +92,7 @@ models/V1HostPathType.ts
 models/V1HostPathVolumeSource.ts
 models/V1ISCSIVolumeSource.ts
 models/V1ISCSIVolumeSourceSecretRef.ts
+models/V1JSON.ts
 models/V1Job.ts
 models/V1JobCondition.ts
 models/V1JobConditionType.ts
@@ -267,6 +268,13 @@ models/V1alpha1ExportStatus.ts
 models/V1alpha1ExportTarget.ts
 models/V1alpha1ExportTargetSpec.ts
 models/V1alpha1ExportTargetStatus.ts
+models/V1alpha1Features.ts
+models/V1alpha1Job.ts
+models/V1alpha1Note.ts
+models/V1alpha1Template.ts
+models/V1alpha1TemplateInstance.ts
+models/V1alpha1TemplateManifests.ts
+models/V1alpha1TemplateStorage.ts
 models/all.ts
 package.json
 rxjsStub.ts
