@@ -1,44 +1,44 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PromiseTemplateApi = exports.PromiseExportApi = void 0;
+exports.PromiseCloudplaneApi = void 0;
 var ObservableAPI_1 = require("./ObservableAPI");
-var PromiseExportApi = (function () {
-    function PromiseExportApi(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableAPI_1.ObservableExportApi(configuration, requestFactory, responseProcessor);
+var PromiseCloudplaneApi = (function () {
+    function PromiseCloudplaneApi(configuration, requestFactory, responseProcessor) {
+        this.api = new ObservableAPI_1.ObservableCloudplaneApi(configuration, requestFactory, responseProcessor);
     }
-    PromiseExportApi.prototype.v1ExportGet = function (_options) {
+    PromiseCloudplaneApi.prototype.v1ExportGet = function (_options) {
         var result = this.api.v1ExportGet(_options);
         return result.toPromise();
     };
-    PromiseExportApi.prototype.v1ExportNameGet = function (name, _options) {
+    PromiseCloudplaneApi.prototype.v1ExportNameGet = function (name, _options) {
         var result = this.api.v1ExportNameGet(name, _options);
         return result.toPromise();
     };
-    PromiseExportApi.prototype.v1ExportTargetGet = function (_options) {
+    PromiseCloudplaneApi.prototype.v1ExportPut = function (_export, _options) {
+        var result = this.api.v1ExportPut(_export, _options);
+        return result.toPromise();
+    };
+    PromiseCloudplaneApi.prototype.v1ExportTargetGet = function (_options) {
         var result = this.api.v1ExportTargetGet(_options);
         return result.toPromise();
     };
-    PromiseExportApi.prototype.v1ExportTargetNameGet = function (name, _options) {
+    PromiseCloudplaneApi.prototype.v1ExportTargetNameGet = function (name, _options) {
         var result = this.api.v1ExportTargetNameGet(name, _options);
         return result.toPromise();
     };
-    PromiseExportApi.prototype.v1ExportTargetPut = function (exportTarget, _options) {
+    PromiseCloudplaneApi.prototype.v1ExportTargetPut = function (exportTarget, _options) {
         var result = this.api.v1ExportTargetPut(exportTarget, _options);
         return result.toPromise();
     };
-    return PromiseExportApi;
-}());
-exports.PromiseExportApi = PromiseExportApi;
-var ObservableAPI_2 = require("./ObservableAPI");
-var PromiseTemplateApi = (function () {
-    function PromiseTemplateApi(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableAPI_2.ObservableTemplateApi(configuration, requestFactory, responseProcessor);
-    }
-    PromiseTemplateApi.prototype.v1ExportPut = function (_options) {
-        var result = this.api.v1ExportPut(_options);
+    PromiseCloudplaneApi.prototype.v1JobPut = function (jobInput, _options) {
+        var result = this.api.v1JobPut(jobInput, _options);
         return result.toPromise();
     };
-    return PromiseTemplateApi;
+    PromiseCloudplaneApi.prototype.v1TemplateGet = function (_options) {
+        var result = this.api.v1TemplateGet(_options);
+        return result.toPromise();
+    };
+    return PromiseCloudplaneApi;
 }());
-exports.PromiseTemplateApi = PromiseTemplateApi;
+exports.PromiseCloudplaneApi = PromiseCloudplaneApi;
 //# sourceMappingURL=PromiseAPI.js.map

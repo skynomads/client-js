@@ -1,41 +1,39 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ObjectTemplateApi = exports.ObjectExportApi = void 0;
+exports.ObjectCloudplaneApi = void 0;
 var ObservableAPI_1 = require("./ObservableAPI");
-var ObjectExportApi = (function () {
-    function ObjectExportApi(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableAPI_1.ObservableExportApi(configuration, requestFactory, responseProcessor);
+var ObjectCloudplaneApi = (function () {
+    function ObjectCloudplaneApi(configuration, requestFactory, responseProcessor) {
+        this.api = new ObservableAPI_1.ObservableCloudplaneApi(configuration, requestFactory, responseProcessor);
     }
-    ObjectExportApi.prototype.v1ExportGet = function (param, options) {
+    ObjectCloudplaneApi.prototype.v1ExportGet = function (param, options) {
         if (param === void 0) { param = {}; }
         return this.api.v1ExportGet(options).toPromise();
     };
-    ObjectExportApi.prototype.v1ExportNameGet = function (param, options) {
+    ObjectCloudplaneApi.prototype.v1ExportNameGet = function (param, options) {
         return this.api.v1ExportNameGet(param.name, options).toPromise();
     };
-    ObjectExportApi.prototype.v1ExportTargetGet = function (param, options) {
+    ObjectCloudplaneApi.prototype.v1ExportPut = function (param, options) {
+        return this.api.v1ExportPut(param._export, options).toPromise();
+    };
+    ObjectCloudplaneApi.prototype.v1ExportTargetGet = function (param, options) {
         if (param === void 0) { param = {}; }
         return this.api.v1ExportTargetGet(options).toPromise();
     };
-    ObjectExportApi.prototype.v1ExportTargetNameGet = function (param, options) {
+    ObjectCloudplaneApi.prototype.v1ExportTargetNameGet = function (param, options) {
         return this.api.v1ExportTargetNameGet(param.name, options).toPromise();
     };
-    ObjectExportApi.prototype.v1ExportTargetPut = function (param, options) {
+    ObjectCloudplaneApi.prototype.v1ExportTargetPut = function (param, options) {
         return this.api.v1ExportTargetPut(param.exportTarget, options).toPromise();
     };
-    return ObjectExportApi;
-}());
-exports.ObjectExportApi = ObjectExportApi;
-var ObservableAPI_2 = require("./ObservableAPI");
-var ObjectTemplateApi = (function () {
-    function ObjectTemplateApi(configuration, requestFactory, responseProcessor) {
-        this.api = new ObservableAPI_2.ObservableTemplateApi(configuration, requestFactory, responseProcessor);
-    }
-    ObjectTemplateApi.prototype.v1ExportPut = function (param, options) {
-        if (param === void 0) { param = {}; }
-        return this.api.v1ExportPut(options).toPromise();
+    ObjectCloudplaneApi.prototype.v1JobPut = function (param, options) {
+        return this.api.v1JobPut(param.jobInput, options).toPromise();
     };
-    return ObjectTemplateApi;
+    ObjectCloudplaneApi.prototype.v1TemplateGet = function (param, options) {
+        if (param === void 0) { param = {}; }
+        return this.api.v1TemplateGet(options).toPromise();
+    };
+    return ObjectCloudplaneApi;
 }());
-exports.ObjectTemplateApi = ObjectTemplateApi;
+exports.ObjectCloudplaneApi = ObjectCloudplaneApi;
 //# sourceMappingURL=ObjectParamAPI.js.map

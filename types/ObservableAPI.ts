@@ -264,20 +264,20 @@ import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
 import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
 import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 
-import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi";
-export class ObservableExportApi {
-    private requestFactory: ExportApiRequestFactory;
-    private responseProcessor: ExportApiResponseProcessor;
+import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor} from "../apis/CloudplaneApi";
+export class ObservableCloudplaneApi {
+    private requestFactory: CloudplaneApiRequestFactory;
+    private responseProcessor: CloudplaneApiResponseProcessor;
     private configuration: Configuration;
 
     public constructor(
         configuration: Configuration,
-        requestFactory?: ExportApiRequestFactory,
-        responseProcessor?: ExportApiResponseProcessor
+        requestFactory?: CloudplaneApiRequestFactory,
+        responseProcessor?: CloudplaneApiResponseProcessor
     ) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new ExportApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new ExportApiResponseProcessor();
+        this.requestFactory = requestFactory || new CloudplaneApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new CloudplaneApiResponseProcessor();
     }
 
     /**
@@ -322,6 +322,29 @@ export class ObservableExportApi {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
                 return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportNameGet(rsp)));
+            }));
+    }
+
+    /**
+     * Put export
+     * @param _export Export
+     */
+    public v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Observable<V1alpha1Export> {
+        const requestContextPromise = this.requestFactory.v1ExportPut(_export, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportPut(rsp)));
             }));
     }
 
@@ -393,29 +416,12 @@ export class ObservableExportApi {
             }));
     }
 
-}
-
-import { TemplateApiRequestFactory, TemplateApiResponseProcessor} from "../apis/TemplateApi";
-export class ObservableTemplateApi {
-    private requestFactory: TemplateApiRequestFactory;
-    private responseProcessor: TemplateApiResponseProcessor;
-    private configuration: Configuration;
-
-    public constructor(
-        configuration: Configuration,
-        requestFactory?: TemplateApiRequestFactory,
-        responseProcessor?: TemplateApiResponseProcessor
-    ) {
-        this.configuration = configuration;
-        this.requestFactory = requestFactory || new TemplateApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new TemplateApiResponseProcessor();
-    }
-
     /**
-     * List templates
+     * Put job
+     * @param jobInput JobInput
      */
-    public v1ExportPut(_options?: Configuration): Observable<Array<V1alpha1Template>> {
-        const requestContextPromise = this.requestFactory.v1ExportPut(_options);
+    public v1JobPut(jobInput: MainJobInput, _options?: Configuration): Observable<V1Job> {
+        const requestContextPromise = this.requestFactory.v1JobPut(jobInput, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -429,7 +435,29 @@ export class ObservableTemplateApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportPut(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1JobPut(rsp)));
+            }));
+    }
+
+    /**
+     * List templates
+     */
+    public v1TemplateGet(_options?: Configuration): Observable<Array<V1alpha1Template>> {
+        const requestContextPromise = this.requestFactory.v1TemplateGet(_options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1TemplateGet(rsp)));
             }));
     }
 

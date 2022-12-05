@@ -262,18 +262,18 @@ import { V1alpha1Template } from '../models/V1alpha1Template';
 import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
 import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
 import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
-import { ObservableExportApi } from './ObservableAPI';
+import { ObservableCloudplaneApi } from './ObservableAPI';
 
-import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi";
-export class PromiseExportApi {
-    private api: ObservableExportApi
+import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor} from "../apis/CloudplaneApi";
+export class PromiseCloudplaneApi {
+    private api: ObservableCloudplaneApi
 
     public constructor(
         configuration: Configuration,
-        requestFactory?: ExportApiRequestFactory,
-        responseProcessor?: ExportApiResponseProcessor
+        requestFactory?: CloudplaneApiRequestFactory,
+        responseProcessor?: CloudplaneApiResponseProcessor
     ) {
-        this.api = new ObservableExportApi(configuration, requestFactory, responseProcessor);
+        this.api = new ObservableCloudplaneApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
@@ -290,6 +290,15 @@ export class PromiseExportApi {
      */
     public v1ExportNameGet(name: string, _options?: Configuration): Promise<V1alpha1Export> {
         const result = this.api.v1ExportNameGet(name, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Put export
+     * @param _export Export
+     */
+    public v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Promise<V1alpha1Export> {
+        const result = this.api.v1ExportPut(_export, _options);
         return result.toPromise();
     }
 
@@ -319,30 +328,20 @@ export class PromiseExportApi {
         return result.toPromise();
     }
 
-
-}
-
-
-
-import { ObservableTemplateApi } from './ObservableAPI';
-
-import { TemplateApiRequestFactory, TemplateApiResponseProcessor} from "../apis/TemplateApi";
-export class PromiseTemplateApi {
-    private api: ObservableTemplateApi
-
-    public constructor(
-        configuration: Configuration,
-        requestFactory?: TemplateApiRequestFactory,
-        responseProcessor?: TemplateApiResponseProcessor
-    ) {
-        this.api = new ObservableTemplateApi(configuration, requestFactory, responseProcessor);
+    /**
+     * Put job
+     * @param jobInput JobInput
+     */
+    public v1JobPut(jobInput: MainJobInput, _options?: Configuration): Promise<V1Job> {
+        const result = this.api.v1JobPut(jobInput, _options);
+        return result.toPromise();
     }
 
     /**
      * List templates
      */
-    public v1ExportPut(_options?: Configuration): Promise<Array<V1alpha1Template>> {
-        const result = this.api.v1ExportPut(_options);
+    public v1TemplateGet(_options?: Configuration): Promise<Array<V1alpha1Template>> {
+        const result = this.api.v1TemplateGet(_options);
         return result.toPromise();
     }
 

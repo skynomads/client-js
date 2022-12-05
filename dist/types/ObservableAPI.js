@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ObservableTemplateApi = exports.ObservableExportApi = void 0;
+exports.ObservableCloudplaneApi = void 0;
 var rxjsStub_1 = require("../rxjsStub");
 var rxjsStub_2 = require("../rxjsStub");
-var ExportApi_1 = require("../apis/ExportApi");
-var ObservableExportApi = (function () {
-    function ObservableExportApi(configuration, requestFactory, responseProcessor) {
+var CloudplaneApi_1 = require("../apis/CloudplaneApi");
+var ObservableCloudplaneApi = (function () {
+    function ObservableCloudplaneApi(configuration, requestFactory, responseProcessor) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new ExportApi_1.ExportApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new ExportApi_1.ExportApiResponseProcessor();
+        this.requestFactory = requestFactory || new CloudplaneApi_1.CloudplaneApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new CloudplaneApi_1.CloudplaneApiResponseProcessor();
     }
-    ObservableExportApi.prototype.v1ExportGet = function (_options) {
+    ObservableCloudplaneApi.prototype.v1ExportGet = function (_options) {
         var _this = this;
         var requestContextPromise = this.requestFactory.v1ExportGet(_options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
@@ -34,7 +34,7 @@ var ObservableExportApi = (function () {
             return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportGet(rsp); }));
         }));
     };
-    ObservableExportApi.prototype.v1ExportNameGet = function (name, _options) {
+    ObservableCloudplaneApi.prototype.v1ExportNameGet = function (name, _options) {
         var _this = this;
         var requestContextPromise = this.requestFactory.v1ExportNameGet(name, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
@@ -58,9 +58,9 @@ var ObservableExportApi = (function () {
             return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportNameGet(rsp); }));
         }));
     };
-    ObservableExportApi.prototype.v1ExportTargetGet = function (_options) {
+    ObservableCloudplaneApi.prototype.v1ExportPut = function (_export, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportTargetGet(_options);
+        var requestContextPromise = this.requestFactory.v1ExportPut(_export, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_5 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -79,12 +79,12 @@ var ObservableExportApi = (function () {
                 var middleware = _a[_i];
                 _loop_6(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportTargetGet(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportPut(rsp); }));
         }));
     };
-    ObservableExportApi.prototype.v1ExportTargetNameGet = function (name, _options) {
+    ObservableCloudplaneApi.prototype.v1ExportTargetGet = function (_options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportTargetNameGet(name, _options);
+        var requestContextPromise = this.requestFactory.v1ExportTargetGet(_options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_7 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -103,12 +103,12 @@ var ObservableExportApi = (function () {
                 var middleware = _a[_i];
                 _loop_8(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportTargetNameGet(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportTargetGet(rsp); }));
         }));
     };
-    ObservableExportApi.prototype.v1ExportTargetPut = function (exportTarget, _options) {
+    ObservableCloudplaneApi.prototype.v1ExportTargetNameGet = function (name, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportTargetPut(exportTarget, _options);
+        var requestContextPromise = this.requestFactory.v1ExportTargetNameGet(name, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_9 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -127,22 +127,12 @@ var ObservableExportApi = (function () {
                 var middleware = _a[_i];
                 _loop_10(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportTargetPut(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportTargetNameGet(rsp); }));
         }));
     };
-    return ObservableExportApi;
-}());
-exports.ObservableExportApi = ObservableExportApi;
-var TemplateApi_1 = require("../apis/TemplateApi");
-var ObservableTemplateApi = (function () {
-    function ObservableTemplateApi(configuration, requestFactory, responseProcessor) {
-        this.configuration = configuration;
-        this.requestFactory = requestFactory || new TemplateApi_1.TemplateApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new TemplateApi_1.TemplateApiResponseProcessor();
-    }
-    ObservableTemplateApi.prototype.v1ExportPut = function (_options) {
+    ObservableCloudplaneApi.prototype.v1ExportTargetPut = function (exportTarget, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportPut(_options);
+        var requestContextPromise = this.requestFactory.v1ExportTargetPut(exportTarget, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_11 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -161,10 +151,58 @@ var ObservableTemplateApi = (function () {
                 var middleware = _a[_i];
                 _loop_12(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportPut(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportTargetPut(rsp); }));
         }));
     };
-    return ObservableTemplateApi;
+    ObservableCloudplaneApi.prototype.v1JobPut = function (jobInput, _options) {
+        var _this = this;
+        var requestContextPromise = this.requestFactory.v1JobPut(jobInput, _options);
+        var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
+        var _loop_13 = function (middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
+        };
+        for (var _i = 0, _a = this.configuration.middleware; _i < _a.length; _i++) {
+            var middleware = _a[_i];
+            _loop_13(middleware);
+        }
+        return middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return _this.configuration.httpApi.send(ctx); })).
+            pipe((0, rxjsStub_2.mergeMap)(function (response) {
+            var middlewarePostObservable = (0, rxjsStub_1.of)(response);
+            var _loop_14 = function (middleware) {
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_2.mergeMap)(function (rsp) { return middleware.post(rsp); }));
+            };
+            for (var _i = 0, _a = _this.configuration.middleware; _i < _a.length; _i++) {
+                var middleware = _a[_i];
+                _loop_14(middleware);
+            }
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1JobPut(rsp); }));
+        }));
+    };
+    ObservableCloudplaneApi.prototype.v1TemplateGet = function (_options) {
+        var _this = this;
+        var requestContextPromise = this.requestFactory.v1TemplateGet(_options);
+        var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
+        var _loop_15 = function (middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
+        };
+        for (var _i = 0, _a = this.configuration.middleware; _i < _a.length; _i++) {
+            var middleware = _a[_i];
+            _loop_15(middleware);
+        }
+        return middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return _this.configuration.httpApi.send(ctx); })).
+            pipe((0, rxjsStub_2.mergeMap)(function (response) {
+            var middlewarePostObservable = (0, rxjsStub_1.of)(response);
+            var _loop_16 = function (middleware) {
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_2.mergeMap)(function (rsp) { return middleware.post(rsp); }));
+            };
+            for (var _i = 0, _a = _this.configuration.middleware; _i < _a.length; _i++) {
+                var middleware = _a[_i];
+                _loop_16(middleware);
+            }
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1TemplateGet(rsp); }));
+        }));
+    };
+    return ObservableCloudplaneApi;
 }());
-exports.ObservableTemplateApi = ObservableTemplateApi;
+exports.ObservableCloudplaneApi = ObservableCloudplaneApi;
 //# sourceMappingURL=ObservableAPI.js.map

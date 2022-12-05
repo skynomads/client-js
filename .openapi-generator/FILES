@@ -1,9 +1,7 @@
 .gitignore
-ExportApi.md
+CloudplaneApi.md
 README.md
-TemplateApi.md
-apis/ExportApi.ts
-apis/TemplateApi.ts
+apis/CloudplaneApi.ts
 apis/baseapi.ts
 apis/exception.ts
 auth/auth.ts

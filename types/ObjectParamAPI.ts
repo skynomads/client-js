@@ -263,54 +263,75 @@ import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
 import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
 import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 
-import { ObservableExportApi } from "./ObservableAPI";
-import { ExportApiRequestFactory, ExportApiResponseProcessor} from "../apis/ExportApi";
+import { ObservableCloudplaneApi } from "./ObservableAPI";
+import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor} from "../apis/CloudplaneApi";
 
-export interface ExportApiV1ExportGetRequest {
+export interface CloudplaneApiV1ExportGetRequest {
 }
 
-export interface ExportApiV1ExportNameGetRequest {
+export interface CloudplaneApiV1ExportNameGetRequest {
     /**
      * Name
      * @type string
-     * @memberof ExportApiv1ExportNameGet
+     * @memberof CloudplaneApiv1ExportNameGet
      */
     name: string
 }
 
-export interface ExportApiV1ExportTargetGetRequest {
+export interface CloudplaneApiV1ExportPutRequest {
+    /**
+     * Export
+     * @type V1alpha1Export
+     * @memberof CloudplaneApiv1ExportPut
+     */
+    _export: V1alpha1Export
 }
 
-export interface ExportApiV1ExportTargetNameGetRequest {
+export interface CloudplaneApiV1ExportTargetGetRequest {
+}
+
+export interface CloudplaneApiV1ExportTargetNameGetRequest {
     /**
      * Name
      * @type string
-     * @memberof ExportApiv1ExportTargetNameGet
+     * @memberof CloudplaneApiv1ExportTargetNameGet
      */
     name: string
 }
 
-export interface ExportApiV1ExportTargetPutRequest {
+export interface CloudplaneApiV1ExportTargetPutRequest {
     /**
      * ExportTarget
      * @type V1alpha1ExportTarget
-     * @memberof ExportApiv1ExportTargetPut
+     * @memberof CloudplaneApiv1ExportTargetPut
      */
     exportTarget: V1alpha1ExportTarget
 }
 
-export class ObjectExportApi {
-    private api: ObservableExportApi
+export interface CloudplaneApiV1JobPutRequest {
+    /**
+     * JobInput
+     * @type MainJobInput
+     * @memberof CloudplaneApiv1JobPut
+     */
+    jobInput: MainJobInput
+}
 
-    public constructor(configuration: Configuration, requestFactory?: ExportApiRequestFactory, responseProcessor?: ExportApiResponseProcessor) {
-        this.api = new ObservableExportApi(configuration, requestFactory, responseProcessor);
+export interface CloudplaneApiV1TemplateGetRequest {
+}
+
+export class ObjectCloudplaneApi {
+    private api: ObservableCloudplaneApi
+
+    public constructor(configuration: Configuration, requestFactory?: CloudplaneApiRequestFactory, responseProcessor?: CloudplaneApiResponseProcessor) {
+        this.api = new ObservableCloudplaneApi(configuration, requestFactory, responseProcessor);
     }
 
     /**
      * List exports
      * @param param the request object
      */
-    public v1ExportGet(param: ExportApiV1ExportGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1Export>> {
+    public v1ExportGet(param: CloudplaneApiV1ExportGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1Export>> {
         return this.api.v1ExportGet( options).toPromise();
     }
 
@@ -318,15 +339,23 @@ export class ObjectExportApi {
      * Get export
      * @param param the request object
      */
-    public v1ExportNameGet(param: ExportApiV1ExportNameGetRequest, options?: Configuration): Promise<V1alpha1Export> {
+    public v1ExportNameGet(param: CloudplaneApiV1ExportNameGetRequest, options?: Configuration): Promise<V1alpha1Export> {
         return this.api.v1ExportNameGet(param.name,  options).toPromise();
+    }
+
+    /**
+     * Put export
+     * @param param the request object
+     */
+    public v1ExportPut(param: CloudplaneApiV1ExportPutRequest, options?: Configuration): Promise<V1alpha1Export> {
+        return this.api.v1ExportPut(param._export,  options).toPromise();
     }
 
     /**
      * List export targets
      * @param param the request object
      */
-    public v1ExportTargetGet(param: ExportApiV1ExportTargetGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1ExportTarget>> {
+    public v1ExportTargetGet(param: CloudplaneApiV1ExportTargetGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1ExportTarget>> {
         return this.api.v1ExportTargetGet( options).toPromise();
     }
 
@@ -334,7 +363,7 @@ export class ObjectExportApi {
      * Get export target
      * @param param the request object
      */
-    public v1ExportTargetNameGet(param: ExportApiV1ExportTargetNameGetRequest, options?: Configuration): Promise<V1alpha1ExportTarget> {
+    public v1ExportTargetNameGet(param: CloudplaneApiV1ExportTargetNameGetRequest, options?: Configuration): Promise<V1alpha1ExportTarget> {
         return this.api.v1ExportTargetNameGet(param.name,  options).toPromise();
     }
 
@@ -342,31 +371,24 @@ export class ObjectExportApi {
      * Put export target
      * @param param the request object
      */
-    public v1ExportTargetPut(param: ExportApiV1ExportTargetPutRequest, options?: Configuration): Promise<V1alpha1ExportTarget> {
+    public v1ExportTargetPut(param: CloudplaneApiV1ExportTargetPutRequest, options?: Configuration): Promise<V1alpha1ExportTarget> {
         return this.api.v1ExportTargetPut(param.exportTarget,  options).toPromise();
     }
 
-}
-
-import { ObservableTemplateApi } from "./ObservableAPI";
-import { TemplateApiRequestFactory, TemplateApiResponseProcessor} from "../apis/TemplateApi";
-
-export interface TemplateApiV1ExportPutRequest {
-}
-
-export class ObjectTemplateApi {
-    private api: ObservableTemplateApi
-
-    public constructor(configuration: Configuration, requestFactory?: TemplateApiRequestFactory, responseProcessor?: TemplateApiResponseProcessor) {
-        this.api = new ObservableTemplateApi(configuration, requestFactory, responseProcessor);
+    /**
+     * Put job
+     * @param param the request object
+     */
+    public v1JobPut(param: CloudplaneApiV1JobPutRequest, options?: Configuration): Promise<V1Job> {
+        return this.api.v1JobPut(param.jobInput,  options).toPromise();
     }
 
     /**
      * List templates
      * @param param the request object
      */
-    public v1ExportPut(param: TemplateApiV1ExportPutRequest = {}, options?: Configuration): Promise<Array<V1alpha1Template>> {
-        return this.api.v1ExportPut( options).toPromise();
+    public v1TemplateGet(param: CloudplaneApiV1TemplateGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1Template>> {
+        return this.api.v1TemplateGet( options).toPromise();
     }
 
 }
