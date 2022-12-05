@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PromiseExportApi = void 0;
+exports.PromiseJobApi = exports.PromiseExportApi = void 0;
 var ObservableAPI_1 = require("./ObservableAPI");
 var PromiseExportApi = (function () {
     function PromiseExportApi(configuration, requestFactory, responseProcessor) {
@@ -12,10 +12,6 @@ var PromiseExportApi = (function () {
     };
     PromiseExportApi.prototype.v1ExportNameGet = function (name, _options) {
         var result = this.api.v1ExportNameGet(name, _options);
-        return result.toPromise();
-    };
-    PromiseExportApi.prototype.v1ExportPut = function (_export, _options) {
-        var result = this.api.v1ExportPut(_export, _options);
         return result.toPromise();
     };
     PromiseExportApi.prototype.v1ExportTargetGet = function (_options) {
@@ -33,4 +29,16 @@ var PromiseExportApi = (function () {
     return PromiseExportApi;
 }());
 exports.PromiseExportApi = PromiseExportApi;
+var ObservableAPI_2 = require("./ObservableAPI");
+var PromiseJobApi = (function () {
+    function PromiseJobApi(configuration, requestFactory, responseProcessor) {
+        this.api = new ObservableAPI_2.ObservableJobApi(configuration, requestFactory, responseProcessor);
+    }
+    PromiseJobApi.prototype.v1ExportPut = function (jobInput, _options) {
+        var result = this.api.v1ExportPut(jobInput, _options);
+        return result.toPromise();
+    };
+    return PromiseJobApi;
+}());
+exports.PromiseJobApi = PromiseJobApi;
 //# sourceMappingURL=PromiseAPI.js.map

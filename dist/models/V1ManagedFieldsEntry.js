@@ -36,7 +36,7 @@ var V1ManagedFieldsEntry = (function () {
         {
             "name": "operation",
             "baseName": "operation",
-            "type": "string",
+            "type": "V1ManagedFieldsOperationType",
             "format": ""
         },
         {

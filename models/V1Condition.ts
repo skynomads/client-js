@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+import { K8sIoApimachineryPkgApisMetaV1ConditionStatus } from '../models/K8sIoApimachineryPkgApisMetaV1ConditionStatus';
 import { HttpFile } from '../http/http';
 
 export class V1Condition {
@@ -32,7 +33,7 @@ export class V1Condition {
     /**
     * status of the condition, one of True, False, Unknown. +required +kubebuilder:validation:Required +kubebuilder:validation:Enum=True;False;Unknown
     */
-    'status'?: string;
+    'status'?: K8sIoApimachineryPkgApisMetaV1ConditionStatus;
     /**
     * type of condition in CamelCase or in foo.example.com/CamelCase. --- Many .condition.type values are consistent across resources like Available, but because arbitrary conditions can be useful (see .node.status.conditions), the ability to deconflict is important. The regex it matches is (dns1123SubdomainFmt/)?(qualifiedNameFmt) +required +kubebuilder:validation:Required +kubebuilder:validation:Pattern=`^([a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*_/)?(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])$` +kubebuilder:validation:MaxLength=316
     */
@@ -68,7 +69,7 @@ export class V1Condition {
         {
             "name": "status",
             "baseName": "status",
-            "type": "string",
+            "type": "K8sIoApimachineryPkgApisMetaV1ConditionStatus",
             "format": ""
         },
         {

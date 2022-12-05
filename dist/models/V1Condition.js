@@ -36,7 +36,7 @@ var V1Condition = (function () {
         {
             "name": "status",
             "baseName": "status",
-            "type": "string",
+            "type": "K8sIoApimachineryPkgApisMetaV1ConditionStatus",
             "format": ""
         },
         {

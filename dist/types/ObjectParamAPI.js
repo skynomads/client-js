@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ObjectExportApi = void 0;
+exports.ObjectJobApi = exports.ObjectExportApi = void 0;
 var ObservableAPI_1 = require("./ObservableAPI");
 var ObjectExportApi = (function () {
     function ObjectExportApi(configuration, requestFactory, responseProcessor) {
@@ -12,9 +12,6 @@ var ObjectExportApi = (function () {
     };
     ObjectExportApi.prototype.v1ExportNameGet = function (param, options) {
         return this.api.v1ExportNameGet(param.name, options).toPromise();
-    };
-    ObjectExportApi.prototype.v1ExportPut = function (param, options) {
-        return this.api.v1ExportPut(param._export, options).toPromise();
     };
     ObjectExportApi.prototype.v1ExportTargetGet = function (param, options) {
         if (param === void 0) { param = {}; }
@@ -29,4 +26,15 @@ var ObjectExportApi = (function () {
     return ObjectExportApi;
 }());
 exports.ObjectExportApi = ObjectExportApi;
+var ObservableAPI_2 = require("./ObservableAPI");
+var ObjectJobApi = (function () {
+    function ObjectJobApi(configuration, requestFactory, responseProcessor) {
+        this.api = new ObservableAPI_2.ObservableJobApi(configuration, requestFactory, responseProcessor);
+    }
+    ObjectJobApi.prototype.v1ExportPut = function (param, options) {
+        return this.api.v1ExportPut(param.jobInput, options).toPromise();
+    };
+    return ObjectJobApi;
+}());
+exports.ObjectJobApi = ObjectJobApi;
 //# sourceMappingURL=ObjectParamAPI.js.map
