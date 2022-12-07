@@ -78,7 +78,7 @@ var V1alpha1Template = (function () {
         {
             "name": "schema",
             "baseName": "schema",
-            "type": "Array<number>",
+            "type": "V1JSON",
             "format": ""
         },
         {
