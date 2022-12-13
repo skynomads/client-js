@@ -3,6 +3,7 @@ import { Observable } from '../rxjsStub';
 import { MainJobInput } from '../models/MainJobInput';
 import { V1Job } from '../models/V1Job';
 import { V1alpha1Export } from '../models/V1alpha1Export';
+import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 import { V1alpha1Template } from '../models/V1alpha1Template';
 import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor } from "../apis/CloudplaneApi";
@@ -17,6 +18,9 @@ export declare class ObservableCloudplaneApi {
     v1ExportTargetGet(_options?: Configuration): Observable<Array<V1alpha1ExportTarget>>;
     v1ExportTargetNameGet(name: string, _options?: Configuration): Observable<V1alpha1ExportTarget>;
     v1ExportTargetPut(exportTarget: V1alpha1ExportTarget, _options?: Configuration): Observable<V1alpha1ExportTarget>;
+    v1ExportscheduleGet(_options?: Configuration): Observable<Array<V1alpha1ExportSchedule>>;
+    v1ExportscheduleNameGet(name: string, _options?: Configuration): Observable<V1alpha1ExportSchedule>;
+    v1ExportschedulePut(schedule: V1alpha1ExportSchedule, _options?: Configuration): Observable<V1alpha1ExportSchedule>;
     v1JobPut(jobInput: MainJobInput, _options?: Configuration): Observable<V1Job>;
     v1TemplateGet(_options?: Configuration): Observable<Array<V1alpha1Template>>;
 }

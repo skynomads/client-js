@@ -10,37 +10,31 @@
  * Do not edit the class manually.
  */
 
+import { V1alpha1Export } from '../models/V1alpha1Export';
 import { HttpFile } from '../http/http';
 
-export class V1alpha1ExportSpec {
-    'application'?: string;
-    'path'?: string;
-    'target'?: string;
+export class V1alpha1ExportScheduleSpec {
+    'schedule'?: string;
+    'template'?: V1alpha1Export;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "application",
-            "baseName": "application",
+            "name": "schedule",
+            "baseName": "schedule",
             "type": "string",
             "format": ""
         },
         {
-            "name": "path",
-            "baseName": "path",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "target",
-            "baseName": "target",
-            "type": "string",
+            "name": "template",
+            "baseName": "template",
+            "type": "V1alpha1Export",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return V1alpha1ExportSpec.attributeTypeMap;
+        return V1alpha1ExportScheduleSpec.attributeTypeMap;
     }
 
     public constructor() {

@@ -264,6 +264,9 @@ __exportStar(require("../models/V1WeightedPodAffinityTermPodAffinityTerm"), expo
 __exportStar(require("../models/V1WindowsSecurityContextOptions"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);
+__exportStar(require("../models/V1alpha1ExportSchedule"), exports);
+__exportStar(require("../models/V1alpha1ExportScheduleSpec"), exports);
+__exportStar(require("../models/V1alpha1ExportScheduleStatus"), exports);
 __exportStar(require("../models/V1alpha1ExportSpec"), exports);
 __exportStar(require("../models/V1alpha1ExportStatus"), exports);
 __exportStar(require("../models/V1alpha1ExportTarget"), exports);
@@ -492,6 +495,9 @@ var V1WeightedPodAffinityTermPodAffinityTerm_1 = require("../models/V1WeightedPo
 var V1WindowsSecurityContextOptions_1 = require("../models/V1WindowsSecurityContextOptions");
 var V1alpha1Export_1 = require("../models/V1alpha1Export");
 var V1alpha1ExportBucket_1 = require("../models/V1alpha1ExportBucket");
+var V1alpha1ExportSchedule_1 = require("../models/V1alpha1ExportSchedule");
+var V1alpha1ExportScheduleSpec_1 = require("../models/V1alpha1ExportScheduleSpec");
+var V1alpha1ExportScheduleStatus_1 = require("../models/V1alpha1ExportScheduleStatus");
 var V1alpha1ExportSpec_1 = require("../models/V1alpha1ExportSpec");
 var V1alpha1ExportStatus_1 = require("../models/V1alpha1ExportStatus");
 var V1alpha1ExportTarget_1 = require("../models/V1alpha1ExportTarget");
@@ -771,6 +777,9 @@ var typeMap = {
     "V1WindowsSecurityContextOptions": V1WindowsSecurityContextOptions_1.V1WindowsSecurityContextOptions,
     "V1alpha1Export": V1alpha1Export_1.V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket_1.V1alpha1ExportBucket,
+    "V1alpha1ExportSchedule": V1alpha1ExportSchedule_1.V1alpha1ExportSchedule,
+    "V1alpha1ExportScheduleSpec": V1alpha1ExportScheduleSpec_1.V1alpha1ExportScheduleSpec,
+    "V1alpha1ExportScheduleStatus": V1alpha1ExportScheduleStatus_1.V1alpha1ExportScheduleStatus,
     "V1alpha1ExportSpec": V1alpha1ExportSpec_1.V1alpha1ExportSpec,
     "V1alpha1ExportStatus": V1alpha1ExportStatus_1.V1alpha1ExportStatus,
     "V1alpha1ExportTarget": V1alpha1ExportTarget_1.V1alpha1ExportTarget,

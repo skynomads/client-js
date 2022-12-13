@@ -16,6 +16,12 @@ var V1alpha1ExportSpec = (function () {
             "format": ""
         },
         {
+            "name": "path",
+            "baseName": "path",
+            "type": "string",
+            "format": ""
+        },
+        {
             "name": "target",
             "baseName": "target",
             "type": "string",

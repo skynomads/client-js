@@ -247,6 +247,9 @@ export * from '../models/V1WeightedPodAffinityTermPodAffinityTerm';
 export * from '../models/V1WindowsSecurityContextOptions';
 export * from '../models/V1alpha1Export';
 export * from '../models/V1alpha1ExportBucket';
+export * from '../models/V1alpha1ExportSchedule';
+export * from '../models/V1alpha1ExportScheduleSpec';
+export * from '../models/V1alpha1ExportScheduleStatus';
 export * from '../models/V1alpha1ExportSpec';
 export * from '../models/V1alpha1ExportStatus';
 export * from '../models/V1alpha1ExportTarget';
@@ -509,6 +512,9 @@ import { V1WeightedPodAffinityTermPodAffinityTerm } from '../models/V1WeightedPo
 import { V1WindowsSecurityContextOptions } from '../models/V1WindowsSecurityContextOptions';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
+import { V1alpha1ExportScheduleSpec } from '../models/V1alpha1ExportScheduleSpec';
+import { V1alpha1ExportScheduleStatus } from '../models/V1alpha1ExportScheduleStatus';
 import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
 import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
@@ -794,6 +800,9 @@ let typeMap: {[index: string]: any} = {
     "V1WindowsSecurityContextOptions": V1WindowsSecurityContextOptions,
     "V1alpha1Export": V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket,
+    "V1alpha1ExportSchedule": V1alpha1ExportSchedule,
+    "V1alpha1ExportScheduleSpec": V1alpha1ExportScheduleSpec,
+    "V1alpha1ExportScheduleStatus": V1alpha1ExportScheduleStatus,
     "V1alpha1ExportSpec": V1alpha1ExportSpec,
     "V1alpha1ExportStatus": V1alpha1ExportStatus,
     "V1alpha1ExportTarget": V1alpha1ExportTarget,

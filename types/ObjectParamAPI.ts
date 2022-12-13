@@ -250,6 +250,9 @@ import { V1WeightedPodAffinityTermPodAffinityTerm } from '../models/V1WeightedPo
 import { V1WindowsSecurityContextOptions } from '../models/V1WindowsSecurityContextOptions';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
+import { V1alpha1ExportScheduleSpec } from '../models/V1alpha1ExportScheduleSpec';
+import { V1alpha1ExportScheduleStatus } from '../models/V1alpha1ExportScheduleStatus';
 import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
 import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
@@ -306,6 +309,27 @@ export interface CloudplaneApiV1ExportTargetPutRequest {
      * @memberof CloudplaneApiv1ExportTargetPut
      */
     exportTarget: V1alpha1ExportTarget
+}
+
+export interface CloudplaneApiV1ExportscheduleGetRequest {
+}
+
+export interface CloudplaneApiV1ExportscheduleNameGetRequest {
+    /**
+     * Name
+     * @type string
+     * @memberof CloudplaneApiv1ExportscheduleNameGet
+     */
+    name: string
+}
+
+export interface CloudplaneApiV1ExportschedulePutRequest {
+    /**
+     * ExportSchedule
+     * @type V1alpha1ExportSchedule
+     * @memberof CloudplaneApiv1ExportschedulePut
+     */
+    schedule: V1alpha1ExportSchedule
 }
 
 export interface CloudplaneApiV1JobPutRequest {
@@ -373,6 +397,30 @@ export class ObjectCloudplaneApi {
      */
     public v1ExportTargetPut(param: CloudplaneApiV1ExportTargetPutRequest, options?: Configuration): Promise<V1alpha1ExportTarget> {
         return this.api.v1ExportTargetPut(param.exportTarget,  options).toPromise();
+    }
+
+    /**
+     * List export schedules
+     * @param param the request object
+     */
+    public v1ExportscheduleGet(param: CloudplaneApiV1ExportscheduleGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1ExportSchedule>> {
+        return this.api.v1ExportscheduleGet( options).toPromise();
+    }
+
+    /**
+     * Get export schedule
+     * @param param the request object
+     */
+    public v1ExportscheduleNameGet(param: CloudplaneApiV1ExportscheduleNameGetRequest, options?: Configuration): Promise<V1alpha1ExportSchedule> {
+        return this.api.v1ExportscheduleNameGet(param.name,  options).toPromise();
+    }
+
+    /**
+     * Put export schedule
+     * @param param the request object
+     */
+    public v1ExportschedulePut(param: CloudplaneApiV1ExportschedulePutRequest, options?: Configuration): Promise<V1alpha1ExportSchedule> {
+        return this.api.v1ExportschedulePut(param.schedule,  options).toPromise();
     }
 
     /**

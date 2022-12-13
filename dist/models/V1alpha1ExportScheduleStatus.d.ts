@@ -1,7 +1,6 @@
-export declare class V1alpha1ExportSpec {
-    'application'?: string;
-    'path'?: string;
-    'target'?: string;
+import { V1Condition } from '../models/V1Condition';
+export declare class V1alpha1ExportScheduleStatus {
+    'conditions'?: Array<V1Condition>;
     static readonly discriminator: string | undefined;
     static readonly attributeTypeMap: Array<{
         name: string;

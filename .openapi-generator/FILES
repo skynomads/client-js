@@ -261,6 +261,9 @@ models/V1WeightedPodAffinityTermPodAffinityTerm.ts
 models/V1WindowsSecurityContextOptions.ts
 models/V1alpha1Export.ts
 models/V1alpha1ExportBucket.ts
+models/V1alpha1ExportSchedule.ts
+models/V1alpha1ExportScheduleSpec.ts
+models/V1alpha1ExportScheduleStatus.ts
 models/V1alpha1ExportSpec.ts
 models/V1alpha1ExportStatus.ts
 models/V1alpha1ExportTarget.ts

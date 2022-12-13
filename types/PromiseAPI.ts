@@ -250,6 +250,9 @@ import { V1WeightedPodAffinityTermPodAffinityTerm } from '../models/V1WeightedPo
 import { V1WindowsSecurityContextOptions } from '../models/V1WindowsSecurityContextOptions';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
+import { V1alpha1ExportScheduleSpec } from '../models/V1alpha1ExportScheduleSpec';
+import { V1alpha1ExportScheduleStatus } from '../models/V1alpha1ExportScheduleStatus';
 import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
 import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
@@ -325,6 +328,32 @@ export class PromiseCloudplaneApi {
      */
     public v1ExportTargetPut(exportTarget: V1alpha1ExportTarget, _options?: Configuration): Promise<V1alpha1ExportTarget> {
         const result = this.api.v1ExportTargetPut(exportTarget, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * List export schedules
+     */
+    public v1ExportscheduleGet(_options?: Configuration): Promise<Array<V1alpha1ExportSchedule>> {
+        const result = this.api.v1ExportscheduleGet(_options);
+        return result.toPromise();
+    }
+
+    /**
+     * Get export schedule
+     * @param name Name
+     */
+    public v1ExportscheduleNameGet(name: string, _options?: Configuration): Promise<V1alpha1ExportSchedule> {
+        const result = this.api.v1ExportscheduleNameGet(name, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Put export schedule
+     * @param schedule ExportSchedule
+     */
+    public v1ExportschedulePut(schedule: V1alpha1ExportSchedule, _options?: Configuration): Promise<V1alpha1ExportSchedule> {
+        const result = this.api.v1ExportschedulePut(schedule, _options);
         return result.toPromise();
     }
 

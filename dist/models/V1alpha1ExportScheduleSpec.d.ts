@@ -1,7 +1,7 @@
-export declare class V1alpha1ExportSpec {
-    'application'?: string;
-    'path'?: string;
-    'target'?: string;
+import { V1alpha1Export } from '../models/V1alpha1Export';
+export declare class V1alpha1ExportScheduleSpec {
+    'schedule'?: string;
+    'template'?: V1alpha1Export;
     static readonly discriminator: string | undefined;
     static readonly attributeTypeMap: Array<{
         name: string;

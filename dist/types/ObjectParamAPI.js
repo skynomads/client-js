@@ -26,6 +26,16 @@ var ObjectCloudplaneApi = (function () {
     ObjectCloudplaneApi.prototype.v1ExportTargetPut = function (param, options) {
         return this.api.v1ExportTargetPut(param.exportTarget, options).toPromise();
     };
+    ObjectCloudplaneApi.prototype.v1ExportscheduleGet = function (param, options) {
+        if (param === void 0) { param = {}; }
+        return this.api.v1ExportscheduleGet(options).toPromise();
+    };
+    ObjectCloudplaneApi.prototype.v1ExportscheduleNameGet = function (param, options) {
+        return this.api.v1ExportscheduleNameGet(param.name, options).toPromise();
+    };
+    ObjectCloudplaneApi.prototype.v1ExportschedulePut = function (param, options) {
+        return this.api.v1ExportschedulePut(param.schedule, options).toPromise();
+    };
     ObjectCloudplaneApi.prototype.v1JobPut = function (param, options) {
         return this.api.v1JobPut(param.jobInput, options).toPromise();
     };

@@ -10,37 +10,24 @@
  * Do not edit the class manually.
  */
 
+import { V1Condition } from '../models/V1Condition';
 import { HttpFile } from '../http/http';
 
-export class V1alpha1ExportSpec {
-    'application'?: string;
-    'path'?: string;
-    'target'?: string;
+export class V1alpha1ExportScheduleStatus {
+    'conditions'?: Array<V1Condition>;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "application",
-            "baseName": "application",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "path",
-            "baseName": "path",
-            "type": "string",
-            "format": ""
-        },
-        {
-            "name": "target",
-            "baseName": "target",
-            "type": "string",
+            "name": "conditions",
+            "baseName": "conditions",
+            "type": "Array<V1Condition>",
             "format": ""
         }    ];
 
     static getAttributeTypeMap() {
-        return V1alpha1ExportSpec.attributeTypeMap;
+        return V1alpha1ExportScheduleStatus.attributeTypeMap;
     }
 
     public constructor() {

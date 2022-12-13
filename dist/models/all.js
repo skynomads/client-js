@@ -263,6 +263,9 @@ __exportStar(require("../models/V1WeightedPodAffinityTermPodAffinityTerm"), expo
 __exportStar(require("../models/V1WindowsSecurityContextOptions"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);
+__exportStar(require("../models/V1alpha1ExportSchedule"), exports);
+__exportStar(require("../models/V1alpha1ExportScheduleSpec"), exports);
+__exportStar(require("../models/V1alpha1ExportScheduleStatus"), exports);
 __exportStar(require("../models/V1alpha1ExportSpec"), exports);
 __exportStar(require("../models/V1alpha1ExportStatus"), exports);
 __exportStar(require("../models/V1alpha1ExportTarget"), exports);

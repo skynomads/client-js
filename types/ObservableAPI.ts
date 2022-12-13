@@ -251,6 +251,9 @@ import { V1WeightedPodAffinityTermPodAffinityTerm } from '../models/V1WeightedPo
 import { V1WindowsSecurityContextOptions } from '../models/V1WindowsSecurityContextOptions';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
+import { V1alpha1ExportScheduleSpec } from '../models/V1alpha1ExportScheduleSpec';
+import { V1alpha1ExportScheduleStatus } from '../models/V1alpha1ExportScheduleStatus';
 import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
 import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
@@ -413,6 +416,74 @@ export class ObservableCloudplaneApi {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
                 return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportTargetPut(rsp)));
+            }));
+    }
+
+    /**
+     * List export schedules
+     */
+    public v1ExportscheduleGet(_options?: Configuration): Observable<Array<V1alpha1ExportSchedule>> {
+        const requestContextPromise = this.requestFactory.v1ExportscheduleGet(_options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportscheduleGet(rsp)));
+            }));
+    }
+
+    /**
+     * Get export schedule
+     * @param name Name
+     */
+    public v1ExportscheduleNameGet(name: string, _options?: Configuration): Observable<V1alpha1ExportSchedule> {
+        const requestContextPromise = this.requestFactory.v1ExportscheduleNameGet(name, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportscheduleNameGet(rsp)));
+            }));
+    }
+
+    /**
+     * Put export schedule
+     * @param schedule ExportSchedule
+     */
+    public v1ExportschedulePut(schedule: V1alpha1ExportSchedule, _options?: Configuration): Observable<V1alpha1ExportSchedule> {
+        const requestContextPromise = this.requestFactory.v1ExportschedulePut(schedule, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportschedulePut(rsp)));
             }));
     }
 

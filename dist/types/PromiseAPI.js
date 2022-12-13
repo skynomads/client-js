@@ -30,6 +30,18 @@ var PromiseCloudplaneApi = (function () {
         var result = this.api.v1ExportTargetPut(exportTarget, _options);
         return result.toPromise();
     };
+    PromiseCloudplaneApi.prototype.v1ExportscheduleGet = function (_options) {
+        var result = this.api.v1ExportscheduleGet(_options);
+        return result.toPromise();
+    };
+    PromiseCloudplaneApi.prototype.v1ExportscheduleNameGet = function (name, _options) {
+        var result = this.api.v1ExportscheduleNameGet(name, _options);
+        return result.toPromise();
+    };
+    PromiseCloudplaneApi.prototype.v1ExportschedulePut = function (schedule, _options) {
+        var result = this.api.v1ExportschedulePut(schedule, _options);
+        return result.toPromise();
+    };
     PromiseCloudplaneApi.prototype.v1JobPut = function (jobInput, _options) {
         var result = this.api.v1JobPut(jobInput, _options);
         return result.toPromise();
