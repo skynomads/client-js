@@ -34,6 +34,9 @@ var ObjectCloudplaneApi = (function () {
         if (param === void 0) { param = {}; }
         return this.api.v1ExportscheduleGet(options).toPromise();
     };
+    ObjectCloudplaneApi.prototype.v1ExportscheduleNameDelete = function (param, options) {
+        return this.api.v1ExportscheduleNameDelete(param.name, options).toPromise();
+    };
     ObjectCloudplaneApi.prototype.v1ExportscheduleNameGet = function (param, options) {
         return this.api.v1ExportscheduleNameGet(param.name, options).toPromise();
     };

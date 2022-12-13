@@ -323,6 +323,15 @@ export interface CloudplaneApiV1ExportTargetPutRequest {
 export interface CloudplaneApiV1ExportscheduleGetRequest {
 }
 
+export interface CloudplaneApiV1ExportscheduleNameDeleteRequest {
+    /**
+     * Name
+     * @type string
+     * @memberof CloudplaneApiv1ExportscheduleNameDelete
+     */
+    name: string
+}
+
 export interface CloudplaneApiV1ExportscheduleNameGetRequest {
     /**
      * Name
@@ -422,6 +431,14 @@ export class ObjectCloudplaneApi {
      */
     public v1ExportscheduleGet(param: CloudplaneApiV1ExportscheduleGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1ExportSchedule>> {
         return this.api.v1ExportscheduleGet( options).toPromise();
+    }
+
+    /**
+     * Delete export schedule
+     * @param param the request object
+     */
+    public v1ExportscheduleNameDelete(param: CloudplaneApiV1ExportscheduleNameDeleteRequest, options?: Configuration): Promise<string> {
+        return this.api.v1ExportscheduleNameDelete(param.name,  options).toPromise();
     }
 
     /**

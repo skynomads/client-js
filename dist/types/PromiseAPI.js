@@ -38,6 +38,10 @@ var PromiseCloudplaneApi = (function () {
         var result = this.api.v1ExportscheduleGet(_options);
         return result.toPromise();
     };
+    PromiseCloudplaneApi.prototype.v1ExportscheduleNameDelete = function (name, _options) {
+        var result = this.api.v1ExportscheduleNameDelete(name, _options);
+        return result.toPromise();
+    };
     PromiseCloudplaneApi.prototype.v1ExportscheduleNameGet = function (name, _options) {
         var result = this.api.v1ExportscheduleNameGet(name, _options);
         return result.toPromise();

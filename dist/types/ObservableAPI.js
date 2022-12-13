@@ -202,9 +202,9 @@ var ObservableCloudplaneApi = (function () {
             return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportscheduleGet(rsp); }));
         }));
     };
-    ObservableCloudplaneApi.prototype.v1ExportscheduleNameGet = function (name, _options) {
+    ObservableCloudplaneApi.prototype.v1ExportscheduleNameDelete = function (name, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportscheduleNameGet(name, _options);
+        var requestContextPromise = this.requestFactory.v1ExportscheduleNameDelete(name, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_17 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -223,12 +223,12 @@ var ObservableCloudplaneApi = (function () {
                 var middleware = _a[_i];
                 _loop_18(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportscheduleNameGet(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportscheduleNameDelete(rsp); }));
         }));
     };
-    ObservableCloudplaneApi.prototype.v1ExportschedulePut = function (schedule, _options) {
+    ObservableCloudplaneApi.prototype.v1ExportscheduleNameGet = function (name, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1ExportschedulePut(schedule, _options);
+        var requestContextPromise = this.requestFactory.v1ExportscheduleNameGet(name, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_19 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -247,12 +247,12 @@ var ObservableCloudplaneApi = (function () {
                 var middleware = _a[_i];
                 _loop_20(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportschedulePut(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportscheduleNameGet(rsp); }));
         }));
     };
-    ObservableCloudplaneApi.prototype.v1JobPut = function (jobInput, _options) {
+    ObservableCloudplaneApi.prototype.v1ExportschedulePut = function (schedule, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1JobPut(jobInput, _options);
+        var requestContextPromise = this.requestFactory.v1ExportschedulePut(schedule, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_21 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -271,12 +271,12 @@ var ObservableCloudplaneApi = (function () {
                 var middleware = _a[_i];
                 _loop_22(middleware);
             }
-            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1JobPut(rsp); }));
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1ExportschedulePut(rsp); }));
         }));
     };
-    ObservableCloudplaneApi.prototype.v1TemplateGet = function (_options) {
+    ObservableCloudplaneApi.prototype.v1JobPut = function (jobInput, _options) {
         var _this = this;
-        var requestContextPromise = this.requestFactory.v1TemplateGet(_options);
+        var requestContextPromise = this.requestFactory.v1JobPut(jobInput, _options);
         var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
         var _loop_23 = function (middleware) {
             middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
@@ -294,6 +294,30 @@ var ObservableCloudplaneApi = (function () {
             for (var _i = 0, _a = _this.configuration.middleware; _i < _a.length; _i++) {
                 var middleware = _a[_i];
                 _loop_24(middleware);
+            }
+            return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1JobPut(rsp); }));
+        }));
+    };
+    ObservableCloudplaneApi.prototype.v1TemplateGet = function (_options) {
+        var _this = this;
+        var requestContextPromise = this.requestFactory.v1TemplateGet(_options);
+        var middlewarePreObservable = (0, rxjsStub_1.from)(requestContextPromise);
+        var _loop_25 = function (middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return middleware.pre(ctx); }));
+        };
+        for (var _i = 0, _a = this.configuration.middleware; _i < _a.length; _i++) {
+            var middleware = _a[_i];
+            _loop_25(middleware);
+        }
+        return middlewarePreObservable.pipe((0, rxjsStub_2.mergeMap)(function (ctx) { return _this.configuration.httpApi.send(ctx); })).
+            pipe((0, rxjsStub_2.mergeMap)(function (response) {
+            var middlewarePostObservable = (0, rxjsStub_1.of)(response);
+            var _loop_26 = function (middleware) {
+                middlewarePostObservable = middlewarePostObservable.pipe((0, rxjsStub_2.mergeMap)(function (rsp) { return middleware.post(rsp); }));
+            };
+            for (var _i = 0, _a = _this.configuration.middleware; _i < _a.length; _i++) {
+                var middleware = _a[_i];
+                _loop_26(middleware);
             }
             return middlewarePostObservable.pipe((0, rxjsStub_2.map)(function (rsp) { return _this.responseProcessor.v1TemplateGet(rsp); }));
         }));

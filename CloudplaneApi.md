@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**v1ExportTargetNameGet**](CloudplaneApi.md#v1ExportTargetNameGet) | **GET** /v1/export/target/{name} | Get export target
 [**v1ExportTargetPut**](CloudplaneApi.md#v1ExportTargetPut) | **PUT** /v1/export/target | Put export target
 [**v1ExportscheduleGet**](CloudplaneApi.md#v1ExportscheduleGet) | **GET** /v1/exportschedule | List export schedules
+[**v1ExportscheduleNameDelete**](CloudplaneApi.md#v1ExportscheduleNameDelete) | **DELETE** /v1/exportschedule/{name} | Delete export schedule
 [**v1ExportscheduleNameGet**](CloudplaneApi.md#v1ExportscheduleNameGet) | **GET** /v1/exportschedule/{name} | Get export schedule
 [**v1ExportschedulePut**](CloudplaneApi.md#v1ExportschedulePut) | **PUT** /v1/exportschedule | Put export schedule
 [**v1JobPut**](CloudplaneApi.md#v1JobPut) | **PUT** /v1/job | Put job
@@ -575,6 +576,64 @@ No authorization required
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v1ExportscheduleNameDelete**
+> string v1ExportscheduleNameDelete()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .CloudplaneApi(configuration);
+
+let body:.CloudplaneApiV1ExportscheduleNameDeleteRequest = {
+  // string | Name
+  name: "name_example",
+};
+
+apiInstance.v1ExportscheduleNameDelete(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | [**string**] | Name | defaults to undefined
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
 **429** | Too Many Requests |  -  |
 **500** | Internal Server Error |  -  |
 

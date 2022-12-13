@@ -18,6 +18,7 @@ export declare class PromiseCloudplaneApi {
     v1ExportTargetNameGet(name: string, _options?: Configuration): Promise<V1alpha1ExportTarget>;
     v1ExportTargetPut(exportTarget: V1alpha1ExportTarget, _options?: Configuration): Promise<V1alpha1ExportTarget>;
     v1ExportscheduleGet(_options?: Configuration): Promise<Array<V1alpha1ExportSchedule>>;
+    v1ExportscheduleNameDelete(name: string, _options?: Configuration): Promise<string>;
     v1ExportscheduleNameGet(name: string, _options?: Configuration): Promise<V1alpha1ExportSchedule>;
     v1ExportschedulePut(schedule: V1alpha1ExportSchedule, _options?: Configuration): Promise<V1alpha1ExportSchedule>;
     v1JobPut(jobInput: MainJobInput, _options?: Configuration): Promise<V1Job>;

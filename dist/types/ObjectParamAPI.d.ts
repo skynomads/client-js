@@ -27,6 +27,9 @@ export interface CloudplaneApiV1ExportTargetPutRequest {
 }
 export interface CloudplaneApiV1ExportscheduleGetRequest {
 }
+export interface CloudplaneApiV1ExportscheduleNameDeleteRequest {
+    name: string;
+}
 export interface CloudplaneApiV1ExportscheduleNameGetRequest {
     name: string;
 }
@@ -49,6 +52,7 @@ export declare class ObjectCloudplaneApi {
     v1ExportTargetNameGet(param: CloudplaneApiV1ExportTargetNameGetRequest, options?: Configuration): Promise<V1alpha1ExportTarget>;
     v1ExportTargetPut(param: CloudplaneApiV1ExportTargetPutRequest, options?: Configuration): Promise<V1alpha1ExportTarget>;
     v1ExportscheduleGet(param?: CloudplaneApiV1ExportscheduleGetRequest, options?: Configuration): Promise<Array<V1alpha1ExportSchedule>>;
+    v1ExportscheduleNameDelete(param: CloudplaneApiV1ExportscheduleNameDeleteRequest, options?: Configuration): Promise<string>;
     v1ExportscheduleNameGet(param: CloudplaneApiV1ExportscheduleNameGetRequest, options?: Configuration): Promise<V1alpha1ExportSchedule>;
     v1ExportschedulePut(param: CloudplaneApiV1ExportschedulePutRequest, options?: Configuration): Promise<V1alpha1ExportSchedule>;
     v1JobPut(param: CloudplaneApiV1JobPutRequest, options?: Configuration): Promise<V1Job>;

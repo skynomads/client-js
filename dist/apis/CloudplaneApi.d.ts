@@ -17,6 +17,7 @@ export declare class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
     v1ExportTargetNameGet(name: string, _options?: Configuration): Promise<RequestContext>;
     v1ExportTargetPut(exportTarget: V1alpha1ExportTarget, _options?: Configuration): Promise<RequestContext>;
     v1ExportscheduleGet(_options?: Configuration): Promise<RequestContext>;
+    v1ExportscheduleNameDelete(name: string, _options?: Configuration): Promise<RequestContext>;
     v1ExportscheduleNameGet(name: string, _options?: Configuration): Promise<RequestContext>;
     v1ExportschedulePut(schedule: V1alpha1ExportSchedule, _options?: Configuration): Promise<RequestContext>;
     v1JobPut(jobInput: MainJobInput, _options?: Configuration): Promise<RequestContext>;
@@ -31,6 +32,7 @@ export declare class CloudplaneApiResponseProcessor {
     v1ExportTargetNameGet(response: ResponseContext): Promise<V1alpha1ExportTarget>;
     v1ExportTargetPut(response: ResponseContext): Promise<V1alpha1ExportTarget>;
     v1ExportscheduleGet(response: ResponseContext): Promise<Array<V1alpha1ExportSchedule>>;
+    v1ExportscheduleNameDelete(response: ResponseContext): Promise<string>;
     v1ExportscheduleNameGet(response: ResponseContext): Promise<V1alpha1ExportSchedule>;
     v1ExportschedulePut(response: ResponseContext): Promise<V1alpha1ExportSchedule>;
     v1JobPut(response: ResponseContext): Promise<V1Job>;

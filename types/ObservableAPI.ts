@@ -470,6 +470,29 @@ export class ObservableCloudplaneApi {
     }
 
     /**
+     * Delete export schedule
+     * @param name Name
+     */
+    public v1ExportscheduleNameDelete(name: string, _options?: Configuration): Observable<string> {
+        const requestContextPromise = this.requestFactory.v1ExportscheduleNameDelete(name, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.v1ExportscheduleNameDelete(rsp)));
+            }));
+    }
+
+    /**
      * Get export schedule
      * @param name Name
      */

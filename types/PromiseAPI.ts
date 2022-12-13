@@ -354,6 +354,15 @@ export class PromiseCloudplaneApi {
     }
 
     /**
+     * Delete export schedule
+     * @param name Name
+     */
+    public v1ExportscheduleNameDelete(name: string, _options?: Configuration): Promise<string> {
+        const result = this.api.v1ExportscheduleNameDelete(name, _options);
+        return result.toPromise();
+    }
+
+    /**
      * Get export schedule
      * @param name Name
      */
