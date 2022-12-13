@@ -54,7 +54,7 @@ var V1alpha1Template = (function () {
         {
             "name": "manifests",
             "baseName": "manifests",
-            "type": "V1alpha1TemplateManifests",
+            "type": "V1alpha1ApplicationSpecValues",
             "format": ""
         },
         {

@@ -262,6 +262,13 @@ __exportStar(require("../models/V1VsphereVirtualDiskVolumeSource"), exports);
 __exportStar(require("../models/V1WeightedPodAffinityTerm"), exports);
 __exportStar(require("../models/V1WeightedPodAffinityTermPodAffinityTerm"), exports);
 __exportStar(require("../models/V1WindowsSecurityContextOptions"), exports);
+__exportStar(require("../models/V1alpha1Application"), exports);
+__exportStar(require("../models/V1alpha1ApplicationSpec"), exports);
+__exportStar(require("../models/V1alpha1ApplicationSpecDomains"), exports);
+__exportStar(require("../models/V1alpha1ApplicationSpecValues"), exports);
+__exportStar(require("../models/V1alpha1ApplicationStatus"), exports);
+__exportStar(require("../models/V1alpha1BlockStorage"), exports);
+__exportStar(require("../models/V1alpha1Domains"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);
 __exportStar(require("../models/V1alpha1ExportSchedule"), exports);
@@ -277,7 +284,6 @@ __exportStar(require("../models/V1alpha1Job"), exports);
 __exportStar(require("../models/V1alpha1Note"), exports);
 __exportStar(require("../models/V1alpha1Template"), exports);
 __exportStar(require("../models/V1alpha1TemplateInstance"), exports);
-__exportStar(require("../models/V1alpha1TemplateManifests"), exports);
 __exportStar(require("../models/V1alpha1TemplateStorage"), exports);
 var IntstrIntOrString_1 = require("../models/IntstrIntOrString");
 var MainJobInput_1 = require("../models/MainJobInput");
@@ -493,6 +499,13 @@ var V1VsphereVirtualDiskVolumeSource_1 = require("../models/V1VsphereVirtualDisk
 var V1WeightedPodAffinityTerm_1 = require("../models/V1WeightedPodAffinityTerm");
 var V1WeightedPodAffinityTermPodAffinityTerm_1 = require("../models/V1WeightedPodAffinityTermPodAffinityTerm");
 var V1WindowsSecurityContextOptions_1 = require("../models/V1WindowsSecurityContextOptions");
+var V1alpha1Application_1 = require("../models/V1alpha1Application");
+var V1alpha1ApplicationSpec_1 = require("../models/V1alpha1ApplicationSpec");
+var V1alpha1ApplicationSpecDomains_1 = require("../models/V1alpha1ApplicationSpecDomains");
+var V1alpha1ApplicationSpecValues_1 = require("../models/V1alpha1ApplicationSpecValues");
+var V1alpha1ApplicationStatus_1 = require("../models/V1alpha1ApplicationStatus");
+var V1alpha1BlockStorage_1 = require("../models/V1alpha1BlockStorage");
+var V1alpha1Domains_1 = require("../models/V1alpha1Domains");
 var V1alpha1Export_1 = require("../models/V1alpha1Export");
 var V1alpha1ExportBucket_1 = require("../models/V1alpha1ExportBucket");
 var V1alpha1ExportSchedule_1 = require("../models/V1alpha1ExportSchedule");
@@ -508,7 +521,6 @@ var V1alpha1Job_1 = require("../models/V1alpha1Job");
 var V1alpha1Note_1 = require("../models/V1alpha1Note");
 var V1alpha1Template_1 = require("../models/V1alpha1Template");
 var V1alpha1TemplateInstance_1 = require("../models/V1alpha1TemplateInstance");
-var V1alpha1TemplateManifests_1 = require("../models/V1alpha1TemplateManifests");
 var V1alpha1TemplateStorage_1 = require("../models/V1alpha1TemplateStorage");
 var primitives = [
     "string",
@@ -775,6 +787,13 @@ var typeMap = {
     "V1WeightedPodAffinityTerm": V1WeightedPodAffinityTerm_1.V1WeightedPodAffinityTerm,
     "V1WeightedPodAffinityTermPodAffinityTerm": V1WeightedPodAffinityTermPodAffinityTerm_1.V1WeightedPodAffinityTermPodAffinityTerm,
     "V1WindowsSecurityContextOptions": V1WindowsSecurityContextOptions_1.V1WindowsSecurityContextOptions,
+    "V1alpha1Application": V1alpha1Application_1.V1alpha1Application,
+    "V1alpha1ApplicationSpec": V1alpha1ApplicationSpec_1.V1alpha1ApplicationSpec,
+    "V1alpha1ApplicationSpecDomains": V1alpha1ApplicationSpecDomains_1.V1alpha1ApplicationSpecDomains,
+    "V1alpha1ApplicationSpecValues": V1alpha1ApplicationSpecValues_1.V1alpha1ApplicationSpecValues,
+    "V1alpha1ApplicationStatus": V1alpha1ApplicationStatus_1.V1alpha1ApplicationStatus,
+    "V1alpha1BlockStorage": V1alpha1BlockStorage_1.V1alpha1BlockStorage,
+    "V1alpha1Domains": V1alpha1Domains_1.V1alpha1Domains,
     "V1alpha1Export": V1alpha1Export_1.V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket_1.V1alpha1ExportBucket,
     "V1alpha1ExportSchedule": V1alpha1ExportSchedule_1.V1alpha1ExportSchedule,
@@ -790,7 +809,6 @@ var typeMap = {
     "V1alpha1Note": V1alpha1Note_1.V1alpha1Note,
     "V1alpha1Template": V1alpha1Template_1.V1alpha1Template,
     "V1alpha1TemplateInstance": V1alpha1TemplateInstance_1.V1alpha1TemplateInstance,
-    "V1alpha1TemplateManifests": V1alpha1TemplateManifests_1.V1alpha1TemplateManifests,
     "V1alpha1TemplateStorage": V1alpha1TemplateStorage_1.V1alpha1TemplateStorage,
 };
 var ObjectSerializer = (function () {

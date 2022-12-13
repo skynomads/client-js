@@ -259,6 +259,13 @@ models/V1VsphereVirtualDiskVolumeSource.ts
 models/V1WeightedPodAffinityTerm.ts
 models/V1WeightedPodAffinityTermPodAffinityTerm.ts
 models/V1WindowsSecurityContextOptions.ts
+models/V1alpha1Application.ts
+models/V1alpha1ApplicationSpec.ts
+models/V1alpha1ApplicationSpecDomains.ts
+models/V1alpha1ApplicationSpecValues.ts
+models/V1alpha1ApplicationStatus.ts
+models/V1alpha1BlockStorage.ts
+models/V1alpha1Domains.ts
 models/V1alpha1Export.ts
 models/V1alpha1ExportBucket.ts
 models/V1alpha1ExportSchedule.ts
@@ -274,7 +281,6 @@ models/V1alpha1Job.ts
 models/V1alpha1Note.ts
 models/V1alpha1Template.ts
 models/V1alpha1TemplateInstance.ts
-models/V1alpha1TemplateManifests.ts
 models/V1alpha1TemplateStorage.ts
 models/all.ts
 package.json

@@ -245,6 +245,13 @@ export * from '../models/V1VsphereVirtualDiskVolumeSource';
 export * from '../models/V1WeightedPodAffinityTerm';
 export * from '../models/V1WeightedPodAffinityTermPodAffinityTerm';
 export * from '../models/V1WindowsSecurityContextOptions';
+export * from '../models/V1alpha1Application';
+export * from '../models/V1alpha1ApplicationSpec';
+export * from '../models/V1alpha1ApplicationSpecDomains';
+export * from '../models/V1alpha1ApplicationSpecValues';
+export * from '../models/V1alpha1ApplicationStatus';
+export * from '../models/V1alpha1BlockStorage';
+export * from '../models/V1alpha1Domains';
 export * from '../models/V1alpha1Export';
 export * from '../models/V1alpha1ExportBucket';
 export * from '../models/V1alpha1ExportSchedule';
@@ -260,7 +267,6 @@ export * from '../models/V1alpha1Job';
 export * from '../models/V1alpha1Note';
 export * from '../models/V1alpha1Template';
 export * from '../models/V1alpha1TemplateInstance';
-export * from '../models/V1alpha1TemplateManifests';
 export * from '../models/V1alpha1TemplateStorage';
 
 import { IntstrIntOrString } from '../models/IntstrIntOrString';
@@ -510,6 +516,13 @@ import { V1VsphereVirtualDiskVolumeSource } from '../models/V1VsphereVirtualDisk
 import { V1WeightedPodAffinityTerm } from '../models/V1WeightedPodAffinityTerm';
 import { V1WeightedPodAffinityTermPodAffinityTerm } from '../models/V1WeightedPodAffinityTermPodAffinityTerm';
 import { V1WindowsSecurityContextOptions } from '../models/V1WindowsSecurityContextOptions';
+import { V1alpha1Application } from '../models/V1alpha1Application';
+import { V1alpha1ApplicationSpec } from '../models/V1alpha1ApplicationSpec';
+import { V1alpha1ApplicationSpecDomains } from '../models/V1alpha1ApplicationSpecDomains';
+import { V1alpha1ApplicationSpecValues } from '../models/V1alpha1ApplicationSpecValues';
+import { V1alpha1ApplicationStatus } from '../models/V1alpha1ApplicationStatus';
+import { V1alpha1BlockStorage } from '../models/V1alpha1BlockStorage';
+import { V1alpha1Domains } from '../models/V1alpha1Domains';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
@@ -525,7 +538,6 @@ import { V1alpha1Job } from '../models/V1alpha1Job';
 import { V1alpha1Note } from '../models/V1alpha1Note';
 import { V1alpha1Template } from '../models/V1alpha1Template';
 import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
-import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
 import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 
 /* tslint:disable:no-unused-variable */
@@ -798,6 +810,13 @@ let typeMap: {[index: string]: any} = {
     "V1WeightedPodAffinityTerm": V1WeightedPodAffinityTerm,
     "V1WeightedPodAffinityTermPodAffinityTerm": V1WeightedPodAffinityTermPodAffinityTerm,
     "V1WindowsSecurityContextOptions": V1WindowsSecurityContextOptions,
+    "V1alpha1Application": V1alpha1Application,
+    "V1alpha1ApplicationSpec": V1alpha1ApplicationSpec,
+    "V1alpha1ApplicationSpecDomains": V1alpha1ApplicationSpecDomains,
+    "V1alpha1ApplicationSpecValues": V1alpha1ApplicationSpecValues,
+    "V1alpha1ApplicationStatus": V1alpha1ApplicationStatus,
+    "V1alpha1BlockStorage": V1alpha1BlockStorage,
+    "V1alpha1Domains": V1alpha1Domains,
     "V1alpha1Export": V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket,
     "V1alpha1ExportSchedule": V1alpha1ExportSchedule,
@@ -813,7 +832,6 @@ let typeMap: {[index: string]: any} = {
     "V1alpha1Note": V1alpha1Note,
     "V1alpha1Template": V1alpha1Template,
     "V1alpha1TemplateInstance": V1alpha1TemplateInstance,
-    "V1alpha1TemplateManifests": V1alpha1TemplateManifests,
     "V1alpha1TemplateStorage": V1alpha1TemplateStorage,
 }
 

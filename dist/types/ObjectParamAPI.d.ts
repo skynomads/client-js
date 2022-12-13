@@ -1,11 +1,14 @@
 import { Configuration } from '../configuration';
 import { MainJobInput } from '../models/MainJobInput';
 import { V1Job } from '../models/V1Job';
+import { V1alpha1Application } from '../models/V1alpha1Application';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 import { V1alpha1Template } from '../models/V1alpha1Template';
 import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor } from "../apis/CloudplaneApi";
+export interface CloudplaneApiV1ApplicationGetRequest {
+}
 export interface CloudplaneApiV1ExportGetRequest {
 }
 export interface CloudplaneApiV1ExportNameGetRequest {
@@ -38,6 +41,7 @@ export interface CloudplaneApiV1TemplateGetRequest {
 export declare class ObjectCloudplaneApi {
     private api;
     constructor(configuration: Configuration, requestFactory?: CloudplaneApiRequestFactory, responseProcessor?: CloudplaneApiResponseProcessor);
+    v1ApplicationGet(param?: CloudplaneApiV1ApplicationGetRequest, options?: Configuration): Promise<Array<V1alpha1Application>>;
     v1ExportGet(param?: CloudplaneApiV1ExportGetRequest, options?: Configuration): Promise<Array<V1alpha1Export>>;
     v1ExportNameGet(param: CloudplaneApiV1ExportNameGetRequest, options?: Configuration): Promise<V1alpha1Export>;
     v1ExportPut(param: CloudplaneApiV1ExportPutRequest, options?: Configuration): Promise<V1alpha1Export>;

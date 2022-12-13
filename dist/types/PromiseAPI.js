@@ -6,6 +6,10 @@ var PromiseCloudplaneApi = (function () {
     function PromiseCloudplaneApi(configuration, requestFactory, responseProcessor) {
         this.api = new ObservableAPI_1.ObservableCloudplaneApi(configuration, requestFactory, responseProcessor);
     }
+    PromiseCloudplaneApi.prototype.v1ApplicationGet = function (_options) {
+        var result = this.api.v1ApplicationGet(_options);
+        return result.toPromise();
+    };
     PromiseCloudplaneApi.prototype.v1ExportGet = function (_options) {
         var result = this.api.v1ExportGet(_options);
         return result.toPromise();

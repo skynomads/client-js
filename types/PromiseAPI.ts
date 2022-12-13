@@ -248,6 +248,13 @@ import { V1VsphereVirtualDiskVolumeSource } from '../models/V1VsphereVirtualDisk
 import { V1WeightedPodAffinityTerm } from '../models/V1WeightedPodAffinityTerm';
 import { V1WeightedPodAffinityTermPodAffinityTerm } from '../models/V1WeightedPodAffinityTermPodAffinityTerm';
 import { V1WindowsSecurityContextOptions } from '../models/V1WindowsSecurityContextOptions';
+import { V1alpha1Application } from '../models/V1alpha1Application';
+import { V1alpha1ApplicationSpec } from '../models/V1alpha1ApplicationSpec';
+import { V1alpha1ApplicationSpecDomains } from '../models/V1alpha1ApplicationSpecDomains';
+import { V1alpha1ApplicationSpecValues } from '../models/V1alpha1ApplicationSpecValues';
+import { V1alpha1ApplicationStatus } from '../models/V1alpha1ApplicationStatus';
+import { V1alpha1BlockStorage } from '../models/V1alpha1BlockStorage';
+import { V1alpha1Domains } from '../models/V1alpha1Domains';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
@@ -263,7 +270,6 @@ import { V1alpha1Job } from '../models/V1alpha1Job';
 import { V1alpha1Note } from '../models/V1alpha1Note';
 import { V1alpha1Template } from '../models/V1alpha1Template';
 import { V1alpha1TemplateInstance } from '../models/V1alpha1TemplateInstance';
-import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
 import { V1alpha1TemplateStorage } from '../models/V1alpha1TemplateStorage';
 import { ObservableCloudplaneApi } from './ObservableAPI';
 
@@ -277,6 +283,14 @@ export class PromiseCloudplaneApi {
         responseProcessor?: CloudplaneApiResponseProcessor
     ) {
         this.api = new ObservableCloudplaneApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * List applications
+     */
+    public v1ApplicationGet(_options?: Configuration): Promise<Array<V1alpha1Application>> {
+        const result = this.api.v1ApplicationGet(_options);
+        return result.toPromise();
     }
 
     /**

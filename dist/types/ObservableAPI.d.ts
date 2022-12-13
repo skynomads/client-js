@@ -2,6 +2,7 @@ import { Configuration } from '../configuration';
 import { Observable } from '../rxjsStub';
 import { MainJobInput } from '../models/MainJobInput';
 import { V1Job } from '../models/V1Job';
+import { V1alpha1Application } from '../models/V1alpha1Application';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
@@ -12,6 +13,7 @@ export declare class ObservableCloudplaneApi {
     private responseProcessor;
     private configuration;
     constructor(configuration: Configuration, requestFactory?: CloudplaneApiRequestFactory, responseProcessor?: CloudplaneApiResponseProcessor);
+    v1ApplicationGet(_options?: Configuration): Observable<Array<V1alpha1Application>>;
     v1ExportGet(_options?: Configuration): Observable<Array<V1alpha1Export>>;
     v1ExportNameGet(name: string, _options?: Configuration): Observable<V1alpha1Export>;
     v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Observable<V1alpha1Export>;

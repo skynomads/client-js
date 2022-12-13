@@ -1,9 +1,9 @@
 import { V1JSON } from '../models/V1JSON';
 import { V1ObjectMeta } from '../models/V1ObjectMeta';
+import { V1alpha1ApplicationSpecValues } from '../models/V1alpha1ApplicationSpecValues';
 import { V1alpha1Features } from '../models/V1alpha1Features';
 import { V1alpha1Job } from '../models/V1alpha1Job';
 import { V1alpha1Note } from '../models/V1alpha1Note';
-import { V1alpha1TemplateManifests } from '../models/V1alpha1TemplateManifests';
 export declare class V1alpha1Template {
     'apiVersion'?: string;
     'description'?: string;
@@ -12,7 +12,7 @@ export declare class V1alpha1Template {
     'jobs'?: Array<V1alpha1Job>;
     'kind'?: string;
     'license'?: string;
-    'manifests'?: V1alpha1TemplateManifests;
+    'manifests'?: V1alpha1ApplicationSpecValues;
     'metadata'?: V1ObjectMeta;
     'name'?: string;
     'notes'?: Array<V1alpha1Note>;

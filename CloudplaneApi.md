@@ -4,6 +4,7 @@ All URIs are relative to *http://cloudplane.org/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**v1ApplicationGet**](CloudplaneApi.md#v1ApplicationGet) | **GET** /v1/application | List applications
 [**v1ExportGet**](CloudplaneApi.md#v1ExportGet) | **GET** /v1/export | List exports
 [**v1ExportNameGet**](CloudplaneApi.md#v1ExportNameGet) | **GET** /v1/export/{name} | Get export
 [**v1ExportPut**](CloudplaneApi.md#v1ExportPut) | **PUT** /v1/export | Put export
@@ -16,6 +17,57 @@ Method | HTTP request | Description
 [**v1JobPut**](CloudplaneApi.md#v1JobPut) | **PUT** /v1/job | Put job
 [**v1TemplateGet**](CloudplaneApi.md#v1TemplateGet) | **GET** /v1/template | List templates
 
+
+# **v1ApplicationGet**
+> Array<V1alpha1Application> v1ApplicationGet()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .CloudplaneApi(configuration);
+
+let body:any = {};
+
+apiInstance.v1ApplicationGet(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**Array<V1alpha1Application>**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ExportGet**
 > Array<V1alpha1Export> v1ExportGet()

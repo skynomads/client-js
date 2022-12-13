@@ -3,11 +3,13 @@ import { Configuration } from '../configuration';
 import { RequestContext, ResponseContext } from '../http/http';
 import { MainJobInput } from '../models/MainJobInput';
 import { V1Job } from '../models/V1Job';
+import { V1alpha1Application } from '../models/V1alpha1Application';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
 import { V1alpha1ExportTarget } from '../models/V1alpha1ExportTarget';
 import { V1alpha1Template } from '../models/V1alpha1Template';
 export declare class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
+    v1ApplicationGet(_options?: Configuration): Promise<RequestContext>;
     v1ExportGet(_options?: Configuration): Promise<RequestContext>;
     v1ExportNameGet(name: string, _options?: Configuration): Promise<RequestContext>;
     v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Promise<RequestContext>;
@@ -21,6 +23,7 @@ export declare class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
     v1TemplateGet(_options?: Configuration): Promise<RequestContext>;
 }
 export declare class CloudplaneApiResponseProcessor {
+    v1ApplicationGet(response: ResponseContext): Promise<Array<V1alpha1Application>>;
     v1ExportGet(response: ResponseContext): Promise<Array<V1alpha1Export>>;
     v1ExportNameGet(response: ResponseContext): Promise<V1alpha1Export>;
     v1ExportPut(response: ResponseContext): Promise<V1alpha1Export>;
