@@ -270,6 +270,7 @@ __exportStar(require("../models/V1alpha1BlockStorage"), exports);
 __exportStar(require("../models/V1alpha1Domains"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);
+__exportStar(require("../models/V1alpha1ExportMetadata"), exports);
 __exportStar(require("../models/V1alpha1ExportSchedule"), exports);
 __exportStar(require("../models/V1alpha1ExportScheduleSpec"), exports);
 __exportStar(require("../models/V1alpha1ExportScheduleStatus"), exports);

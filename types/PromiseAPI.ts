@@ -257,6 +257,7 @@ import { V1alpha1BlockStorage } from '../models/V1alpha1BlockStorage';
 import { V1alpha1Domains } from '../models/V1alpha1Domains';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportMetadata } from '../models/V1alpha1ExportMetadata';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
 import { V1alpha1ExportScheduleSpec } from '../models/V1alpha1ExportScheduleSpec';
 import { V1alpha1ExportScheduleStatus } from '../models/V1alpha1ExportScheduleStatus';

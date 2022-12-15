@@ -24,7 +24,7 @@ var V1alpha1Export = (function () {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "V1ObjectMeta",
+            "type": "V1alpha1ExportMetadata",
             "format": ""
         },
         {

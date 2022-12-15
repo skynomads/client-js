@@ -198,48 +198,7 @@ let body:.CloudplaneApiV1ExportPutRequest = {
   _export: {
     apiVersion: "apiVersion_example",
     kind: "kind_example",
-    metadata: {
-      annotations: {
-        "key": "key_example",
-      },
-      creationTimestamp: "creationTimestamp_example",
-      deletionGracePeriodSeconds: 1,
-      deletionTimestamp: "deletionTimestamp_example",
-      finalizers: [
-        "finalizers_example",
-      ],
-      generateName: "generateName_example",
-      generation: 1,
-      labels: {
-        "key": "key_example",
-      },
-      managedFields: [
-        {
-          apiVersion: "apiVersion_example",
-          fieldsType: "fieldsType_example",
-          fieldsV1: ,
-          manager: "manager_example",
-          operation: ,
-          subresource: "subresource_example",
-          time: "time_example",
-        },
-      ],
-      name: "name_example",
-      namespace: "namespace_example",
-      ownerReferences: [
-        {
-          apiVersion: "apiVersion_example",
-          blockOwnerDeletion: true,
-          controller: true,
-          kind: "kind_example",
-          name: "name_example",
-          uid: "uid_example",
-        },
-      ],
-      resourceVersion: "resourceVersion_example",
-      selfLink: "selfLink_example",
-      uid: "uid_example",
-    },
+    metadata: ,
     spec: {
       application: "application_example",
       path: "path_example",
@@ -763,48 +722,7 @@ let body:.CloudplaneApiV1ExportschedulePutRequest = {
       template: {
         apiVersion: "apiVersion_example",
         kind: "kind_example",
-        metadata: {
-          annotations: {
-            "key": "key_example",
-          },
-          creationTimestamp: "creationTimestamp_example",
-          deletionGracePeriodSeconds: 1,
-          deletionTimestamp: "deletionTimestamp_example",
-          finalizers: [
-            "finalizers_example",
-          ],
-          generateName: "generateName_example",
-          generation: 1,
-          labels: {
-            "key": "key_example",
-          },
-          managedFields: [
-            {
-              apiVersion: "apiVersion_example",
-              fieldsType: "fieldsType_example",
-              fieldsV1: ,
-              manager: "manager_example",
-              operation: ,
-              subresource: "subresource_example",
-              time: "time_example",
-            },
-          ],
-          name: "name_example",
-          namespace: "namespace_example",
-          ownerReferences: [
-            {
-              apiVersion: "apiVersion_example",
-              blockOwnerDeletion: true,
-              controller: true,
-              kind: "kind_example",
-              name: "name_example",
-              uid: "uid_example",
-            },
-          ],
-          resourceVersion: "resourceVersion_example",
-          selfLink: "selfLink_example",
-          uid: "uid_example",
-        },
+        metadata: ,
         spec: {
           application: "application_example",
           path: "path_example",

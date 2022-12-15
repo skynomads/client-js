@@ -271,6 +271,7 @@ __exportStar(require("../models/V1alpha1BlockStorage"), exports);
 __exportStar(require("../models/V1alpha1Domains"), exports);
 __exportStar(require("../models/V1alpha1Export"), exports);
 __exportStar(require("../models/V1alpha1ExportBucket"), exports);
+__exportStar(require("../models/V1alpha1ExportMetadata"), exports);
 __exportStar(require("../models/V1alpha1ExportSchedule"), exports);
 __exportStar(require("../models/V1alpha1ExportScheduleSpec"), exports);
 __exportStar(require("../models/V1alpha1ExportScheduleStatus"), exports);
@@ -508,6 +509,7 @@ var V1alpha1BlockStorage_1 = require("../models/V1alpha1BlockStorage");
 var V1alpha1Domains_1 = require("../models/V1alpha1Domains");
 var V1alpha1Export_1 = require("../models/V1alpha1Export");
 var V1alpha1ExportBucket_1 = require("../models/V1alpha1ExportBucket");
+var V1alpha1ExportMetadata_1 = require("../models/V1alpha1ExportMetadata");
 var V1alpha1ExportSchedule_1 = require("../models/V1alpha1ExportSchedule");
 var V1alpha1ExportScheduleSpec_1 = require("../models/V1alpha1ExportScheduleSpec");
 var V1alpha1ExportScheduleStatus_1 = require("../models/V1alpha1ExportScheduleStatus");
@@ -796,6 +798,7 @@ var typeMap = {
     "V1alpha1Domains": V1alpha1Domains_1.V1alpha1Domains,
     "V1alpha1Export": V1alpha1Export_1.V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket_1.V1alpha1ExportBucket,
+    "V1alpha1ExportMetadata": V1alpha1ExportMetadata_1.V1alpha1ExportMetadata,
     "V1alpha1ExportSchedule": V1alpha1ExportSchedule_1.V1alpha1ExportSchedule,
     "V1alpha1ExportScheduleSpec": V1alpha1ExportScheduleSpec_1.V1alpha1ExportScheduleSpec,
     "V1alpha1ExportScheduleStatus": V1alpha1ExportScheduleStatus_1.V1alpha1ExportScheduleStatus,

@@ -268,6 +268,7 @@ models/V1alpha1BlockStorage.ts
 models/V1alpha1Domains.ts
 models/V1alpha1Export.ts
 models/V1alpha1ExportBucket.ts
+models/V1alpha1ExportMetadata.ts
 models/V1alpha1ExportSchedule.ts
 models/V1alpha1ExportScheduleSpec.ts
 models/V1alpha1ExportScheduleStatus.ts

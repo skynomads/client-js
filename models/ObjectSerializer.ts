@@ -254,6 +254,7 @@ export * from '../models/V1alpha1BlockStorage';
 export * from '../models/V1alpha1Domains';
 export * from '../models/V1alpha1Export';
 export * from '../models/V1alpha1ExportBucket';
+export * from '../models/V1alpha1ExportMetadata';
 export * from '../models/V1alpha1ExportSchedule';
 export * from '../models/V1alpha1ExportScheduleSpec';
 export * from '../models/V1alpha1ExportScheduleStatus';
@@ -525,6 +526,7 @@ import { V1alpha1BlockStorage } from '../models/V1alpha1BlockStorage';
 import { V1alpha1Domains } from '../models/V1alpha1Domains';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportBucket } from '../models/V1alpha1ExportBucket';
+import { V1alpha1ExportMetadata } from '../models/V1alpha1ExportMetadata';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
 import { V1alpha1ExportScheduleSpec } from '../models/V1alpha1ExportScheduleSpec';
 import { V1alpha1ExportScheduleStatus } from '../models/V1alpha1ExportScheduleStatus';
@@ -819,6 +821,7 @@ let typeMap: {[index: string]: any} = {
     "V1alpha1Domains": V1alpha1Domains,
     "V1alpha1Export": V1alpha1Export,
     "V1alpha1ExportBucket": V1alpha1ExportBucket,
+    "V1alpha1ExportMetadata": V1alpha1ExportMetadata,
     "V1alpha1ExportSchedule": V1alpha1ExportSchedule,
     "V1alpha1ExportScheduleSpec": V1alpha1ExportScheduleSpec,
     "V1alpha1ExportScheduleStatus": V1alpha1ExportScheduleStatus,

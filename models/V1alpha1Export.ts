@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-import { V1ObjectMeta } from '../models/V1ObjectMeta';
+import { V1alpha1ExportMetadata } from '../models/V1alpha1ExportMetadata';
 import { V1alpha1ExportSpec } from '../models/V1alpha1ExportSpec';
 import { V1alpha1ExportStatus } from '../models/V1alpha1ExportStatus';
 import { HttpFile } from '../http/http';
@@ -24,7 +24,7 @@ export class V1alpha1Export {
     * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds +optional
     */
     'kind'?: string;
-    'metadata'?: V1ObjectMeta;
+    'metadata'?: V1alpha1ExportMetadata;
     'spec'?: V1alpha1ExportSpec;
     'status'?: V1alpha1ExportStatus;
 
@@ -46,7 +46,7 @@ export class V1alpha1Export {
         {
             "name": "metadata",
             "baseName": "metadata",
-            "type": "V1ObjectMeta",
+            "type": "V1alpha1ExportMetadata",
             "format": ""
         },
         {
