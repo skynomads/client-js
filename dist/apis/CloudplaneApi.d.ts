@@ -12,7 +12,7 @@ export declare class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
     v1ApplicationGet(_options?: Configuration): Promise<RequestContext>;
     v1ApplicationNameDelete(name: string, _options?: Configuration): Promise<RequestContext>;
     v1ApplicationNameGet(name: string, _options?: Configuration): Promise<RequestContext>;
-    v1ApplicationPut(_options?: Configuration): Promise<RequestContext>;
+    v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Promise<RequestContext>;
     v1ExportGet(_options?: Configuration): Promise<RequestContext>;
     v1ExportNameGet(name: string, _options?: Configuration): Promise<RequestContext>;
     v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Promise<RequestContext>;

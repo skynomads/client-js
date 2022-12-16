@@ -18,8 +18,8 @@ var PromiseCloudplaneApi = (function () {
         var result = this.api.v1ApplicationNameGet(name, _options);
         return result.toPromise();
     };
-    PromiseCloudplaneApi.prototype.v1ApplicationPut = function (_options) {
-        var result = this.api.v1ApplicationPut(_options);
+    PromiseCloudplaneApi.prototype.v1ApplicationPut = function (application, _options) {
+        var result = this.api.v1ApplicationPut(application, _options);
         return result.toPromise();
     };
     PromiseCloudplaneApi.prototype.v1ExportGet = function (_options) {

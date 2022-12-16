@@ -360,9 +360,10 @@ export class ObservableCloudplaneApi {
 
     /**
      * Put applications
+     * @param application ExportTarget
      */
-    public v1ApplicationPut(_options?: Configuration): Observable<V1alpha1Application> {
-        const requestContextPromise = this.requestFactory.v1ApplicationPut(_options);
+    public v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Observable<V1alpha1Application> {
+        const requestContextPromise = this.requestFactory.v1ApplicationPut(application, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);

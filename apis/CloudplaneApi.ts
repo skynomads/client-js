@@ -108,9 +108,16 @@ export class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Put applications
+     * @param application ExportTarget
      */
-    public async v1ApplicationPut(_options?: Configuration): Promise<RequestContext> {
+    public async v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
+        // verify required parameter 'application' is not null or undefined
+        if (application === null || application === undefined) {
+            throw new RequiredError("CloudplaneApi", "v1ApplicationPut", "application");
+        }
+
 
         // Path Params
         const localVarPath = '/v1/application';
@@ -119,6 +126,17 @@ export class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.PUT);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
 
+
+        // Body Params
+        const contentType = ObjectSerializer.getPreferredMediaType([
+            "application/json"
+        ]);
+        requestContext.setHeaderParam("Content-Type", contentType);
+        const serializedBody = ObjectSerializer.stringify(
+            ObjectSerializer.serialize(application, "V1alpha1Application", ""),
+            contentType
+        );
+        requestContext.setBody(serializedBody);
 
         
         const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default

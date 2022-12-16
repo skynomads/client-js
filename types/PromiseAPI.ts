@@ -314,9 +314,10 @@ export class PromiseCloudplaneApi {
 
     /**
      * Put applications
+     * @param application ExportTarget
      */
-    public v1ApplicationPut(_options?: Configuration): Promise<V1alpha1Application> {
-        const result = this.api.v1ApplicationPut(_options);
+    public v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Promise<V1alpha1Application> {
+        const result = this.api.v1ApplicationPut(application, _options);
         return result.toPromise();
     }
 

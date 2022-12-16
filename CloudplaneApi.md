@@ -190,7 +190,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1ApplicationPut**
-> V1alpha1Application v1ApplicationPut()
+> V1alpha1Application v1ApplicationPut(application)
 
 
 ### Example
@@ -203,7 +203,84 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .CloudplaneApi(configuration);
 
-let body:any = {};
+let body:.CloudplaneApiV1ApplicationPutRequest = {
+  // V1alpha1Application | ExportTarget
+  application: {
+    apiVersion: "apiVersion_example",
+    kind: "kind_example",
+    metadata: {
+      annotations: {
+        "key": "key_example",
+      },
+      creationTimestamp: "creationTimestamp_example",
+      deletionGracePeriodSeconds: 1,
+      deletionTimestamp: "deletionTimestamp_example",
+      finalizers: [
+        "finalizers_example",
+      ],
+      generateName: "generateName_example",
+      generation: 1,
+      labels: {
+        "key": "key_example",
+      },
+      managedFields: [
+        {
+          apiVersion: "apiVersion_example",
+          fieldsType: "fieldsType_example",
+          fieldsV1: ,
+          manager: "manager_example",
+          operation: ,
+          subresource: "subresource_example",
+          time: "time_example",
+        },
+      ],
+      name: "name_example",
+      namespace: "namespace_example",
+      ownerReferences: [
+        {
+          apiVersion: "apiVersion_example",
+          blockOwnerDeletion: true,
+          controller: true,
+          kind: "kind_example",
+          name: "name_example",
+          uid: "uid_example",
+        },
+      ],
+      resourceVersion: "resourceVersion_example",
+      selfLink: "selfLink_example",
+      uid: "uid_example",
+    },
+    spec: {
+      blockStorage: {
+        size: {
+          format: "format_example",
+        },
+      },
+      domains: ,
+      instance: "instance_example",
+      name: "name_example",
+      pool: "pool_example",
+      replicas: 1,
+      type: "type_example",
+      values: ,
+    },
+    status: {
+      conditions: [
+        {
+          lastTransitionTime: "lastTransitionTime_example",
+          message: "message_example",
+          observedGeneration: 1,
+          reason: "reason_example",
+          status: ,
+          type: "type_example",
+        },
+      ],
+      hosts: [
+        "hosts_example",
+      ],
+    },
+  },
+};
 
 apiInstance.v1ApplicationPut(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -212,7 +289,10 @@ apiInstance.v1ApplicationPut(body).then((data:any) => {
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application** | **V1alpha1Application**| ExportTarget |
 
 
 ### Return type
@@ -225,7 +305,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

@@ -136,17 +136,26 @@ var CloudplaneApiRequestFactory = (function (_super) {
             });
         });
     };
-    CloudplaneApiRequestFactory.prototype.v1ApplicationPut = function (_options) {
+    CloudplaneApiRequestFactory.prototype.v1ApplicationPut = function (application, _options) {
         var _a, _b, _c;
         return __awaiter(this, void 0, void 0, function () {
-            var _config, localVarPath, requestContext, defaultAuth;
+            var _config, localVarPath, requestContext, contentType, serializedBody, defaultAuth;
             return __generator(this, function (_d) {
                 switch (_d.label) {
                     case 0:
                         _config = _options || this.configuration;
+                        if (application === null || application === undefined) {
+                            throw new baseapi_1.RequiredError("CloudplaneApi", "v1ApplicationPut", "application");
+                        }
                         localVarPath = '/v1/application';
                         requestContext = _config.baseServer.makeRequestContext(localVarPath, http_1.HttpMethod.PUT);
                         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8");
+                        contentType = ObjectSerializer_1.ObjectSerializer.getPreferredMediaType([
+                            "application/json"
+                        ]);
+                        requestContext.setHeaderParam("Content-Type", contentType);
+                        serializedBody = ObjectSerializer_1.ObjectSerializer.stringify(ObjectSerializer_1.ObjectSerializer.serialize(application, "V1alpha1Application", ""), contentType);
+                        requestContext.setBody(serializedBody);
                         defaultAuth = ((_a = _options === null || _options === void 0 ? void 0 : _options.authMethods) === null || _a === void 0 ? void 0 : _a.default) || ((_c = (_b = this.configuration) === null || _b === void 0 ? void 0 : _b.authMethods) === null || _c === void 0 ? void 0 : _c.default);
                         if (!(defaultAuth === null || defaultAuth === void 0 ? void 0 : defaultAuth.applySecurityAuthentication)) return [3, 2];
                         return [4, (defaultAuth === null || defaultAuth === void 0 ? void 0 : defaultAuth.applySecurityAuthentication(requestContext))];

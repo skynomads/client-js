@@ -17,8 +17,7 @@ var ObjectCloudplaneApi = (function () {
         return this.api.v1ApplicationNameGet(param.name, options).toPromise();
     };
     ObjectCloudplaneApi.prototype.v1ApplicationPut = function (param, options) {
-        if (param === void 0) { param = {}; }
-        return this.api.v1ApplicationPut(options).toPromise();
+        return this.api.v1ApplicationPut(param.application, options).toPromise();
     };
     ObjectCloudplaneApi.prototype.v1ExportGet = function (param, options) {
         if (param === void 0) { param = {}; }

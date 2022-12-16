@@ -16,6 +16,7 @@ export interface CloudplaneApiV1ApplicationNameGetRequest {
     name: string;
 }
 export interface CloudplaneApiV1ApplicationPutRequest {
+    application: V1alpha1Application;
 }
 export interface CloudplaneApiV1ExportGetRequest {
 }
@@ -55,7 +56,7 @@ export declare class ObjectCloudplaneApi {
     v1ApplicationGet(param?: CloudplaneApiV1ApplicationGetRequest, options?: Configuration): Promise<Array<V1alpha1Application>>;
     v1ApplicationNameDelete(param: CloudplaneApiV1ApplicationNameDeleteRequest, options?: Configuration): Promise<string>;
     v1ApplicationNameGet(param: CloudplaneApiV1ApplicationNameGetRequest, options?: Configuration): Promise<V1alpha1Application>;
-    v1ApplicationPut(param?: CloudplaneApiV1ApplicationPutRequest, options?: Configuration): Promise<V1alpha1Application>;
+    v1ApplicationPut(param: CloudplaneApiV1ApplicationPutRequest, options?: Configuration): Promise<V1alpha1Application>;
     v1ExportGet(param?: CloudplaneApiV1ExportGetRequest, options?: Configuration): Promise<Array<V1alpha1Export>>;
     v1ExportNameGet(param: CloudplaneApiV1ExportNameGetRequest, options?: Configuration): Promise<V1alpha1Export>;
     v1ExportPut(param: CloudplaneApiV1ExportPutRequest, options?: Configuration): Promise<V1alpha1Export>;

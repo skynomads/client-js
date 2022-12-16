@@ -298,6 +298,12 @@ export interface CloudplaneApiV1ApplicationNameGetRequest {
 }
 
 export interface CloudplaneApiV1ApplicationPutRequest {
+    /**
+     * ExportTarget
+     * @type V1alpha1Application
+     * @memberof CloudplaneApiv1ApplicationPut
+     */
+    application: V1alpha1Application
 }
 
 export interface CloudplaneApiV1ExportGetRequest {
@@ -419,8 +425,8 @@ export class ObjectCloudplaneApi {
      * Put applications
      * @param param the request object
      */
-    public v1ApplicationPut(param: CloudplaneApiV1ApplicationPutRequest = {}, options?: Configuration): Promise<V1alpha1Application> {
-        return this.api.v1ApplicationPut( options).toPromise();
+    public v1ApplicationPut(param: CloudplaneApiV1ApplicationPutRequest, options?: Configuration): Promise<V1alpha1Application> {
+        return this.api.v1ApplicationPut(param.application,  options).toPromise();
     }
 
     /**

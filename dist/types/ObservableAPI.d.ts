@@ -16,7 +16,7 @@ export declare class ObservableCloudplaneApi {
     v1ApplicationGet(_options?: Configuration): Observable<Array<V1alpha1Application>>;
     v1ApplicationNameDelete(name: string, _options?: Configuration): Observable<string>;
     v1ApplicationNameGet(name: string, _options?: Configuration): Observable<V1alpha1Application>;
-    v1ApplicationPut(_options?: Configuration): Observable<V1alpha1Application>;
+    v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Observable<V1alpha1Application>;
     v1ExportGet(_options?: Configuration): Observable<Array<V1alpha1Export>>;
     v1ExportNameGet(name: string, _options?: Configuration): Observable<V1alpha1Export>;
     v1ExportPut(_export: V1alpha1Export, _options?: Configuration): Observable<V1alpha1Export>;
