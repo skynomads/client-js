@@ -10,6 +10,16 @@ var ObjectCloudplaneApi = (function () {
         if (param === void 0) { param = {}; }
         return this.api.v1ApplicationGet(options).toPromise();
     };
+    ObjectCloudplaneApi.prototype.v1ApplicationNameDelete = function (param, options) {
+        return this.api.v1ApplicationNameDelete(param.name, options).toPromise();
+    };
+    ObjectCloudplaneApi.prototype.v1ApplicationNameGet = function (param, options) {
+        return this.api.v1ApplicationNameGet(param.name, options).toPromise();
+    };
+    ObjectCloudplaneApi.prototype.v1ApplicationPut = function (param, options) {
+        if (param === void 0) { param = {}; }
+        return this.api.v1ApplicationPut(options).toPromise();
+    };
     ObjectCloudplaneApi.prototype.v1ExportGet = function (param, options) {
         if (param === void 0) { param = {}; }
         return this.api.v1ExportGet(options).toPromise();

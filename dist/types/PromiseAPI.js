@@ -10,6 +10,18 @@ var PromiseCloudplaneApi = (function () {
         var result = this.api.v1ApplicationGet(_options);
         return result.toPromise();
     };
+    PromiseCloudplaneApi.prototype.v1ApplicationNameDelete = function (name, _options) {
+        var result = this.api.v1ApplicationNameDelete(name, _options);
+        return result.toPromise();
+    };
+    PromiseCloudplaneApi.prototype.v1ApplicationNameGet = function (name, _options) {
+        var result = this.api.v1ApplicationNameGet(name, _options);
+        return result.toPromise();
+    };
+    PromiseCloudplaneApi.prototype.v1ApplicationPut = function (_options) {
+        var result = this.api.v1ApplicationPut(_options);
+        return result.toPromise();
+    };
     PromiseCloudplaneApi.prototype.v1ExportGet = function (_options) {
         var result = this.api.v1ExportGet(_options);
         return result.toPromise();

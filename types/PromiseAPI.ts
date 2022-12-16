@@ -295,6 +295,32 @@ export class PromiseCloudplaneApi {
     }
 
     /**
+     * Delete application
+     * @param name Name
+     */
+    public v1ApplicationNameDelete(name: string, _options?: Configuration): Promise<string> {
+        const result = this.api.v1ApplicationNameDelete(name, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Get application
+     * @param name Name
+     */
+    public v1ApplicationNameGet(name: string, _options?: Configuration): Promise<V1alpha1Application> {
+        const result = this.api.v1ApplicationNameGet(name, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Put applications
+     */
+    public v1ApplicationPut(_options?: Configuration): Promise<V1alpha1Application> {
+        const result = this.api.v1ApplicationPut(_options);
+        return result.toPromise();
+    }
+
+    /**
      * List exports
      */
     public v1ExportGet(_options?: Configuration): Promise<Array<V1alpha1Export>> {

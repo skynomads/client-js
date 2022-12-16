@@ -279,6 +279,27 @@ import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor} from "../a
 export interface CloudplaneApiV1ApplicationGetRequest {
 }
 
+export interface CloudplaneApiV1ApplicationNameDeleteRequest {
+    /**
+     * Name
+     * @type string
+     * @memberof CloudplaneApiv1ApplicationNameDelete
+     */
+    name: string
+}
+
+export interface CloudplaneApiV1ApplicationNameGetRequest {
+    /**
+     * Name
+     * @type string
+     * @memberof CloudplaneApiv1ApplicationNameGet
+     */
+    name: string
+}
+
+export interface CloudplaneApiV1ApplicationPutRequest {
+}
+
 export interface CloudplaneApiV1ExportGetRequest {
 }
 
@@ -376,6 +397,30 @@ export class ObjectCloudplaneApi {
      */
     public v1ApplicationGet(param: CloudplaneApiV1ApplicationGetRequest = {}, options?: Configuration): Promise<Array<V1alpha1Application>> {
         return this.api.v1ApplicationGet( options).toPromise();
+    }
+
+    /**
+     * Delete application
+     * @param param the request object
+     */
+    public v1ApplicationNameDelete(param: CloudplaneApiV1ApplicationNameDeleteRequest, options?: Configuration): Promise<string> {
+        return this.api.v1ApplicationNameDelete(param.name,  options).toPromise();
+    }
+
+    /**
+     * Get application
+     * @param param the request object
+     */
+    public v1ApplicationNameGet(param: CloudplaneApiV1ApplicationNameGetRequest, options?: Configuration): Promise<V1alpha1Application> {
+        return this.api.v1ApplicationNameGet(param.name,  options).toPromise();
+    }
+
+    /**
+     * Put applications
+     * @param param the request object
+     */
+    public v1ApplicationPut(param: CloudplaneApiV1ApplicationPutRequest = {}, options?: Configuration): Promise<V1alpha1Application> {
+        return this.api.v1ApplicationPut( options).toPromise();
     }
 
     /**

@@ -5,6 +5,9 @@ All URIs are relative to *http://cloudplane.org/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1ApplicationGet**](CloudplaneApi.md#v1ApplicationGet) | **GET** /v1/application | List applications
+[**v1ApplicationNameDelete**](CloudplaneApi.md#v1ApplicationNameDelete) | **DELETE** /v1/application/{name} | Delete application
+[**v1ApplicationNameGet**](CloudplaneApi.md#v1ApplicationNameGet) | **GET** /v1/application/{name} | Get application
+[**v1ApplicationPut**](CloudplaneApi.md#v1ApplicationPut) | **PUT** /v1/application | Put applications
 [**v1ExportGet**](CloudplaneApi.md#v1ExportGet) | **GET** /v1/export | List exports
 [**v1ExportNameGet**](CloudplaneApi.md#v1ExportNameGet) | **GET** /v1/export/{name} | Get export
 [**v1ExportPut**](CloudplaneApi.md#v1ExportPut) | **PUT** /v1/export | Put export
@@ -48,6 +51,173 @@ This endpoint does not need any parameter.
 ### Return type
 
 **Array<V1alpha1Application>**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v1ApplicationNameDelete**
+> string v1ApplicationNameDelete()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .CloudplaneApi(configuration);
+
+let body:.CloudplaneApiV1ApplicationNameDeleteRequest = {
+  // string | Name
+  name: "name_example",
+};
+
+apiInstance.v1ApplicationNameDelete(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | [**string**] | Name | defaults to undefined
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v1ApplicationNameGet**
+> V1alpha1Application v1ApplicationNameGet()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .CloudplaneApi(configuration);
+
+let body:.CloudplaneApiV1ApplicationNameGetRequest = {
+  // string | Name
+  name: "name_example",
+};
+
+apiInstance.v1ApplicationNameGet(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | [**string**] | Name | defaults to undefined
+
+
+### Return type
+
+**V1alpha1Application**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **v1ApplicationPut**
+> V1alpha1Application v1ApplicationPut()
+
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .CloudplaneApi(configuration);
+
+let body:any = {};
+
+apiInstance.v1ApplicationPut(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**V1alpha1Application**
 
 ### Authorization
 

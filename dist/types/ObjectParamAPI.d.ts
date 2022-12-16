@@ -9,6 +9,14 @@ import { V1alpha1Template } from '../models/V1alpha1Template';
 import { CloudplaneApiRequestFactory, CloudplaneApiResponseProcessor } from "../apis/CloudplaneApi";
 export interface CloudplaneApiV1ApplicationGetRequest {
 }
+export interface CloudplaneApiV1ApplicationNameDeleteRequest {
+    name: string;
+}
+export interface CloudplaneApiV1ApplicationNameGetRequest {
+    name: string;
+}
+export interface CloudplaneApiV1ApplicationPutRequest {
+}
 export interface CloudplaneApiV1ExportGetRequest {
 }
 export interface CloudplaneApiV1ExportNameGetRequest {
@@ -45,6 +53,9 @@ export declare class ObjectCloudplaneApi {
     private api;
     constructor(configuration: Configuration, requestFactory?: CloudplaneApiRequestFactory, responseProcessor?: CloudplaneApiResponseProcessor);
     v1ApplicationGet(param?: CloudplaneApiV1ApplicationGetRequest, options?: Configuration): Promise<Array<V1alpha1Application>>;
+    v1ApplicationNameDelete(param: CloudplaneApiV1ApplicationNameDeleteRequest, options?: Configuration): Promise<string>;
+    v1ApplicationNameGet(param: CloudplaneApiV1ApplicationNameGetRequest, options?: Configuration): Promise<V1alpha1Application>;
+    v1ApplicationPut(param?: CloudplaneApiV1ApplicationPutRequest, options?: Configuration): Promise<V1alpha1Application>;
     v1ExportGet(param?: CloudplaneApiV1ExportGetRequest, options?: Configuration): Promise<Array<V1alpha1Export>>;
     v1ExportNameGet(param: CloudplaneApiV1ExportNameGetRequest, options?: Configuration): Promise<V1alpha1Export>;
     v1ExportPut(param: CloudplaneApiV1ExportPutRequest, options?: Configuration): Promise<V1alpha1Export>;
