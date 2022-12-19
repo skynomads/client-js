@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**v1ApplicationGet**](CloudplaneApi.md#v1ApplicationGet) | **GET** /v1/application | List applications
 [**v1ApplicationNameDelete**](CloudplaneApi.md#v1ApplicationNameDelete) | **DELETE** /v1/application/{name} | Delete application
 [**v1ApplicationNameGet**](CloudplaneApi.md#v1ApplicationNameGet) | **GET** /v1/application/{name} | Get application
-[**v1ApplicationPut**](CloudplaneApi.md#v1ApplicationPut) | **PUT** /v1/application | Put applications
+[**v1ApplicationPut**](CloudplaneApi.md#v1ApplicationPut) | **PUT** /v1/application | Put application.
 [**v1ExportGet**](CloudplaneApi.md#v1ExportGet) | **GET** /v1/export | List exports
 [**v1ExportNameGet**](CloudplaneApi.md#v1ExportNameGet) | **GET** /v1/export/{name} | Get export
 [**v1ExportPut**](CloudplaneApi.md#v1ExportPut) | **PUT** /v1/export | Put export

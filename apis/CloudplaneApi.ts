@@ -107,7 +107,7 @@ export class CloudplaneApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Put applications
+     * Put application.
      * @param application ExportTarget
      */
     public async v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Promise<RequestContext> {

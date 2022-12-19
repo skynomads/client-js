@@ -359,7 +359,7 @@ export class ObservableCloudplaneApi {
     }
 
     /**
-     * Put applications
+     * Put application.
      * @param application ExportTarget
      */
     public v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Observable<V1alpha1Application> {

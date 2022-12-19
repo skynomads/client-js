@@ -313,7 +313,7 @@ export class PromiseCloudplaneApi {
     }
 
     /**
-     * Put applications
+     * Put application.
      * @param application ExportTarget
      */
     public v1ApplicationPut(application: V1alpha1Application, _options?: Configuration): Promise<V1alpha1Application> {

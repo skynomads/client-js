@@ -422,7 +422,7 @@ export class ObjectCloudplaneApi {
     }
 
     /**
-     * Put applications
+     * Put application.
      * @param param the request object
      */
     public v1ApplicationPut(param: CloudplaneApiV1ApplicationPutRequest, options?: Configuration): Promise<V1alpha1Application> {
