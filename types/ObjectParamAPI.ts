@@ -6,6 +6,7 @@ import { IntstrType } from '../models/IntstrType';
 import { K8sIoApiCoreV1ConditionStatus } from '../models/K8sIoApiCoreV1ConditionStatus';
 import { K8sIoApimachineryPkgApisMetaV1ConditionStatus } from '../models/K8sIoApimachineryPkgApisMetaV1ConditionStatus';
 import { MainJobInput } from '../models/MainJobInput';
+import { MainJobResponse } from '../models/MainJobResponse';
 import { ResourceQuantity } from '../models/ResourceQuantity';
 import { V1AWSElasticBlockStoreVolumeSource } from '../models/V1AWSElasticBlockStoreVolumeSource';
 import { V1Affinity } from '../models/V1Affinity';
@@ -513,7 +514,7 @@ export class ObjectCloudplaneApi {
      * Put job
      * @param param the request object
      */
-    public v1JobPut(param: CloudplaneApiV1JobPutRequest, options?: Configuration): Promise<V1Job> {
+    public v1JobPut(param: CloudplaneApiV1JobPutRequest, options?: Configuration): Promise<MainJobResponse> {
         return this.api.v1JobPut(param.jobInput,  options).toPromise();
     }
 

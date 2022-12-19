@@ -1522,7 +1522,7 @@ var CloudplaneApiResponseProcessor = (function () {
                         return [4, response.body.text()];
                     case 1:
                         body = _b.apply(_a, [_d.apply(_c, [_2.sent(), contentType]),
-                            "V1Job", ""]);
+                            "MainJobResponse", ""]);
                         return [2, body];
                     case 2:
                         if (!(0, util_1.isCodeInRange)("400", response.httpStatusCode)) return [3, 4];
@@ -1567,7 +1567,7 @@ var CloudplaneApiResponseProcessor = (function () {
                         return [4, response.body.text()];
                     case 11:
                         body = _x.apply(_w, [_z.apply(_y, [_2.sent(), contentType]),
-                            "V1Job", ""]);
+                            "MainJobResponse", ""]);
                         return [2, body];
                     case 12:
                         _0 = exception_1.ApiException.bind;

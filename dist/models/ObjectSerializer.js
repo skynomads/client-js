@@ -20,6 +20,7 @@ __exportStar(require("../models/IntstrType"), exports);
 __exportStar(require("../models/K8sIoApiCoreV1ConditionStatus"), exports);
 __exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1ConditionStatus"), exports);
 __exportStar(require("../models/MainJobInput"), exports);
+__exportStar(require("../models/MainJobResponse"), exports);
 __exportStar(require("../models/ResourceQuantity"), exports);
 __exportStar(require("../models/V1AWSElasticBlockStoreVolumeSource"), exports);
 __exportStar(require("../models/V1Affinity"), exports);
@@ -288,6 +289,7 @@ __exportStar(require("../models/V1alpha1TemplateInstance"), exports);
 __exportStar(require("../models/V1alpha1TemplateStorage"), exports);
 var IntstrIntOrString_1 = require("../models/IntstrIntOrString");
 var MainJobInput_1 = require("../models/MainJobInput");
+var MainJobResponse_1 = require("../models/MainJobResponse");
 var ResourceQuantity_1 = require("../models/ResourceQuantity");
 var V1AWSElasticBlockStoreVolumeSource_1 = require("../models/V1AWSElasticBlockStoreVolumeSource");
 var V1Affinity_1 = require("../models/V1Affinity");
@@ -577,6 +579,7 @@ var enumsMap = new Set([
 var typeMap = {
     "IntstrIntOrString": IntstrIntOrString_1.IntstrIntOrString,
     "MainJobInput": MainJobInput_1.MainJobInput,
+    "MainJobResponse": MainJobResponse_1.MainJobResponse,
     "ResourceQuantity": ResourceQuantity_1.ResourceQuantity,
     "V1AWSElasticBlockStoreVolumeSource": V1AWSElasticBlockStoreVolumeSource_1.V1AWSElasticBlockStoreVolumeSource,
     "V1Affinity": V1Affinity_1.V1Affinity,

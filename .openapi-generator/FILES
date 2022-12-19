@@ -16,6 +16,7 @@ models/IntstrType.ts
 models/K8sIoApiCoreV1ConditionStatus.ts
 models/K8sIoApimachineryPkgApisMetaV1ConditionStatus.ts
 models/MainJobInput.ts
+models/MainJobResponse.ts
 models/ObjectSerializer.ts
 models/ResourceQuantity.ts
 models/V1AWSElasticBlockStoreVolumeSource.ts

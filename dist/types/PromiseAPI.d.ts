@@ -1,6 +1,6 @@
 import { Configuration } from '../configuration';
 import { MainJobInput } from '../models/MainJobInput';
-import { V1Job } from '../models/V1Job';
+import { MainJobResponse } from '../models/MainJobResponse';
 import { V1alpha1Application } from '../models/V1alpha1Application';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
@@ -24,6 +24,6 @@ export declare class PromiseCloudplaneApi {
     v1ExportscheduleNameDelete(name: string, _options?: Configuration): Promise<string>;
     v1ExportscheduleNameGet(name: string, _options?: Configuration): Promise<V1alpha1ExportSchedule>;
     v1ExportschedulePut(schedule: V1alpha1ExportSchedule, _options?: Configuration): Promise<V1alpha1ExportSchedule>;
-    v1JobPut(jobInput: MainJobInput, _options?: Configuration): Promise<V1Job>;
+    v1JobPut(jobInput: MainJobInput, _options?: Configuration): Promise<MainJobResponse>;
     v1TemplateGet(_options?: Configuration): Promise<Array<V1alpha1Template>>;
 }

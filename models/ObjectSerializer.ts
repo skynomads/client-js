@@ -3,6 +3,7 @@ export * from '../models/IntstrType';
 export * from '../models/K8sIoApiCoreV1ConditionStatus';
 export * from '../models/K8sIoApimachineryPkgApisMetaV1ConditionStatus';
 export * from '../models/MainJobInput';
+export * from '../models/MainJobResponse';
 export * from '../models/ResourceQuantity';
 export * from '../models/V1AWSElasticBlockStoreVolumeSource';
 export * from '../models/V1Affinity';
@@ -275,6 +276,7 @@ import { IntstrType } from '../models/IntstrType';
 import { K8sIoApiCoreV1ConditionStatus } from '../models/K8sIoApiCoreV1ConditionStatus';
 import { K8sIoApimachineryPkgApisMetaV1ConditionStatus } from '../models/K8sIoApimachineryPkgApisMetaV1ConditionStatus';
 import { MainJobInput } from '../models/MainJobInput';
+import { MainJobResponse } from '../models/MainJobResponse';
 import { ResourceQuantity } from '../models/ResourceQuantity';
 import { V1AWSElasticBlockStoreVolumeSource } from '../models/V1AWSElasticBlockStoreVolumeSource';
 import { V1Affinity } from '../models/V1Affinity';
@@ -600,6 +602,7 @@ let enumsMap: Set<string> = new Set<string>([
 let typeMap: {[index: string]: any} = {
     "IntstrIntOrString": IntstrIntOrString,
     "MainJobInput": MainJobInput,
+    "MainJobResponse": MainJobResponse,
     "ResourceQuantity": ResourceQuantity,
     "V1AWSElasticBlockStoreVolumeSource": V1AWSElasticBlockStoreVolumeSource,
     "V1Affinity": V1Affinity,

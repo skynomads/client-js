@@ -19,6 +19,7 @@ __exportStar(require("../models/IntstrType"), exports);
 __exportStar(require("../models/K8sIoApiCoreV1ConditionStatus"), exports);
 __exportStar(require("../models/K8sIoApimachineryPkgApisMetaV1ConditionStatus"), exports);
 __exportStar(require("../models/MainJobInput"), exports);
+__exportStar(require("../models/MainJobResponse"), exports);
 __exportStar(require("../models/ResourceQuantity"), exports);
 __exportStar(require("../models/V1AWSElasticBlockStoreVolumeSource"), exports);
 __exportStar(require("../models/V1Affinity"), exports);

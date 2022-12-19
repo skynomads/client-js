@@ -1046,7 +1046,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **v1JobPut**
-> V1Job v1JobPut(jobInput)
+> MainJobResponse v1JobPut(jobInput)
 
 
 ### Example
@@ -1083,7 +1083,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**V1Job**
+**MainJobResponse**
 
 ### Authorization
 

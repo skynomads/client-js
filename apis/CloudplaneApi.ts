@@ -9,7 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { MainJobInput } from '../models/MainJobInput';
-import { V1Job } from '../models/V1Job';
+import { MainJobResponse } from '../models/MainJobResponse';
 import { V1alpha1Application } from '../models/V1alpha1Application';
 import { V1alpha1Export } from '../models/V1alpha1Export';
 import { V1alpha1ExportSchedule } from '../models/V1alpha1ExportSchedule';
@@ -1378,13 +1378,13 @@ export class CloudplaneApiResponseProcessor {
      * @params response Response returned by the server for a request to v1JobPut
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async v1JobPut(response: ResponseContext): Promise<V1Job > {
+     public async v1JobPut(response: ResponseContext): Promise<MainJobResponse > {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: V1Job = ObjectSerializer.deserialize(
+            const body: MainJobResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "V1Job", ""
-            ) as V1Job;
+                "MainJobResponse", ""
+            ) as MainJobResponse;
             return body;
         }
         if (isCodeInRange("400", response.httpStatusCode)) {
@@ -1418,10 +1418,10 @@ export class CloudplaneApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: V1Job = ObjectSerializer.deserialize(
+            const body: MainJobResponse = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "V1Job", ""
-            ) as V1Job;
+                "MainJobResponse", ""
+            ) as MainJobResponse;
             return body;
         }
 
